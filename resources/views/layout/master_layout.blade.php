@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/5c3b708ee0.js" crossorigin="anonymous"></script>
 </head>
@@ -11,13 +11,13 @@
     
     <header>
        <div id="foto">
-        <a href="#">
-            <img src="images/Logo.png" alt="logo">
+        <a href="{{route('home')}}">
+            <img id="logo" src="{{asset('images/Logo.png')}}" alt="logo">
         </a>
        </div>
-        <nav>
+        <nav id="header-nav">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#">Our story</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
