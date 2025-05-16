@@ -138,7 +138,7 @@ footer li a:hover
     flex-direction: column;
 
 }
-#privacy-policy h1
+.title
 {
     background-color: #d9c8a4;
     border-radius: 10px;
