@@ -195,7 +195,7 @@ class ProductsTableSeeder extends Seeder
             'updated_at' => now(),
         ],
         [
-            'name' => 'Enkel_twisted_met_dubbel_twisted_ring',
+            'name' => 'Enkel twisted met dubbel twisted ring',
             'description' => 'Description for Product 16',
             'image' => 'images/rings/enkel_twisted_met_dubbel_twisted_ring.jpg',
             'price' => 24.99,
@@ -209,7 +209,7 @@ class ProductsTableSeeder extends Seeder
         [
             'name' => 'Hartjes ring',
             'description' => 'Description for Product 17',
-            'image' => 'images/rings/hartjes.jpg',
+            'image' => 'images/rings/hartjesring.jpg',
             'price' => 22.99,
             'stock' => 10,
             'sale' => false,
