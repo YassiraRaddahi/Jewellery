@@ -12,7 +12,7 @@
     <header>
        <div id="foto">
         <a href="#">
-            <img src="images/Logo.png" alt="logo">
+            <img id="logo" src="images/Logo.png" alt="logo">
         </a>
        </div>
         <nav>

@@ -1,4 +1,4 @@
-@extends('layouts.master_layout')
+@extends('layout.master_layout')
 @section('title', 'Contact Us')
 @section('content')
 <div id="contactus">
