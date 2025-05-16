@@ -8,7 +8,7 @@
 
 <div class="products-container">
     @foreach($products as $product)
-        <div>
+        <div class="product-category">
             <div class="product-category">
                 <img src="{{asset($product->image)}}" alt="{{$product->name}}">
             </div>    
