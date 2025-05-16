@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout.master_layout');
 });
+ Route::get('/login', function () {
+    return view('pages.log-in.blade.php');
+})->name('login');
 
 // Route::get('/account', function () {
 //     return view('pages.account');
