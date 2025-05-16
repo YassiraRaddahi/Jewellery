@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('layout.master_layout');
 });
  Route::get('/login', function () {
-    return view('pages.log-in.blade.php');
+    return view('pages.log_in');
 })->name('login');
 
 // Route::get('/account', function () {

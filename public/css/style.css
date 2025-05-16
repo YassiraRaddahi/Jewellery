@@ -127,3 +127,49 @@ footer li a:hover
 {
     color: #000000;
 }
+.log_group
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    background-color:#fefcf3 ;
+    height: 40vh;
+    width: 20vw;
+    padding: 20px;
+    border-radius: 10px;
+}
+.log_group label
+{
+   font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 5px;
+   
+}
+.log_group input
+{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    border: #000000 solid 2px;
+}
+.log_group button
+{
+    padding: 10px 20px;
+    background-color: #e9f0cc;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}

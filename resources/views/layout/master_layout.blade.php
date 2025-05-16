@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                <li><a href="login"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
+                <li><a href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
             </ul>
         </div>
     </header>
