@@ -127,3 +127,22 @@ footer li a:hover
 {
     color: #000000;
 }
+#privacy-policy
+{
+    font-family: 'verdana';
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#privacy-policy h1
+{
+    background-color: #d9c8a4;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+
+}

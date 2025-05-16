@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/5c3b708ee0.js" crossorigin="anonymous"></script>
 </head>
@@ -39,7 +39,7 @@
     <footer>
     
         <p>&copy; 2025 Moonie Studio</p>
-        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
     </footer>
 </body>
 </html>

@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('layout.master_layout');
 });
 
+Route::get('/privacy', function () {
+    return view('pages.privacy');
+})->name('privacy');
 // Route::get('/account', function () {
 //     return view('pages.account');
 // })->name('account');
