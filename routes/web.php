@@ -6,13 +6,17 @@ Route::get('/', function () {
     return view('layout.master_layout');
 });
 
+Route::get('/ourstory', function () {
+    return view('pages.our_story');
+})->name('ourstory');
+
 // Route::get('/account', function () {
 //     return view('pages.account');
 // })->name('account');
 
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/about', [AboutController::class, 'index'])->name('story');
+//Route::get('/about', [AboutController::class, 'index'])->name('story');
 // Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
