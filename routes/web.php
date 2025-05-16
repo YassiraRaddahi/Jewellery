@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('layout.master_layout');
 });
 
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('contact');
 // Route::get('/account', function () {
 //     return view('pages.account');
 // })->name('account');
