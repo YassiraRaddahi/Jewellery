@@ -10,15 +10,10 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(string $name)
+    public function index()
     {   
-        $category = Category::where('name', $name)->firstOrFail();
-        $products = $category->products()->paginate(12);
-        return view('category.index', [
-            'category' => $category,
-            'products' => $products,
-        ]);
-    }
+        
+    } 
 
     /**
      * Show the form for creating a new resource.
@@ -39,9 +34,14 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $name)
     {
-        //
+        $category = Category::with('products')->where('name', $name)->firstOrFail();
+        $products = $category->products;
+        return view('categories.show', [
+            'category' => $category,
+            'products' => $products,
+        ]);
     }
 
     /**

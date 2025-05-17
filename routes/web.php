@@ -9,7 +9,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/categories/{name}', [CategoriesController::class, 'index'])->name('category.index');
+
+Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+
 
 // Route::get('/account', function () {
 //     return view('pages.account');
