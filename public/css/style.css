@@ -9,6 +9,25 @@ body
     margin: 0;
     padding: 0;
     background-color:#f2efe3;
+    font-family: 'verdana';
+}
+
+h1
+{
+    
+    font-family: 'italic';
+    font-size: 2.5em;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
+p
+{
+    font-size: 1.2em;
+    color: #000000;
+    text-align: center;
+    margin: 20px 0;
+  
 }
 
 header 
@@ -60,7 +79,6 @@ nav ul li a
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
 
 #logo
 {
@@ -229,6 +247,54 @@ footer li a:hover
 {
     color: #000000;
 }
+
+#ourstory_image
+{
+    width: 50vw;
+    max-width: 500px;
+    height: 60vh;
+    padding: 20px;
+}
+
+
+#ourstory_image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ourstory_text
+{
+    width: 50vw;
+    padding: 20px;
+}
+
+#ourstory_text h1
+{
+    font-family: 'Lobster', cursive;
+}
+
+#ourstory
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) 
+{
+  
+    /* Styles for screens smaller than or equal to 768px */
+  
+    #ourstory
+    {
+        flex-direction: column;
+    }
+}
+
 #privacy-policy
 {
     font-family: 'verdana';
@@ -240,11 +306,11 @@ footer li a:hover
     flex-direction: column;
 
 }
+
 .title
 {
     background-color: #d9c8a4;
     border-radius: 10px;
     padding: 10px;
     margin: 0;
-
 }

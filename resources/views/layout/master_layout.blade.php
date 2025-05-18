@@ -18,7 +18,7 @@
         <nav id="header-nav">
             <ul>
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="#">Our story</a></li>
+                <li><a href="{{ route('ourstory') }}">Our story</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
