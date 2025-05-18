@@ -11,13 +11,13 @@
     
     <header>
        <div id="foto">
-        <a href="#">
+        <a href="{{route('home')}}">
             <img id="logo" src="{{asset('images/Logo.png')}}" alt="logo">
         </a>
        </div>
-        <nav>
+        <nav id="header-nav">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{ route('ourstory') }}">Our story</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -33,13 +33,15 @@
     </header>
 
     <main>
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 
     <footer>
     
         <p>&copy; 2025 Moonie Studio</p>
-        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
     </footer>
 </body>
 </html>

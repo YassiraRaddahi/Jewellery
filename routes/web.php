@@ -1,14 +1,26 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductsController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layout.master_layout');
-});
+    return view('home');
+})->name('home');
+
+
+Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
 
 Route::get('/ourstory', function () {
     return view('pages.our_story');
 })->name('ourstory');
+
+Route::get('/privacy', function () {
+    return view('pages.privacy');
+})->name('privacy');
 
 // Route::get('/account', function () {
 //     return view('pages.account');
