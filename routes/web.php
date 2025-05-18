@@ -15,6 +15,9 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
 
 
+Route::get('/privacy', function () {
+    return view('pages.privacy');
+})->name('privacy');
 // Route::get('/account', function () {
 //     return view('pages.account');
 // })->name('account');
