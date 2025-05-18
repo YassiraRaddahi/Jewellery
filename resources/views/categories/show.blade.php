@@ -9,7 +9,7 @@
 @include('layout.nav-products')
 
 <div class="products-header">
-     <h1>{{$title}}</h1>
+     <h1 class="title">{{$title}}</h1>
     <span>{{count($products)}} products</span>
 </div>
 

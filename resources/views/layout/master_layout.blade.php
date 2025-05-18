@@ -41,7 +41,7 @@
     <footer>
     
         <p>&copy; 2025 Moonie Studio</p>
-        <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
+        <span><a href="{{ route('privacy')}}">Privacy Policy</a></span>
     </footer>
 </body>
 </html>
