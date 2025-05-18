@@ -309,7 +309,7 @@ footer span a:hover
     margin: 0;
 }
 
-.log_group
+.login_group
 {
     display: flex;
     justify-content: space-between;
@@ -323,7 +323,7 @@ footer span a:hover
     border-radius: 10px;
 }
 
-.log_group label
+.login_group label
 {
    font-family: Arial, sans-serif;
     font-size: 16px;
@@ -331,7 +331,7 @@ footer span a:hover
    
 }
 
-.log_group input
+.login_group input
 {
     padding: 10px;
     margin-bottom: 10px;
@@ -340,7 +340,7 @@ footer span a:hover
     border: #000000 solid 2px;
 }
 
-.log_group button
+.login_group button
 {
     padding: 10px 20px;
     background-color: #e9f0cc;
