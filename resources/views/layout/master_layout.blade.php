@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/5c3b708ee0.js" crossorigin="anonymous"></script>
 </head>
@@ -11,14 +11,14 @@
     
     <header>
        <div id="foto">
-        <a href="#">
-            <img id="logo" src="images/Logo.png" alt="logo">
+        <a href="{{route('home')}}">
+            <img id="logo" src="{{asset('images/Logo.png')}}" alt="logo">
         </a>
        </div>
-        <nav>
+        <nav id="header-nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our story</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{ route('ourstory') }}">Our story</a></li>
                 <li><a href="{{ route('contact')}}">Contact</a></li>
             </ul>
         </nav>
@@ -27,19 +27,21 @@
             <ul>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                <li><a href="#"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
+                <li><a href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
             </ul>
         </div>
     </header>
 
     <main>
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 
     <footer>
     
         <p>&copy; 2025 Moonie Studio</p>
-        <li><a href="#">Privacy Policy</a></li>
+        <span><a href="{{ route('privacy')}}">Privacy Policy</a></span>
     </footer>
 </body>
 </html>
