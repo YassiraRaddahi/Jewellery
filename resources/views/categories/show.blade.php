@@ -1,19 +1,17 @@
 @extends('layout.master_layout')
 
-@if(isset($category->name))
-    @section('title', $category->name)
-@else
-    @section('title', 'All Products')
-@endif
+
+@section('title', $title)
 
 
 @section('content')
 
-@if(isset($category->name))
-    <h1>{{$category->name}}</h1>
-@else
-    <h1>All Products</h1>
-@endif
+@include('layout.nav-products')
+
+<div class="products-header">
+     <h1>{{$title}}</h1>
+    <span>{{count($products)}} products</span>
+</div>
 
 <div class="products-container">
     @foreach($products as $product)
@@ -26,11 +24,11 @@
                 <div><h4>{{$product->name}}</h4></div>
 
                 <div class="product-category-price">
-                @if($product->sale)
-                    <p><del>€{{$product->price}}</del></p>
+                @if($product->on_sale)
                     <p>€{{number_format($product->price * (1 - $product->discount_factor), 2)}}</p>
+                    <p class="product-old-price">€{{number_format($product->price, 2)}}</p>
                 @else
-                    <p>€{{$product->price}}</p>
+                    <p>€{{number_format($product->price, 2)}}</p>
                 @endif
                 </div>
             </div>

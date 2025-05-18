@@ -14,6 +14,16 @@ class ProductsController extends Controller
     {
         $products = Product::all();
         return view('categories.show', [
+            'title' => 'All Products',
+            'products' => $products,
+        ]);
+    }
+
+    public function sale()
+    {
+        $products = Product::where('on_sale', true)->get();
+        return view('categories.show', [
+            'title' => 'Sale',
             'products' => $products,
         ]);
     }

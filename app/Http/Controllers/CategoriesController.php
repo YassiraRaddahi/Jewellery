@@ -39,7 +39,7 @@ class CategoriesController extends Controller
         $category = Category::with('products')->where('name', $name)->firstOrFail();
         $products = $category->products;
         return view('categories.show', [
-            'category' => $category,
+            'title' => $category->name,
             'products' => $products,
         ]);
     }

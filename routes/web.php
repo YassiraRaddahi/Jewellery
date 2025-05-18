@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
 
 
 // Route::get('/account', function () {

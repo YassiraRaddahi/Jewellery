@@ -5,16 +5,7 @@
 
 @section('content')
 
-    <nav id="products-nav">
-        <ul>
-            <li><a href="#">Sale</a></li>
-            <li><a href="{{route('categories.show', 'rings')}}">Rings</a></li>
-            <li><a href="{{route('categories.show', 'bracelets')}}">Bracelets</a></li>
-            <li><a href="{{route('categories.show', 'necklaces')}}">Necklaces</a></li>
-            <li><a href="{{route('categories.show', 'earrings')}}">Earrings</a></li>
-            <li><a href="{{route('products.index')}}">Show all</a></li>
-        </ul>
-    </nav>
+@include('layout.nav-products')
 
     <div class="products-container">
         <div class="product-home">

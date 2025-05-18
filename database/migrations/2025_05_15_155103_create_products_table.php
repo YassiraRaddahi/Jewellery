@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2);
             $table->unsignedInteger('stock');
-            $table->boolean('sale')->default(false);
+            $table->boolean('on_sale')->default(false);
             $table->decimal('discount_factor')->nullable();
             // Wanneer je een categorie verwijdert, worden de producten met die categorie niet verwijderd, maar wordt de category_id op null gezet.
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
