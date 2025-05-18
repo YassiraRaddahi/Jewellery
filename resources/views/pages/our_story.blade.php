@@ -13,7 +13,7 @@
              are ever alike, making it even more special as it is passed on from generation to generation.</p>
     </div>
     <div id="ourstory_image">
-        <img src="{{asset('images/sierlijke_oorbellen_in_sierlijk_armband.jpg')}}" alt="Jewelry Image">
+        <img src="{{asset('images/lifestyle_photos/sierlijke_oorbellen_in_sierlijk_armband.jpg')}}" alt="Jewelry Image">
     </div>
-    </div>
+</div>
 @endsection

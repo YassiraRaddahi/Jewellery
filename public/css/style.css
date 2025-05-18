@@ -149,9 +149,12 @@ footer li a:hover
 
 #ourstory_image
 {
-    width: 40vw;
+    width: 50vw;
+    max-width: 500px;
     height: 60vh;
+    padding: 20px;
 }
+
 
 #ourstory_image img
 {
@@ -159,20 +162,34 @@ footer li a:hover
     height: 100%;
     object-fit: cover;
 }
+
 #ourstory_text
 {
     width: 50vw;
-    height: 40vh;
     padding: 20px;
 }
+
 #ourstory_text h1
 {
     font-family: 'Lobster', cursive;
 }
-#ourstory{
+
+#ourstory
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    padding: 20px;
     flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  
+    /* Styles for screens smaller than or equal to 768px */
+  
+    #ourstory
+    {
+        flex-direction: column;
+    }
+
 }
