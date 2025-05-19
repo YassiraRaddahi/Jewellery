@@ -24,6 +24,7 @@ Route::get('/login', function () {
 Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
+Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
 Route::get('/privacy', function () {
     return view('pages.privacy');

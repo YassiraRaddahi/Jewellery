@@ -1,17 +1,9 @@
 @extends('layout.master_layout')
 
-
 @section('title', $title)
 
 
 @section('content')
-
-@include('layout.nav-products')
-
-<div class="products-header">
-     <h1 class="title">{{$title}}</h1>
-    <span>{{count($products)}} products</span>
-</div>
 
 <div class="products-container">
     @foreach($products as $product)
