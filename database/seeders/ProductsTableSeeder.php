@@ -43,8 +43,8 @@ class ProductsTableSeeder extends Seeder
             'image' => 'images/bracelets/laagjes_armband_steentjes.jpg',
             'price' => 10.99,
             'stock' => 10,
-            'on_sale' => true,
-            'discount_factor' => 0.15, // 15% korting
+            'on_sale' => false,
+            'discount_factor' => null,
             'category_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
@@ -67,8 +67,8 @@ class ProductsTableSeeder extends Seeder
             'image' => 'images/earrings/dubbel_twisted_oorbellen_dik.jpg',
             'price' => 22.99,
             'stock' => 10,
-            'on_sale' => false,
-            'discount_factor' => null,
+            'on_sale' => true,
+            'discount_factor' => 0.2, // 20% korting
             'category_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
@@ -151,8 +151,8 @@ class ProductsTableSeeder extends Seeder
             "image" => "images/necklaces/kleurenketting_met_kleurenarmband.jpg",
             "price" => 24.99,
             "stock" => 10,
-            "on_sale" => true,
-            "discount_factor" => 0.2, // 20% korting
+            "on_sale" => false,
+            "discount_factor" => null,
             "category_id" => 3,
             'created_at' => now(),
             'updated_at' => now(),
