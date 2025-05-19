@@ -371,3 +371,23 @@ footer span a:hover
     cursor: pointer;
     border-radius: 50px;
 } */
+ .homepage_banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    margin: 0%;
+    
+ }
+ #sierlijke_lifestyle {
+    display: flex;
+    
+    height: 40vh;
+    width: 30vw;
+ }
+#sierlijke_lifestyle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
