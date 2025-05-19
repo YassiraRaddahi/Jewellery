@@ -6,16 +6,18 @@
 @section('content')
 
 <div class="homepage_banner">
-    <div id="homepage_zoekbar">
         <div id="zoekbalk">
             <input type="text" placeholder="Search for a product...">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <h1>Make milestones memorable</h1>
+            <button type="submit"><i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="slogan">
+                <h1>Make </h1>
+                <h1>Milestones</h1>
+                <h1>Memorable</h1>
+            </div>
         </div>
         <div id="sierlijke_lifestyle">
             <img src="{{asset('images/lifestyle_photos/sierlijke_oorbellen_met_sierlijke_bloemenketting.jpg')}}" alt="Homepage Banner">
         </div>
-    </div>
 </div>
 @include('layout.nav-products')
 

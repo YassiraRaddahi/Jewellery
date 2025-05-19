@@ -373,16 +373,16 @@ footer span a:hover
 } */
  .homepage_banner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     padding: 20px;
     margin: 0%;
+    width: 65vw;
     
  }
  #sierlijke_lifestyle {
     display: flex;
-    
     height: 40vh;
     width: 30vw;
  }
@@ -390,4 +390,28 @@ footer span a:hover
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+input[type="text"] {
+    border-radius: 5px;
+    background-color: #f2efe3;
+    height: 5vh;
+    width: 20vw;
+    border: #c39f86 solid 2px;
+}
+button[type="submit"] {
+      border-radius: 5px;
+    background-color: #f2efe3;
+    height: 5vh;
+    border: #c39f86 solid 2px;
+}
+#zoekbalk-icon
+{
+    font-size: 15px;
+    color: #c39f86;
+    margin-right: auto;
+}
+#slogan
+{
+    font-family: 'italic';
+
 }
