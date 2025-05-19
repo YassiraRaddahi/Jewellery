@@ -20,7 +20,6 @@ h1
 p
 {
     font-size: 1.2em;
-    margin: 20px 0;
 }
 
 header 
@@ -107,18 +106,7 @@ nav ul li a
     border-radius: 50%;
 }
 
-#contactus-image
-{
-    width: 20vw;
-    height: 20vh;
-}
 
-#contactus-image img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 main 
 {
     padding: 20px;
@@ -287,6 +275,7 @@ footer span a:hover
     align-items: center;
     padding: 20px;
     flex-direction: row;
+    width: 80vw;
 }
 
 @media (max-width: 768px) 
@@ -318,7 +307,7 @@ footer span a:hover
    background-color: #d9c8a4;
     border-radius: 10px;
     padding: 10px;
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
 .log_group
@@ -371,3 +360,40 @@ footer span a:hover
     cursor: pointer;
     border-radius: 50px;
 } */
+ 
+ .contactus
+ {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    width: 80vw;
+ }
+
+ #contactus-text
+ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+ }
+
+ #contactus-text p
+ {
+    margin: 10px 0;
+ }
+
+ #contactus-image
+ {
+    width: 50vw;
+    max-width: 500px;
+    height: 60vh;
+    padding: 20px;
+}
+
+#contactus-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
