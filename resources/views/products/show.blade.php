@@ -28,9 +28,24 @@
                 <p>€{{number_format($product->price, 2)}}</p>
             @endif
         </div>
-        <div>
-            
-        </div>
     </div>
+    <div class="product-show-add-to-cart">
+        <form action="#" method="GET">
+            @csrf
+            <select name="quantity" id="quantity">
+                @for($i = 1; $i <= $product->stock; $i++)
+                    <option value="{{$i}}">{{$i}}</option>
+                @endfor
+            <input type="hidden" name="product_id" value="{{$product->id}}">
+            <button onclick="ProductAddedMessage()" type="submit" name="submitButton" class="add-to-cart-button">Add to cart</button>
+        </form>
+    </div>
+
+    <div>
+        @if(isset($_GET['submitButton']))
+            <p id="product-added-message">Product added to cart!</p>
+        @endif
+    </div>
+    
 </div>
 @endsection
