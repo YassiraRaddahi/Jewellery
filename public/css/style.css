@@ -207,6 +207,12 @@ main
     color: red;
 }
 
+.product-out-of-stock
+{
+    color: red;
+    font-weight: bold;
+}
+
 .product-category img
 {
     width: 100%;

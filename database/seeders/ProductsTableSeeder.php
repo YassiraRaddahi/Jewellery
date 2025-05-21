@@ -54,7 +54,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Description for Product 4',
             'image' => 'images/bracelets/sierlijke_armband_rotated.jpg',
             'price' => 19.99,
-            'stock' => 10,
+            'stock' => 0,
             'on_sale' => false,
             'discount_factor' => null,
             'category_id' => 2,

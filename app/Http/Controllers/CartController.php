@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class CartController extends Controller
 {
@@ -28,6 +29,7 @@ class CartController extends Controller
         // dd($request->all());
         $productId = $request->input('product_id');
         $quantity = (int) $request->input('quantity', 1);
+        $stock =  Product::findOrFail($productId)->stock;
 
         // dd($quantity);
 
@@ -35,6 +37,8 @@ class CartController extends Controller
 
         if(isset($cart[$productId]))
         {
+            // Check if the quantity exceeds the stock
+            
             $cart[$productId] += $quantity;
         }
         else
@@ -45,7 +49,7 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
 
-        return redirect()->back();
+       return to_route('products.show',$productId);
         
     }
 

@@ -26,18 +26,22 @@
                 <p class="product-old-price">€{{number_format($product->price, 2)}}</p>
             @else
                 <p>€{{number_format($product->price, 2)}}</p>
+
+                @if($product->stock == 0)
+                <p class="product-out-of-stock">No stock available</p>
+                @endif
             @endif
         </div>
     </div>
     <div class="product-show-add-to-cart">
         <form action="{{route('cart.add')}}" method="POST">
             @csrf
-            <select name="quantity" id="quantity">
-                @for($i = 1; $i <= $product->stock; $i++)
-                    <option type="number" value="{{$i}}">{{$i}}</option>
+            <select name="quantity" id="quantity" {{ $product->stock < 1 || $remaining_stock < 1 ? 'disabled' : '' }}>
+                @for($i = 1; $i <= $remaining_stock; $i++)
+                    <option value="{{$i}}">{{$i}}</option>
                 @endfor
             <input type="hidden" name="product_id" value="{{$product->id}}">
-            <button onclick="ProductAddedMessage(this)" type="submit" name="submitButton" class="add-to-cart-button">Add to cart</button>
+            <button onclick="ProductAddedMessage(this)" type="submit" name="submitButton" class="add-to-cart-button" {{ $product->stock < 1  || $remaining_stock < 1 ? 'disabled' : '' }}>Add to cart</button>
         </form>
     </div>
 

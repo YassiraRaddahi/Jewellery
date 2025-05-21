@@ -8,23 +8,23 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
-// Route::get('/session-debug', function () {
-//      // Store some session data
-//     session(['user_id' => 42, 'name' => 'Alice']);
-//     session()->save(); // force save
+Route::get('/session-debug', function () {
+     // Store some session data
+    // session(['user_id' => 42, 'name' => 'Alice']);
+    // session()->save(); // force save
 
-//     $sessionId = session()->getId();
+    $sessionId = session()->getId();
 
-//     $filePath = storage_path("framework/sessions/{$sessionId}");
+    $filePath = storage_path("framework/sessions/{$sessionId}");
 
-//     return [
-//         'session_id'      => $sessionId,
-//         'session_file'    => $filePath,
-//         'exists'          => file_exists($filePath),
-//         'file_contents'   => file_exists($filePath) ? file_get_contents($filePath) : 'not found',
-//         'session_data'    => session()->all(),
-//     ];
-// });
+    return [
+        'session_id'      => $sessionId,
+        'session_file'    => $filePath,
+        'exists'          => file_exists($filePath),
+        'file_contents'   => file_exists($filePath) ? file_get_contents($filePath) : 'not found',
+        'session_data'    => session()->all(),
+    ];
+});
 
 Route::get('/', function () {
     return view('home');

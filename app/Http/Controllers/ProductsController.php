@@ -50,9 +50,24 @@ class ProductsController extends Controller
     public function show(string $id)
     {
         $product = Product::findOrFail($id);
+
+        $remaining_stock = $product->stock;
+
+        if(session()->has('cart'))
+        {
+            $cart = session()->get('cart');
+
+            // Check if the product is in the cart
+            if(isset($cart[$id]))
+            {
+                 $remaining_stock = $product->stock - $cart[$id];
+            }
+        }
+        
         return view('products.show', [
             'title' => $product->name,
             'product' => $product,
+            'remaining_stock' => $remaining_stock,
         ]);
     }
 
