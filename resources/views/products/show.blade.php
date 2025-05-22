@@ -39,13 +39,13 @@
             <div class="product-show-add-to-cart-form">
                 <form action="{{route('cart.add')}}" method="POST">
                     @csrf
-                    <select name="quantity" class="product_quantity_selector" {{ $product->stock < 1 || $remaining_stock < 1 ? 'disabled' : '' }}>
+                    <select name="quantity" class="product_quantity_selector" {{ $remaining_stock < 1 ? 'disabled' : '' }}>
                         @for($i = 1; $i <= $remaining_stock; $i++)
                             <option value="{{$i}}">{{$i}}</option>
                         @endfor
                     </select>
                     <input type="hidden" name="product_id" value="{{$product->id}}">
-                    <button onclick="ProductAddedMessage(this)" type="submit" name="submitButton" class="add-to-cart-button" {{ $product->stock < 1  || $remaining_stock < 1 ? 'disabled' : '' }}>Add to cart</button>
+                    <button onclick="ProductAddedMessage(this)" type="submit" name="submitButton" class="add-to-cart-button" {{ $remaining_stock < 1 ? 'disabled' : '' }}>Add to cart</button>
                 </form>
             </div>
             <div class="product-added-message">

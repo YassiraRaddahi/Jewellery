@@ -245,6 +245,18 @@ main
     font-size: inherit;
 }
 
+
+
+.add-to-cart-button:disabled
+{
+    cursor: not-allowed;
+}
+
+.product_quantity_selector:disabled
+{
+    cursor: not-allowed;
+}
+
 .add-to-cart-button:hover
 {
     background-color: #ccbc9a;
