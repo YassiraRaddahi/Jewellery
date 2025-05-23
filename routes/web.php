@@ -29,4 +29,9 @@ Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
 
+Route::get('/createuser', function () {
+    return view('users.create');
+})->name('users.create');
+
+
 
