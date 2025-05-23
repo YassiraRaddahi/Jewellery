@@ -397,3 +397,15 @@ footer span a:hover
     height: 100%;
     object-fit: cover;
 }
+.welcome_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 80vw;
+}
+#icon_welcome img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}

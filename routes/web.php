@@ -29,4 +29,7 @@ Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
 
+Route::get('/user', function () {
+    return view('users.show');
+})->name('user');
 
