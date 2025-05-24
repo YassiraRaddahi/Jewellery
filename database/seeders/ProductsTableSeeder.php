@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
     {
         DB::table('products')->insert([[
             'name' => 'Armband met glitterrand',
-            'description' => 'Description for Product 1',
+            'description' => 'Etiam viverra lorem eu lacus suscipit malesuada. Etiam non odio cursus, mollis ligula vel, gravida eros. Maecenas blandit tellus quis odio hendrerit porttitor. Praesent aliquet, lacus vel pretium ultricies, nisi ipsum consequat arcu, sit amet ultrices nulla mi vestibulum tortor. Phasellus ornare dui eleifend aliquam auctor. Vestibulum id eleifend felis. Fusce varius tristique diam sed tristique. Integer dapibus ipsum a erat egestas, eu porta mauris malesuada. Quisque egestas lacinia nisl. Ut et odio in sapien luctus tempus nec vitae enim. Etiam pellentesque gravida risus, id malesuada odio. Aliquam ipsum ligula, consectetur quis massa et, varius placerat nisi.',
             'image' => 'images/bracelets/armband_met_glitterrand.jpg',
             'price' => 19.99,
             'stock' => 10,

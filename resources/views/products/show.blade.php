@@ -49,9 +49,13 @@
                 </form>
             </div>
             <div class="product-added-message">
-                @if(isset(session('cart')[$product->id]))
-                    <p id="product-added-message">Product is added to cart</p>
-                    <p> {{session()->get('cart')[$product->id]}} in cart</p>
+                @if(session('addToCartError'))
+                    <div class="error-message">
+                        <p>{{session('addToCartError')}}</p>
+                    </div>
+                @elseif($amount_in_cart > 0)
+                    <p id="product-added-message">Product is added to cart</p>    
+                    <p> {{$amount_in_cart}} in cart</p>
                 @endif
             </div>
         </div>

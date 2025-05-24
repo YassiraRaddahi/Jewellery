@@ -21,7 +21,7 @@
             </div>    
 
             <div class="product-category-name-price">
-                <div><h4>{{$product->name}}</h4></div>
+                <div class="product-category-name"><h4>{{$product->name}}</h4></div>
 
                 <div class="product-category-price">
                 @if($product->on_sale)

@@ -49,24 +49,35 @@ class ProductsController extends Controller
      */
     public function show(string $id)
     {
+
+        // Getting the product from the database
         $product = Product::findOrFail($id);
 
         $remaining_stock = $product->stock;
+        $amount_in_cart = 0;
 
+        // Checking if the session has a cart
         if(session()->has('cart'))
         {
+            // Getting the cart from the session
             $cart = session()->get('cart');
 
             // Check if the product is in the cart
             if(isset($cart[$id]))
             {
-                 $remaining_stock = $product->stock - $cart[$id];
+
+                // Getting the amount of the product in the cart
+                $amount_in_cart = $cart[$id];
+
+                // Calculating the remaining stock (stock - amount in cart)
+                $remaining_stock = $product->stock - $amount_in_cart;
             }
         }
         
         return view('products.show', [
             'title' => $product->name,
             'product' => $product,
+            'amount_in_cart' => $amount_in_cart,
             'remaining_stock' => $remaining_stock,
         ]);
     }
