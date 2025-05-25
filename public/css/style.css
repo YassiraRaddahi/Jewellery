@@ -20,7 +20,6 @@ h1
 p
 {
     font-size: 1.2em;
-    margin: 20px 0;
 }
 
 header 
@@ -107,18 +106,7 @@ nav ul li a
     border-radius: 50%;
 }
 
-#contactus-image
-{
-    width: 20vw;
-    height: 20vh;
-}
 
-#contactus-image img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 main 
 {
     padding: 20px;
@@ -429,6 +417,7 @@ footer span a:hover
     align-items: center;
     padding: 20px;
     flex-direction: row;
+    width: 80vw;
 }
 
 @media (max-width: 1200px) 
@@ -468,10 +457,10 @@ footer span a:hover
    background-color: #d9c8a4;
     border-radius: 10px;
     padding: 10px;
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
-.log_group
+.login_group
 {
     display: flex;
     justify-content: space-between;
@@ -479,13 +468,20 @@ footer span a:hover
     margin-bottom: 20px;
     flex-direction: column;
     background-color:#fefcf3 ;
-    height: 40vh;
-    width: 20vw;
+    height: 50vh;
+    width: 30vw;
     padding: 20px;
     border-radius: 10px;
+   
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    top: 50%;
+
 }
 
-.log_group label
+.login_group label
 {
    font-family: Arial, sans-serif;
     font-size: 16px;
@@ -493,23 +489,72 @@ footer span a:hover
    
 }
 
-.log_group input
+.login_group input
 {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 50px;
     border: #000000 solid 2px;
+    width: 25vw;
+
 }
 
-.log_group button
+.login_group button
 {
     padding: 10px 20px;
-    background-color: #e9f0cc;
-    color: #000000;
+    background-color: #c39f86;
+    color: #ffffff;
     border: none;
     cursor: pointer;
     border-radius: 50px;
     display: flex;
+    width: auto;
+    font-size: 1.2em;
+    justify-content: right;
+}
+
+/* {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+} */
+ 
+ .contactus
+ {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 20px;
+    width: 80vw;
+ }
+
+ #contactus-text
+ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+ }
+
+ #contactus-text p
+ {
+    margin: 10px 0;
+ }
+
+ #contactus-image
+ {
+    width: 50vw;
+    max-width: 500px;
+    height: 60vh;
+    padding: 20px;
+}
+
+#contactus-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
