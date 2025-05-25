@@ -17,11 +17,11 @@
     @foreach($products as $product)
         <div class="product-category-container">
             <div class="product-category">
-                <img src="{{asset($product->image)}}" alt="{{$product->name}}">
+                <a href="{{route('products.show', ['id' => $product->id, 'previous_route' => '/' . request()->path()])}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
             </div>    
 
             <div class="product-category-name-price">
-                <div><h4>{{$product->name}}</h4></div>
+                <div class="product-category-name"><h4>{{$product->name}}</h4></div>
 
                 <div class="product-category-price">
                 @if($product->on_sale)

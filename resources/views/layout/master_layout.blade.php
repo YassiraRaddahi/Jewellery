@@ -43,5 +43,7 @@
         <p>&copy; 2025 Moonie Studio</p>
         <span><a href="{{ route('privacy')}}">Privacy Policy</a></span>
     </footer>
+
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
