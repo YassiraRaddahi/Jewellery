@@ -17,7 +17,7 @@
     @foreach($products as $product)
         <div class="product-category-container">
             <div class="product-category">
-                <a href="{{route('products.show', $product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+                <a href="{{route('products.show', ['id' => $product->id, 'previous_route' => '/' . request()->path()])}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
             </div>    
 
             <div class="product-category-name-price">

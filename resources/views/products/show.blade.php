@@ -9,7 +9,7 @@
 
 <div>
     <div class="go-back-link-container">
-        <a href="{{route('categories.show', $product->category->name)}}" class="go-back-link"><i class="fa-solid fa-left-long"></i>Go Back</a>
+        <a href="{{$previous_route}}" class="go-back-link"><i class="fa-solid fa-left-long"></i>Go Back</a>
     </div>
     <div class="product-show">   
         <div class="product-category-container">
@@ -43,7 +43,7 @@
 
             <div class="product-show-add-to-cart">
                 <div class="product-show-add-to-cart-form">
-                    <form action="{{route('cart.add')}}" method="POST">
+                    <form action="{{route('cart.add', ['previous_route' => $previous_route])}}" method="POST">
                         @csrf
                         <select name="quantity" class="product_quantity_selector" {{ $remaining_stock < 1 ? 'disabled' : '' }}>
                             @for($i = 1; $i <= $remaining_stock; $i++)

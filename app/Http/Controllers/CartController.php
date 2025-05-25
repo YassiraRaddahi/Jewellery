@@ -30,6 +30,9 @@ class CartController extends Controller
 
         // Getting the product ID and quantity from the request
         $productId = $request->input('product_id');
+
+        $previous_route = $request->query('previous_route');
+
         $quantity = (int) $request->input('quantity', 1);
 
         // Retrieving the product's stock from the database
@@ -63,7 +66,7 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
 
-       return to_route('products.show',$productId);
+       return to_route('products.show',['id' => $productId, 'previous_route' => $previous_route]);
         
     }
 

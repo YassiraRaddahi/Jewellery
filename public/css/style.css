@@ -122,6 +122,7 @@ nav ul li a
 main 
 {
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .container
@@ -268,8 +269,8 @@ main
 
 .go-back-link
 {
-    background-color:#858080;
-    color: white;
+    background-color:#d2d3cd;
+    color: #000000;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -285,7 +286,7 @@ main
 
 .go-back-link:hover
 {
-    background-color: #858080e6;
+    background-color: #babbb4;
 }
 
 .go-back-link i
