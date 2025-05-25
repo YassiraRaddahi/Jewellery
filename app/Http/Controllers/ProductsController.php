@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -51,8 +52,7 @@ class ProductsController extends Controller
     {
 
         // Getting the product from the database
-        $product = Product::findOrFail($id);
-
+        $product = Product::with('category')->findOrFail($id);
         $remaining_stock = $product->stock;
         $amount_in_cart = 0;
 
@@ -77,6 +77,7 @@ class ProductsController extends Controller
         return view('products.show', [
             'title' => $product->name,
             'product' => $product,
+            'category' => $product->category,
             'amount_in_cart' => $amount_in_cart,
             'remaining_stock' => $remaining_stock,
         ]);
