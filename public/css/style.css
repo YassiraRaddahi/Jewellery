@@ -321,7 +321,7 @@ footer span a:hover
     width: 30vw;
     padding: 20px;
     border-radius: 10px;
-   
+   font-family: inherit;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -332,7 +332,7 @@ footer span a:hover
 
 .login_group label
 {
-   font-family: Arial, sans-serif;
+   
     font-size: 16px;
     margin-bottom: 5px;
    
@@ -357,10 +357,15 @@ footer span a:hover
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    display: flex;
-    width: auto;
-    font-size: 1.2em;
-    justify-content: right;
+    min-width: 125px;
+    font-family: inherit;
+    font-size: inherit;
+}
+#log-in-button
+{
+   display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* {

@@ -16,7 +16,9 @@
             <label for="password">Password:</label><hr>
             <input type="password" id="password" name="password" required>
         </div>
+        <div id="log-in-button">
         <button type="submit">Log in</button>
+        </div>
     </form>
 
     <p>Don't have an account? <a href="#">Register here</a></p>
