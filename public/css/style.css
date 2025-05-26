@@ -399,17 +399,33 @@ footer span a:hover
 }
 .welcome_user {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     width: 80vw;
     flex-direction: column;
-    height: auto;
+    height: 70vh;
+
+    
 }
-#icon_welcome img{
-    width: 40vw;
-    height: 40vh;
-    padding: 20px;
-    object-fit: cover;
-    border-radius: 50%;
+
+#welcome_message_account
+{
+    text-align: center;
+    width:max-content;
+    
+}
+
+#icon_welcome {
+    display: flex;
+    justify-content: space-evenly;	
+    width: 100%;
+  
+}
+#icon_welcome img {
+
+    width: 6vw;
+    aspect-ratio: 1/1;
+    
+    
 }

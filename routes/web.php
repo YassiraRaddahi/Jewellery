@@ -32,4 +32,6 @@ Route::get('/privacy', function () {
 Route::get('/user', function () {
     return view('users.show');
 })->name('user');
-
+Route::get('/user/welcome_user',function () {
+    return view('users.welcome_user');
+})->name('user.welcome_user');
