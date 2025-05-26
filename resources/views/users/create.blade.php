@@ -32,8 +32,11 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
     </div>
+    <div id ="button_create_account">
+       <button type="submit">Create</button>
+    </div>
 
-    <button type="submit">Create</button>
+    
 </form>
 
         
