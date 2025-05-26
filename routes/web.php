@@ -29,6 +29,7 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 
 Route::get('/privacy', function () {
     return view('pages.privacy');

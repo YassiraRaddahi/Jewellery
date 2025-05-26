@@ -344,6 +344,18 @@ main
     width: 60%;
 }
 
+.cart-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    min-height: 60vh;
+    border: 1px solid #000000;
+    padding: 20px;
+}
+
 footer 
 {
     background-color: #f2efe3;
