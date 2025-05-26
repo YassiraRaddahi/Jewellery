@@ -83,7 +83,36 @@ class CartController extends Controller
      */
     public function show()
     {
-        return view('carts.show');
+        // Assigning an empty array to the cart variable
+        $cart = [];
+
+        // Checking if the session has a cart
+        if(session()->has('cart'))
+        {
+            // Getting the cart from the session
+            $cart = session()->get('cart');
+        }
+
+        foreach($cart as $productId => $quantity)
+        {
+            // Getting the product from the database
+            $product = Product::findOrFail($productId);
+
+            // Adding the product to the cart array with its quantity
+            $cart[$productId] = [
+                'product' => $product,
+                'quantity' => $quantity,
+                'total_price' => $product->price * $quantity,
+            ];
+        }
+        {
+            print_r($productId);
+        }
+
+        
+
+
+        return view('carts.show', ['cart' => $cart]);
     }
 
     /**
