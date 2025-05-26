@@ -4,15 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function search(Request $request)
     {
-        //
+        // $searchBar = true;
+        // $searchResults = null;
+
+        // return view('views.home', [
+        //      'searchBar' => $searchBar,
+        //    'searchResults' => $searchResults,
+        //  'searchTerm' => null
+        //]);
+        if ($request->has('search')) {
+            $users = User::search($request->input('search'));
+        } else {
+            $users = User::query()->get();
+        }
+
+        return view('views.home', [
+            'searchBar' => true,
+            'searchResults' => $users,
+            'searchTerm' => $request->input('search', '')
+        ]);
     }
 
     /**
@@ -36,7 +55,10 @@ class SearchController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.show', [
+            'user' => $user,
+        ]);
     }
 
     /**

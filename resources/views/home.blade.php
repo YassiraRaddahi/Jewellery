@@ -7,10 +7,10 @@
 
 <div class="homepage_banner">
     <div id="zoekbalk">
-        <form action="{{ route('search') }}" method="GET" id="search-form">
+        <form action="{{route('search')}}" method="GET" id="search-form">
             <input name="search" placeholder="Search for a product...">
+                    <button type="submit"><i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <button type="submit"><i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i></button>
         <div id="slogan">
             <h1>Make </h1>
             <h1>Milestones</h1>

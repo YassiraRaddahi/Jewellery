@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SearchController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,4 @@ Route::get('/privacy', function () {
 })->name('privacy');
 
 
+Route::get('/search', [SearchController::class, 'search'])->name('search');

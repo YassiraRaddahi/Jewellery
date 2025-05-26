@@ -391,19 +391,21 @@ footer span a:hover
     height: 100%;
     object-fit: cover;
 }
-input[type="text"] {
+#search-form [name="search"] {
     border-radius: 5px;
     background-color: #f2efe3;
     height: 5vh;
-    width: 20vw;
+    width: 18vw;
     border: #c39f86 solid 2px;
 }
-button[type="submit"] {
-      border-radius: 5px;
+
+#search-form [type="submit"]  {
+   border-radius: 5px;
     background-color: #f2efe3;
     height: 5vh;
     border: #c39f86 solid 2px;
 }
+
 #zoekbalk-icon
 {
     font-size: 15px;
