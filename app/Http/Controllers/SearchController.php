@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -11,28 +12,31 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function search(Request $request)
+    public function liveSearch(Request $request)
     {
-        // $searchBar = true;
-        // $searchResults = null;
-
-        // return view('views.home', [
-        //      'searchBar' => $searchBar,
-        //    'searchResults' => $searchResults,
-        //  'searchTerm' => null
-        //]);
-        if ($request->has('search')) {
-            $users = User::search($request->input('search'));
-        } else {
-            $users = User::query()->get();
-        }
+        // where id -> 5
+        $searchProducts = Product::orderBy('name', 'ASC');
+        
+     if(request()->has('search')) {
+        $searchProducts = $searchProducts->where('name', 'like', '%', request()->get('search'). '%');
+           
+     }
 
         return view('views.home', [
-            'searchBar' => true,
-            'searchResults' => $users,
-            'searchTerm' => $request->input('search', '')
+            'search' => $searchProducts->paginate(10),
+            'title' => 'Search Results'
         ]);
+    
     }
+   //  return view('views.home', [
+    //'title' => 'Search Results',
+    //'products' => $products, // or your product list
+    //'searchBar' => true,
+    //'searchResults' => $products,
+    //'searchTerm' => $request->input('search', '')
+//]);
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,12 +57,9 @@ class SearchController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $name)
     {
-        $user = User::findOrFail($id);
-        return view('users.show', [
-            'user' => $user,
-        ]);
+    //
     }
 
     /**

@@ -6,17 +6,38 @@
 @section('content')
 
 <div class="homepage_banner">
-    <div id="zoekbalk">
-        <form action="{{route('search')}}" method="GET" id="search-form">
-            <input name="search" placeholder="Search for a product...">
-                    <button type="submit"><i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i></button>
+     <div id="zoekbalk">
+        <form action="{{ route('search') }}" method="GET" id="search-form" autocomplete="off">
+            <input name="search" id="search-input" placeholder="Search for a product..."  value="{{ request('search') }}">
+            <button type="submit">
+                <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </form>
+   @if(isset($searchResults) && request('search'))
+            <div id="live-results">
+                @if($searchResults->isEmpty())
+                    <p class="p-2">No results found for "{{ request('search') }}".</p>
+                @else
+                    <ul class="p-2">
+                        @foreach ($searchResults as $product)
+                            <li class="py-1 border-b">
+                                <a href="{{ route('product.show', $product->id) }}" class="block text-gray-800 hover:text-[#c39f86]">
+                                    {{ $product->name }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        @endif
         <div id="slogan">
             <h1>Make </h1>
             <h1>Milestones</h1>
             <h1>Memorable</h1>
         </div>
     </div>
+
+
     <div id="sierlijke_lifestyle">
         <img src="{{asset('images/lifestyle_photos/sierlijke_oorbellen_met_sierlijke_bloemenketting.jpg')}}" alt="Homepage Banner">
     </div>
