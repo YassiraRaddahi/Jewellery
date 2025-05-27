@@ -32,3 +32,5 @@ Route::get('/privacy', function () {
 
 
 Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
+Route::get('/search/name', [SearchController::class, 'show'])->name('search.name');
+Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');

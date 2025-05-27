@@ -15,27 +15,22 @@ class SearchController extends Controller
     public function liveSearch(Request $request)
     {
         // where id -> 5
-        $searchProducts = Product::orderBy('name', 'ASC');
+        $products = Product::orderBy('name', 'ASC');
         
      if(request()->has('search')) {
-        $searchProducts = $searchProducts->where('name', 'like', '%', request()->get('search'). '%');
+        $searchProducts = $products->where('name', 'like', "%");
            
      }
-
+        
         return view('views.home', [
-            'search' => $searchProducts->paginate(10),
+            'search' => $searchProducts->paginate(4),
             'title' => 'Search Results'
         ]);
     
     }
-   //  return view('views.home', [
-    //'title' => 'Search Results',
-    //'products' => $products, // or your product list
-    //'searchBar' => true,
-    //'searchResults' => $products,
-    //'searchTerm' => $request->input('search', '')
-//]);
-
+    /**
+     * Display a listing of the resource.
+     */
 
 
     /**
@@ -59,7 +54,16 @@ class SearchController extends Controller
      */
     public function show(string $name)
     {
-    //
+        $products = Product::where('name', $name)->firstOrFail();
+        
+        // Check if the product exists
+        if (!$products) {
+            abort(404, 'Product not found');
+        }
+        return view('products.show', [
+            'product' => $products,
+            'title' => $products->name
+        ]);
     }
 
     /**

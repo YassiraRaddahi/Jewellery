@@ -19,9 +19,9 @@
                     <p class="p-2">No results found for "{{ request('search') }}".</p>
                 @else
                     <ul class="p-2">
-                        @foreach ($searchResults as $product)
+                        @foreach ($searchResults as $products)
                             <li class="py-1 border-b">
-                                <a href="{{ route('product.show', $product->id) }}" class="block text-gray-800 hover:text-[#c39f86]">
+                                <a href="{{ route('products.show', $products->name) }}" class="block text-gray-800 hover:text-[#c39f86]">
                                     {{ $product->name }}
                                 </a>
                             </li>
