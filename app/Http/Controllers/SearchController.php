@@ -22,7 +22,7 @@ class SearchController extends Controller
            
      }
         
-        return view('views.home', [
+        return view('home', [
             'search' => $searchProducts->paginate(4),
             'title' => 'Search Results'
         ]);
@@ -54,12 +54,15 @@ class SearchController extends Controller
      */
     public function show(string $name)
     {
-        $products = Product::where('name', $name)->firstOrFail();
+        $products = Product::where('name', 'categorie', $name);
         
         // Check if the product exists
         if (!$products) {
-            abort(404, 'Product not found');
+            
+         //   abort(404, 'Product not found');
         }
+        // Return the view with the product data
+
         return view('products.show', [
             'product' => $products,
             'title' => $products->name
