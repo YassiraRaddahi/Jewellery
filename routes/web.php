@@ -28,8 +28,10 @@ Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('c
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/sale', [ProductsController::class, 'sale'])->name('products.sale');
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
-Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::get('/cart/delete-one/{id}', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
 
 Route::get('/privacy', function () {
     return view('pages.privacy');
