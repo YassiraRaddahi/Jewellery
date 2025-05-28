@@ -33,3 +33,7 @@ Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
+
+Route::get('/personaldata', function () {
+    return view('users.personal_data');
+})->name('personaldata');
