@@ -87,6 +87,7 @@ nav ul li a
 .icon-buttons ul li a
 {
     color: #000000;
+    text-decoration: none;
 }
 
 #products-nav
