@@ -34,8 +34,8 @@
                     @else
                         <p>€{{number_format($product->price, 2)}}</p>
 
-                        @if($product->stock == 0)
-                        <p class="product-out-of-stock">No stock available</p>
+                        @if($product->stock < 1)
+                        <p class="out-of-stock-message">No stock available</p>
                         @endif
                     @endif
                 </div>

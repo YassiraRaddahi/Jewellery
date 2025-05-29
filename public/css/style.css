@@ -205,7 +205,17 @@ main
     color: red;
 }
 
-.product-out-of-stock
+.product-category-out-of-stock
+{
+    text-align: right;
+}
+
+.product-category-out-of-stock p
+{
+    margin-top: 0;
+}
+
+.out-of-stock-message
 {
     color: red;
     font-weight: bold;
