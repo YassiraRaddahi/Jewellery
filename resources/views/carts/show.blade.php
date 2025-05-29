@@ -21,7 +21,13 @@
                         <div class="cart-item-name-container">
                             <h4>{{ $item['product']->name }}</h4>
                         </div>
-                        <p>Total: €{{ number_format($item['total_price'], 2) }}</p>
+                        
+                        @if($item['product']->on_sale)
+                            <p>Total: <span class="product-old-price"> € {{number_format($item['total_normal_price'], 2)}}</span> €{{ number_format($item['total_sale_price'], 2) }}</p>
+                        @else
+                            <p>Total: €{{ number_format($item['total_normal_price'], 2) }}</p>
+                        @endif
+                        
                     </div>
 
                     <div class="cart-item-update-delete">
@@ -39,6 +45,19 @@
                 </div>
             </div>
         @endforeach
+        <div class="bottom-cart-container">
+            <div>
+                @if($cart_has_sale_products)
+                    <p>Total: <span class="product-old-price"> € {{number_format($cart_total_normal_price, 2)}}</span> €{{ number_format($cart_total_sale_price, 2) }}</p>
+                @else
+                    <p>Total: €{{ number_format($cart_total_normal_price, 2) }}</p>
+                @endif
+
+                <form action="#" method="GET">
+                    <button type="submit" name="submitButton" class="order-button">Order</button>
+                </form>
+            </div>
+        </div>
     @endif
 
 

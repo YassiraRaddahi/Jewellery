@@ -28,7 +28,7 @@ class CartController extends Controller
     {
         // dd($request->all());
 
-        // Getting the product ID and quantity from the request
+        // Getting the product ID, previous route and quantity from the request
         $productId = (int) $request->input('product_id');
 
         $previous_route = $request->query('previous_route');
@@ -86,6 +86,10 @@ class CartController extends Controller
         // Assigning an empty array to the cart variable 
         $cart = [];
 
+        $cart_total_normal_price = 0;
+        $cart_total_sale_price = 0;
+        $cart_has_sale_products = false;
+
         // Checking if the session has a cart and is not empty
         if(!empty(session()->get('cart')))
         {
@@ -102,14 +106,37 @@ class CartController extends Controller
                     $cart[] = [
                         'product' => $product,
                         'quantity' => $quantity,
-                        'total_price' => $product->price * $quantity,
+                        'total_normal_price' => $product->price * $quantity,
+                        'total_sale_price' => $product->price * (1 - $product->discount_factor) * $quantity
                     ];
+
+                    $cart_total_normal_price += $product->price * $quantity;
+
+                    if($product->on_sale)
+                    {
+                        $cart_total_sale_price += $product->price * (1 - $product->discount_factor) * $quantity;
+                    }
+                    else
+                    {
+                        $cart_total_sale_price += $product->price * $quantity;
+                    }
+                    
+                }
+
+                if($cart_total_normal_price != $cart_total_sale_price)
+                {
+                    $cart_has_sale_products = true;
                 }
         }
 
         // dd($cart);
 
-        return view('carts.show', ['cart' => $cart]);
+        return view('carts.show', [
+            'cart' => $cart,
+            'cart_total_normal_price' => $cart_total_normal_price,
+            'cart_total_sale_price' => $cart_total_sale_price,
+            'cart_has_sale_products' => $cart_has_sale_products
+        ]);
     }
 
     /**
