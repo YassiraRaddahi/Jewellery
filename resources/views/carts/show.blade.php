@@ -31,7 +31,12 @@
                     </div>
 
                     <div class="cart-item-update-delete">
-                        <a href= "{{route('cart.deleteOne', $item['product']->id)}}" ><i id="trash-icon" class="fa-solid fa-trash-can"></i></a>
+                        <form action="{{route('cart.deleteOne')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$item['product']->id}}">
+                            <button class="icon-button" type="submit" name="submit-icon"><i id="trash-icon" class="fa-solid fa-trash-can"></i></button>
+                        </form>
+
                         <form action="{{route('cart.update')}}" method="POST">
                             @csrf
                             <select name="quantity" class="cart_quantity_selector">
@@ -39,6 +44,7 @@
                                     <option value="{{ $i }}" {{ $i == $item['quantity'] ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
+                            <input type="hidden" name="product_id" value="{{$item['product']->id}}">
                             <button type="submit" class="update-quantity-button">Update</button>
                         </form>
                     </div>

@@ -152,9 +152,22 @@ class CartController extends Controller
      */
     public function update(Request $request)
     {
-        $productID = $request->input('product_id');
-        $quantity = $request->input('quantity');
+        $productID = (int) $request->input('product_id');
+        $quantity = (int) $request->input('quantity');
 
+        // dd($productID, $quantity);
+
+        // Getting the cart from the session
+
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$productID]))
+        {
+            // Updating product's quantity with the new quantity
+            $cart[$productID] = $quantity;
+
+            session()->put('cart', $cart);
+        }
 
 
         return back();
@@ -163,15 +176,17 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function deleteOne(string $id)
+    public function deleteOne(Request $request)
     {
 
         // Converting the ID to an integer
-        $id = (int) $id;
+        $id = (int) $request->input('product_id');
+
         // Getting the cart from the session
         $cart = session()->get('cart', []);
 
-        if((key_exists($id, $cart)))
+        // Checking if the product exists in the cart
+        if(isset($cart[$id]))
         {
 
             // Removing the product from the cart

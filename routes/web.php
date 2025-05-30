@@ -31,7 +31,7 @@ Route::get('/products/{id}', [ProductsController::class, 'show'])->name('product
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-Route::get('/cart/delete-one/{id}', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
+Route::post('/cart/delete-one', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
 
 Route::get('/privacy', function () {
     return view('pages.privacy');
