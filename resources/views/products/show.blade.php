@@ -60,9 +60,8 @@
                             <p>{{session('addToCartError')}}</p>
                         </div>
                     @elseif($amount_in_cart > 0)
-                        <p id="product-added-message">Product is added to cart</p>    
                         <p> {{$amount_in_cart}} in cart</p>
-                    @endif
+                    @endif 
                 </div>
             </div>
         </div>
