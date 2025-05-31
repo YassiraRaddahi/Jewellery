@@ -29,9 +29,6 @@ Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
 
-Route::get('/user', function () {
-    return view('users.show');
-})->name('user');
-Route::get('/user/welcome_user',function () {
-    return view('users.welcome_user');
-})->name('user.welcome_user');
+Route::get('/users/accountpage', function () {
+    return view('users.accountpage');
+})->name('users.accountpage');

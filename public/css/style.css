@@ -397,35 +397,60 @@ footer span a:hover
     height: 100%;
     object-fit: cover;
 }
-.welcome_user {
+
+.general-accountpage-container
+{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     width: 80vw;
-    flex-direction: column;
     height: 70vh;
-
-    
 }
 
-#welcome_message_account
+.welcome-message-account-container
 {
     text-align: center;
-    width:max-content;
-    
-}
-
-#icon_welcome {
+    height: 50%;
     display: flex;
-    justify-content: space-evenly;	
-    width: 100%;
-  
+    flex-direction: column;
+    justify-content: flex-end;
 }
-#icon_welcome img {
 
-    width: 6vw;
+.welcome-message-account-container h1
+{
+    font-size: clamp(22px, 4vw, 2.5em);
+}
+
+.welcome-message-account-container h2
+{
+    font-size: clamp(13.2px, 2.4vw, 1.5em);
+    
+}
+
+.icons-general-accountpage-container 
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+#personal-data-icon{
+
+    width: clamp(40px, 6vw, 80px);
     aspect-ratio: 1/1;
-    
-    
+}
+
+#order-history-icon
+{
+    width: clamp(45.25px, 6.7875vw, 90.5px);
+    aspect-ratio: 1.13125/1;
+}
+
+#logout-icon
+{
+    width: clamp(35px, 5.5vw, 70px);
+    aspect-ratio: 1/1;
 }
