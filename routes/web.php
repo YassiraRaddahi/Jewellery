@@ -12,6 +12,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/users/login', function () {
+    return view('users.login');
+})->name('login');  
+
 Route::get('/ourstory', function () {
     return view('pages.our_story');
 })->name('ourstory');
@@ -19,10 +23,6 @@ Route::get('/ourstory', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
-
-Route::get('/login', function () {
-    return view('pages.log_in');
-})->name('login');  
 
 Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
