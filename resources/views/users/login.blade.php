@@ -8,7 +8,6 @@
     <form action="{{ route('login') }}" method="POST">
         @csrf
         <div>
-            
             <label for="email">Email Address:</label><hr>
             <input type="email" id="email" name="email" required>
         </div>
