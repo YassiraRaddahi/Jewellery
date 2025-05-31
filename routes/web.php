@@ -17,7 +17,7 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
-Route::get('/login', function () {
+Route::get('/users/login', function () {
     return view('users.login');
 })->name('login');  
 
@@ -29,7 +29,7 @@ Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
 
-Route::get('/createuser', function () {
+Route::get('/users/create', function () {
     return view('users.create');
 })->name('users.create');
 
