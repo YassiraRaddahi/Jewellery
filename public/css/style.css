@@ -707,20 +707,15 @@ footer span a:hover
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
     flex-direction: column;
     background-color:#fefcf3 ;
-    height: 50vh;
     width: 30vw;
     padding: 20px;
     border-radius: 10px;
-   font-family: inherit;
-    margin: 0 auto;
+    height: 65vh;
+    font-family: inherit;
     margin-top: 20px;
     margin-bottom: 20px;
-    position: relative;
-    top: 50%;
-
 }
 
 .login_group label
@@ -756,9 +751,10 @@ footer span a:hover
 }
 #log-in-button
 {
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 /* {
@@ -800,8 +796,6 @@ footer span a:hover
     {
         display: flex;
         justify-content: center;
-        
-    
         background-color: #d9c8a4;
         color: #000000;
         border: none;
@@ -814,11 +808,14 @@ footer span a:hover
    {
         display: flex;
         justify-content: center;
+        margin-top: 20px;
    }
   
     #button_create_account button
    {
         min-width: 125px;
+        font-family: inherit;
+        font-size: inherit;
    }
 
  .contactus
