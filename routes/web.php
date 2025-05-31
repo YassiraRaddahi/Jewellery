@@ -20,6 +20,10 @@ Route::get('/users/login', function () {
     return view('users.login');
 })->name('login');  
 
+Route::get('/users/accountpage', function () {
+    return view('users.accountpage');
+})->name('users.accountpage');
+
 Route::get('/ourstory', function () {
     return view('pages.our_story');
 })->name('ourstory');
@@ -40,6 +44,4 @@ Route::post('/cart/delete-one', [CartController::class, 'deleteOne'])->name('car
 Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
-
-
 

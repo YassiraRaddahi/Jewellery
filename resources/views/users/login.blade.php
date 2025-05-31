@@ -5,6 +5,7 @@
 @section('content')
 
 <div class="login_group">
+
     <h1>Log in</h1>
     <form action="{{ route('login') }}" method="POST">
         @csrf
@@ -22,6 +23,5 @@
     </form>
 
     <p>Don't have an account? <a href="{{ route('users.create') }}">Register here</a></p>
-
 </div>
 @endsection

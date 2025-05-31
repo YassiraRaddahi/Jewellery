@@ -858,3 +858,73 @@ footer span a:hover
     object-fit: cover;
 }
 
+.general-accountpage-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 80vw;
+    height: 70vh;
+}
+
+.welcome-message-account-container
+{
+    text-align: center;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.welcome-message-account-container h1
+{
+    font-size: clamp(22px, 4vw, 2.5em);
+}
+
+.welcome-message-account-container h2
+{
+    font-size: clamp(13.2px, 2.4vw, 1.5em);
+    font-weight: normal;
+}
+
+.icons-general-accountpage-container 
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.icons-general-accountpage-container div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons-general-accountpage-container p
+{
+    font-size: clamp(10.56px, 1.92vw, 1.2em);
+}
+
+#personal-data-icon{
+
+    width: clamp(40px, 6vw, 80px);
+    aspect-ratio: 1/1;
+}
+
+#order-history-icon
+{
+    width: clamp(45.25px, 6.7875vw, 90.5px);
+    aspect-ratio: 1.13125/1;
+}
+
+#logout-icon
+{
+    width: clamp(35px, 5.5vw, 60px);
+    aspect-ratio: 1/1;
+    margin: 5px 0px;
+}
+
