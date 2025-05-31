@@ -18,7 +18,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/login', function () {
-    return view('pages.log_in');
+    return view('users.login');
 })->name('login');  
 
 Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
