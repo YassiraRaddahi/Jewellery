@@ -426,15 +426,27 @@ footer span a:hover
 .welcome-message-account-container h2
 {
     font-size: clamp(13.2px, 2.4vw, 1.5em);
-    
+    font-weight: normal;
 }
 
 .icons-general-accountpage-container 
 {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     width: 100%;
+}
+
+.icons-general-accountpage-container div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons-general-accountpage-container p
+{
+    font-size: clamp(10.56px, 1.92vw, 1.2em);
 }
 
 #personal-data-icon{
@@ -451,6 +463,7 @@ footer span a:hover
 
 #logout-icon
 {
-    width: clamp(35px, 5.5vw, 70px);
+    width: clamp(35px, 5.5vw, 60px);
     aspect-ratio: 1/1;
+    margin: 5px 0px;
 }
