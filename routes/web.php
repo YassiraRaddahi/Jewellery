@@ -17,9 +17,10 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
-Route::get('/login', function () {
-    return view('pages.log_in');
+Route::get('/users/login', function () {
+    return view('users.login');
 })->name('login');  
+
 
 Route::get('/categories/{name}', [CategoriesController::class, 'show'])->name('categories.show');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
