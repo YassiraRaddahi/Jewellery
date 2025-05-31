@@ -3,6 +3,7 @@
 @section('title', 'Log in')
 
 @section('content')
+
 <div class="login_group">
     <h1>Log in</h1>
     <form action="{{ route('login') }}" method="POST">
@@ -15,11 +16,12 @@
             <label for="password">Password:</label><hr>
             <input type="password" id="password" name="password" required>
         </div>
-        <div id="log-in-button">
-        <button type="submit">Log in</button>
+            <div id="log-in-button">
+            <button type="submit">Log in</button>
         </div>
     </form>
 
-    <p>Don't have an account? <a href="#">Register here</a></p>
+    <p>Don't have an account? <a href="{{ route('users.create') }}">Register here</a></p>
+
 </div>
 @endsection

@@ -12,6 +12,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/users/create', function () {
+    return view('users.create');
+})->name('users.create');
+
 Route::get('/users/login', function () {
     return view('users.login');
 })->name('login');  
@@ -36,3 +40,6 @@ Route::post('/cart/delete-one', [CartController::class, 'deleteOne'])->name('car
 Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
+
+
+
