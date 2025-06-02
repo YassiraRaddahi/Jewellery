@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\SearchController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
@@ -44,4 +45,9 @@ Route::post('/cart/delete-one', [CartController::class, 'deleteOne'])->name('car
 Route::get('/privacy', function () {
     return view('pages.privacy');
 })->name('privacy');
+
+Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
+Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.name');
+Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
+Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
