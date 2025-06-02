@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -47,9 +48,42 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, Request $request)
     {
-        //
+
+        // Getting the product from the database
+        $product = Product::with('category')->findOrFail($id);
+        $remaining_stock = $product->stock;
+        $amount_in_cart = 0;
+
+        $previous_route = $request->query('previous_route', route('categories.show', $product->category->name, false));
+
+        // Checking if the session has a cart
+        if(session()->has('cart'))
+        {
+            // Getting the cart from the session
+            $cart = session()->get('cart');
+
+            // Check if the product is in the cart
+            if(isset($cart[$id]))
+            {
+
+                // Getting the amount of the product in the cart
+                $amount_in_cart = $cart[$id];
+
+                // Calculating the remaining stock (stock - amount in cart)
+                $remaining_stock = $product->stock - $amount_in_cart;
+            }
+        }
+        
+        return view('products.show', [
+            'title' => $product->name,
+            'product' => $product,
+            'category' => $product->category,
+            'previous_route' => $previous_route,
+            'amount_in_cart' => $amount_in_cart,
+            'remaining_stock' => $remaining_stock,
+        ]);
     }
 
     /**
