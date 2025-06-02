@@ -411,6 +411,7 @@ footer span a:hover
     font-size: 15px;
     color: #c39f86;
     margin-right: auto;
+    cursor: pointer;
 }
 #slogan
 {
