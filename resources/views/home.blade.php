@@ -22,7 +22,7 @@
                         @foreach ($searchResults as $products)
                             <li class="py-1 border-b">
                                 <a href="{{ route('products.show',['id' => $products->id, 'previous_route'=> '/' . request()->path()]) }}" class="block text-gray-800 hover:text-[#c39f86]">
-                                    {{ $product->name }}
+                                    {{ $products->name }}
                                 </a>
                             </li>
                         @endforeach

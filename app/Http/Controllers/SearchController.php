@@ -18,18 +18,20 @@ class SearchController extends Controller
         $products = Product::with('category')->orderBy('name', 'ASC');
        // $categories = $products->category;
 
+       $searchProducts = [];
+
        // dd($categories);
      if(request()->has('search')) {
         $searchProducts = $products
         ->where('name', 'like', "%{$request->search}%")
         // ->orWhere('categories', 'like', "%{$request->search}%")
-        ->orWhere('description', 'like', "%{$request->search}%");
+        ->orWhere('description', 'like', "%{$request->search}%")->paginate(10);
            
      }
         
         return view('home', [
             'search' => $request->search,	
-            'searchResults' => $searchProducts->paginate(10),
+            'searchResults' => $searchProducts,
          //   'products' => $products->category,
             'title' => 'Search Results'
             
