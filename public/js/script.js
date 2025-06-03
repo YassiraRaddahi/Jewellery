@@ -11,3 +11,10 @@ function ProductAddedMessage(button)
     }, 1000);
 
 }
+
+function SearchProducts() {
+    let searchInput = document.getElementById("searchInput").value;
+    let searchResults = document.getElementById("searchResults");
+
+    
+}
