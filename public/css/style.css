@@ -65,9 +65,7 @@ nav ul li a
 
 .icon-buttons 
 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 120px;
 }
 
 
@@ -76,12 +74,14 @@ nav ul li a
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon-buttons ul li
 {
     display: inline-block;
-    margin-right: 20px;
+
 }
 
 .icon-buttons ul li a
@@ -103,13 +103,13 @@ nav ul li a
     font-size: 16px;
     top: -15px;
     right: -15px;
-    background-color: yellow;
+    background-color: rgb(222, 179, 101);
     border-radius: 50%;
     height: 25px;
     text-align: center;
     aspect-ratio: 1/1;
     line-height: 25px;
-
+    color: #000000;
 }
 
 #products-nav
@@ -120,6 +120,11 @@ nav ul li a
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+}
+
+#logo-container
+{
+    width:  120px;
 }
 
 #logo

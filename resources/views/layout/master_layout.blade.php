@@ -10,7 +10,7 @@
 <body>
     
     <header>
-       <div id="foto">
+       <div id="logo-container">
         <a href="{{route('home')}}">
             <img id="logo" src="{{asset('images/Logo.png')}}" alt="logo">
         </a>
@@ -34,7 +34,7 @@
                         @endif
                     </a>
                 </li>
-                <li><a href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
+                <li><a href="{{ route('loginForm') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
             </ul>
         </div>
     </header>

@@ -22,6 +22,6 @@
         </div>
     </form>
 
-    <p>Don't have an account? <a href="{{ route('users.create') }}">Register here</a></p>
+    <p>Don't have an account? <a href="{{ route('registerForm') }}">Register here</a></p>
 </div>
 @endsection
