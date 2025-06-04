@@ -30,7 +30,7 @@ class ProductsTableSeeder extends Seeder
             'category_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
-        ],
+        ], 
         [
             'name' => 'Kleurenarmband',
             'description' => 'Sed lacus dolor, vestibulum vitae mauris nec, pulvinar imperdiet felis. Aenean sit amet libero iaculis, mattis augue nec, commodo tortor. 

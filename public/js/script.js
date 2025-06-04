@@ -12,9 +12,3 @@ function ProductAddedMessage(button)
 
 }
 
-function SearchProducts() {
-    let searchInput = document.getElementById("searchInput").value;
-    let searchResults = document.getElementById("searchResults");
-
-    
-}
