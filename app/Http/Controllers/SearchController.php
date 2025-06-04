@@ -17,6 +17,7 @@ class SearchController extends Controller
         // where id -> 5
         $products = Product::with('category')->orderBy('name', 'ASC');
        $searchProducts = [];
+       $searchFocus = true;
 
        // dd($categories);
      if(!empty($request->search)) {
@@ -29,10 +30,13 @@ class SearchController extends Controller
            
      }
 // dd($searchProducts);
-        
+        //if ($searchProducts->empty) {
+            
+        //}
         return view('home', [
             'search' => $request->search,	
             'searchResults' => $searchProducts,
+            'searchFocus' => $searchFocus,
             'title' => 'Search Results'
         ]);
     

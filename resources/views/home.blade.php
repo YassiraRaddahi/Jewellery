@@ -9,7 +9,7 @@
     <div id="zoekbalk">
         <div class="zoekbalk-container">
             <form action="{{ route('search') }}" method="GET" id="search-form" autocomplete="off">
-                <input name="search" id="search-input" placeholder="Search for a product...">
+                <input name="search" id="search-input" placeholder="Search for a product..." >
                 <button type="submit">
                     <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
                 </button>

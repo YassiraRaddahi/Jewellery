@@ -12,3 +12,11 @@ function ProductAddedMessage(button)
 
 }
 
+function searchFocus() {
+        
+    const searchField = document.querySelector('.search-field');
+    if (searchField) {
+        searchField.focus();
+    }
+
+}
