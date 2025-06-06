@@ -137,8 +137,7 @@ nav ul li a
 
 main 
 {
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 
 .container
@@ -568,6 +567,7 @@ footer
     justify-content: center;
     flex-direction: row;
     color: black;
+    height: 45px;
 }
 
 footer p 
@@ -731,6 +731,12 @@ footer span a:hover
    
 }
 
+.error-message
+{
+    color: red;
+    font-size: 14px;
+}
+
 .login_group input
 {
     padding: 10px;
@@ -775,8 +781,6 @@ footer span a:hover
  {
     background-color: #fefcf3;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
     width: 50vw;
     max-width: 500px;
     display: flex;
@@ -904,6 +908,7 @@ footer span a:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: 33.3%;
 }
 
 .icons-general-accountpage-container p

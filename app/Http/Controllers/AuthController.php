@@ -3,21 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use League\CommonMark\Reference\Reference;
 
 class AuthController extends Controller
 {
-
-
     public function loginForm()
     {
-         return view('auth.login');
+
+        if(Auth::check())
+        {
+            return redirect()->route('users.accountpage');
+        }
+
+        return view('auth.login');
     }
 
-    // NIET VERGETEN ACCOUNTPAGE ICONS GOED IN HET MIDDEN TE ZETTEN!!!
-    public function login()
+    public function login(Request $request)
     {
-        // Test
-         return view('users.accountpage');
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ]);
+
+        // Tries to log in the user
+        if(Auth::attempt($credentials)) {
+
+            // Regenerates session to prevent session fixation
+            $request->session()->regenerate();
+
+            // Redirects to the intended page, otherwise to the accountpage
+            return redirect()->intended(route('users.accountpage'));
+        }
+
+        // Redirects back with an error message and repopulates the email input
+        return back()->withErrors([
+            'general' => 'The email address or password does not match our records',
+        ])->onlyInput('email');
+
     }
 
 

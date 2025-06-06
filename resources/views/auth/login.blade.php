@@ -11,11 +11,26 @@
         @csrf
         <div>
             <label for="email">Email Address:</label><hr>
-            <input type="email" id="email" name="email" required>
+                @if($errors->has('email'))
+                    <p class="error-message">
+                        {{$errors->first('email')}}
+                    </p>
+                @endif
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required>
         </div>
         <div>
             <label for="password">Password:</label><hr>
+                @if($errors->has('password'))
+                    <p class="error-message">
+                        {{$errors->first('password')}}
+                    </p>
+                @endif
             <input type="password" id="password" name="password" required>
+                @if($errors->has('general'))
+                    <p class="error-message">
+                        {{$errors->first('general')}}
+                    </p>
+                @endif
         </div>
         <div id="log-in-button">
             <button type="submit">Log in</button>

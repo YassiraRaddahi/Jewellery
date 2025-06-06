@@ -38,8 +38,8 @@ Route::get('/products/{id}', [ProductsController::class, 'show'])->name('product
 // Cart
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
-Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-Route::post('/cart/delete-one', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
+Route::put('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/delete-one', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
 
 // Authentication
 Route::get('/login', [AuthController::class, 'loginForm'])->name('loginForm');
@@ -50,4 +50,4 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 // Users
 Route::get('/users/accountpage', function () {
     return view('users.accountpage');
-})->name('users.accountpage');
+})->middleware('auth')->name('users.accountpage');
