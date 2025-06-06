@@ -30,9 +30,15 @@ class SearchController extends Controller
            
      }
 // dd($searchProducts);
-        //if ($searchProducts->empty) {
-            
+       
+//auto focus on the search bar
+if ($request->search) {
+    $searchFocus = true;
+} else {
+    $searchFocus = false;
+}
         //}
+        
         return view('home', [
             'search' => $request->search,	
             'searchResults' => $searchProducts,

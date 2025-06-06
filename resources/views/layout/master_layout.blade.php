@@ -25,7 +25,7 @@
     
         <div class="icon-buttons">
             <ul>
-                <li><a href="{{route('search')}}"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a></li>
+                <li><a href="{{route('search')}}"><i class="fa-solid fa-magnifying-glass fa-lg" autofocus="{{route ('search')}}"></i></a></li>
                 <li>
                     <a class="cart-link" href="{{ route('cart.show')}}">
                         <i class="fa-solid fa-cart-shopping fa-lg"></i>
