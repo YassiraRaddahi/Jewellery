@@ -930,7 +930,16 @@ footer span a:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 33.3%;
+    height: 100%;
+}
+
+.icons-general-accountpage-container a
+{
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    width: 18%;
+    text-align: center;
 }
 
 .icons-general-accountpage-container p
@@ -938,8 +947,8 @@ footer span a:hover
     font-size: clamp(10.56px, 1.92vw, 1.2em);
 }
 
-#personal-data-icon{
-
+#personal-data-icon, #delete-account-icon
+{
     width: clamp(40px, 6vw, 80px);
     aspect-ratio: 1/1;
 }
@@ -950,11 +959,17 @@ footer span a:hover
     aspect-ratio: 1.13125/1;
 }
 
+#logout-icon-container
+{
+    display: flex;
+    align-items: flex-end;
+    width: clamp(52px, 7.8vw, 104px);
+}
+
 #logout-icon
 {
-    width: clamp(35px, 5.5vw, 60px);
+    width: clamp(40px, 6vw, 80px);
     aspect-ratio: 1/1;
-    margin: 5px 0px;
 }
 
 
