@@ -9,7 +9,7 @@
         <p>E-mail: moonie@studio.nl</p>
         <p>Phone: +31 6 12345678</p>
     </div>
-    <div id="contactus-image">
+    <div class="contactus-image">
         <img src="{{ asset('images/dubbel_twisted_oorbellen_dik_met_enkel_twisted_oorbellen.jpg') }}" alt="Contact Us" class="contactus-image">    
     </div>
 </div>

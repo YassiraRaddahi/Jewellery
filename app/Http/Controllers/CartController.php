@@ -28,8 +28,8 @@ class CartController extends Controller
     {
         // dd($request->all());
 
-        // Getting the product ID and quantity from the request
-        $productId = $request->input('product_id');
+        // Getting the product ID, previous route and quantity from the request
+        $productId = (int) $request->input('product_id');
 
         $previous_route = $request->query('previous_route');
 
@@ -46,7 +46,7 @@ class CartController extends Controller
             return back()->with('addToCartError', 'The requested quantity exceeds the available stock.');
         }
 
-        $cart = session()->get('cart', default: []);
+        $cart = session()->get('cart',  []);
 
         if(isset($cart[$productId]))
         {
@@ -81,9 +81,62 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        // Assigning an empty array to the cart variable 
+        $cart = [];
+
+        $cart_total_normal_price = 0;
+        $cart_total_sale_price = 0;
+        $cart_has_sale_products = false;
+
+        // Checking if the session has a cart and is not empty
+        if(!empty(session()->get('cart')))
+        {
+            // Getting the cart from the session
+            $session_cart = session()->get('cart');
+
+                // Looping through each product in the cart
+                foreach($session_cart as $productId => $quantity)
+                {
+                    // Getting the product from the database
+                    $product = Product::findOrFail($productId);
+
+                    // Adding the product to the cart array with its quantity and its total price in the cart
+                    $cart[] = [
+                        'product' => $product,
+                        'quantity' => $quantity,
+                        'total_normal_price' => $product->price * $quantity,
+                        'total_sale_price' => $product->price * (1 - $product->discount_factor) * $quantity
+                    ];
+
+                    $cart_total_normal_price += $product->price * $quantity;
+
+                    if($product->on_sale)
+                    {
+                        $cart_total_sale_price += $product->price * (1 - $product->discount_factor) * $quantity;
+                    }
+                    else
+                    {
+                        $cart_total_sale_price += $product->price * $quantity;
+                    }
+                    
+                }
+
+                if($cart_total_normal_price != $cart_total_sale_price)
+                {
+                    $cart_has_sale_products = true;
+                }
+        }
+
+        // dd($cart);
+
+        return view('carts.show', [
+            'cart' => $cart,
+            'cart_total_normal_price' => $cart_total_normal_price,
+            'cart_total_sale_price' => $cart_total_sale_price,
+            'cart_has_sale_products' => $cart_has_sale_products
+        ]);
     }
 
     /**
@@ -97,16 +150,60 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $productID = (int) $request->input('product_id');
+        $quantity = (int) $request->input('quantity');
+
+        // dd($productID, $quantity);
+
+        // Getting the cart from the session
+
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$productID]))
+        {
+            // Updating product's quantity with the new quantity
+            $cart[$productID] = $quantity;
+
+            session()->put('cart', $cart);
+        }
+
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function deleteOne(Request $request)
     {
-        //
+
+        // Converting the ID to an integer
+        $id = (int) $request->input('product_id');
+
+        // Getting the cart from the session
+        $cart = session()->get('cart', []);
+
+        // Checking if the product exists in the cart
+        if(isset($cart[$id]))
+        {
+
+            // Removing the product from the cart
+            unset($cart[$id]);
+
+            // Updating the session with the modified cart
+            session()->put('cart', $cart);
+
+            // Checking if the cart is empty after removing the product
+            if(empty($cart))
+            {
+                // If the cart is empty, remove it from the session
+                session()->forget('cart');
+            }
+
+            // Returning to the cart page with a success message
+            return back()->with('success', 'Product removed from cart successfully.');
+        }
     }
 }

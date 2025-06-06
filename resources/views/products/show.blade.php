@@ -34,8 +34,8 @@
                     @else
                         <p>€{{number_format($product->price, 2)}}</p>
 
-                        @if($product->stock == 0)
-                        <p class="product-out-of-stock">No stock available</p>
+                        @if($product->stock < 1)
+                        <p class="out-of-stock-message">No stock available</p>
                         @endif
                     @endif
                 </div>
@@ -60,9 +60,8 @@
                             <p>{{session('addToCartError')}}</p>
                         </div>
                     @elseif($amount_in_cart > 0)
-                        <p id="product-added-message">Product is added to cart</p>    
                         <p> {{$amount_in_cart}} in cart</p>
-                    @endif
+                    @endif 
                 </div>
             </div>
         </div>

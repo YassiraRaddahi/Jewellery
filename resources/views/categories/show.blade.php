@@ -32,6 +32,11 @@
                 @endif
                 </div>
             </div>
+             @if($product->stock < 1)
+                <div class="product-category-out-of-stock">
+                    <p class="out-of-stock-message">Out of Stock</p>
+                </div>
+            @endif
         </div>
     @endforeach
 </div>

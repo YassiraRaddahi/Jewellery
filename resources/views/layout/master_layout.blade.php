@@ -10,7 +10,7 @@
 <body>
     
     <header>
-       <div id="foto">
+       <div id="logo-container">
         <a href="{{route('home')}}">
             <img id="logo" src="{{asset('images/Logo.png')}}" alt="logo">
         </a>
@@ -26,8 +26,15 @@
         <div class="icon-buttons">
             <ul>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                <li><a href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
+                <li>
+                    <a class="cart-link" href="{{ route('cart.show')}}">
+                        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                        @if(countItemsCart() > 0)
+                            <span class="cart-icon-number"><b>{{countItemsCart()}}</b></span>
+                        @endif
+                    </a>
+                </li>
+                <li><a href="{{ route('loginForm') }}"><i class="fa-regular fa-circle-user fa-lg"></i></a></li>
             </ul>
         </div>
     </header>
