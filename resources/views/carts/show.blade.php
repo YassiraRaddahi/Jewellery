@@ -33,12 +33,14 @@
                     <div class="cart-item-update-delete">
                         <form action="{{route('cart.deleteOne')}}" method="POST">
                             @csrf
+                            @method('DELETE')
                             <input type="hidden" name="product_id" value="{{$item['product']->id}}">
                             <button class="icon-button" type="submit" name="submit-icon"><i id="trash-icon" class="fa-solid fa-trash-can"></i></button>
                         </form>
 
                         <form action="{{route('cart.update')}}" method="POST">
                             @csrf
+                            @method('PUT')
                             <select name="quantity" class="cart_quantity_selector">
                                 @for($i = 1; $i <= $item['product']->stock; $i++)
                                     <option value="{{ $i }}" {{ $i == $item['quantity'] ? 'selected' : '' }}>{{ $i }}</option>

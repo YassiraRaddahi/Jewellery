@@ -65,9 +65,7 @@ nav ul li a
 
 .icon-buttons 
 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 120px;
 }
 
 
@@ -76,12 +74,14 @@ nav ul li a
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon-buttons ul li
 {
     display: inline-block;
-    margin-right: 20px;
+
 }
 
 .icon-buttons ul li a
@@ -103,13 +103,13 @@ nav ul li a
     font-size: 16px;
     top: -15px;
     right: -15px;
-    background-color: yellow;
+    background-color: rgb(222, 179, 101);
     border-radius: 50%;
     height: 25px;
     text-align: center;
     aspect-ratio: 1/1;
     line-height: 25px;
-
+    color: #000000;
 }
 
 #products-nav
@@ -122,6 +122,11 @@ nav ul li a
     margin-bottom: 20px;
 }
 
+#logo-container
+{
+    width:  120px;
+}
+
 #logo
 {
     width: 100px;
@@ -132,8 +137,7 @@ nav ul li a
 
 main 
 {
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 
 .container
@@ -563,6 +567,7 @@ footer
     justify-content: center;
     flex-direction: row;
     color: black;
+    height: 45px;
 }
 
 footer p 
@@ -707,20 +712,15 @@ footer span a:hover
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
     flex-direction: column;
     background-color:#fefcf3 ;
-    height: 50vh;
     width: 30vw;
     padding: 20px;
     border-radius: 10px;
-   font-family: inherit;
-    margin: 0 auto;
+    height: 65vh;
+    font-family: inherit;
     margin-top: 20px;
     margin-bottom: 20px;
-    position: relative;
-    top: 50%;
-
 }
 
 .login_group label
@@ -729,6 +729,12 @@ footer span a:hover
     font-size: 16px;
     margin-bottom: 5px;
    
+}
+
+.error-message
+{
+    color: red;
+    font-size: 14px;
 }
 
 .login_group input
@@ -756,9 +762,10 @@ footer span a:hover
 }
 #log-in-button
 {
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 /* {
@@ -774,8 +781,6 @@ footer span a:hover
  {
     background-color: #fefcf3;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
     width: 50vw;
     max-width: 500px;
     display: flex;
@@ -800,8 +805,6 @@ footer span a:hover
     {
         display: flex;
         justify-content: center;
-        
-    
         background-color: #d9c8a4;
         color: #000000;
         border: none;
@@ -814,11 +817,14 @@ footer span a:hover
    {
         display: flex;
         justify-content: center;
+        margin-top: 20px;
    }
   
     #button_create_account button
    {
         min-width: 125px;
+        font-family: inherit;
+        font-size: inherit;
    }
 
  .contactus
@@ -924,6 +930,7 @@ footer span a:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: 33.3%;
 }
 
 .icons-general-accountpage-container p

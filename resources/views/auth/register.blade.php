@@ -5,7 +5,7 @@
 @section('content')
 <div class="create_account_container">
     <h1>Create Account</h1>
-    <form action="{{ route('users.create') }}" method="POST">
+    <form action="{{ route('register') }}" method="POST">
         @csrf
 
         <div>
@@ -14,8 +14,8 @@
         </div>
 
         <div>
-            <label for="insertion">Insertion:</label>
-            <input type="text" id="insertion" name="insertion" required>
+            <label for="infix">Infix:</label>
+            <input type="text" id="infix" name="infix" required>
         </div>
 
         <div>
@@ -37,7 +37,7 @@
         </div>
     </form>
 
-    <p>Already have an account? <a href="{{ route('login') }}">Log in here</a></p>
+    <p>Already have an account? <a href="{{ route('loginForm') }}">Log in here</a></p>
 </div>
 
 @endsection
