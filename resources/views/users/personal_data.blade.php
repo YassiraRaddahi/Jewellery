@@ -10,8 +10,7 @@
             </div>
             <div class="information_details">
                 <div>
-                    <p>NAME</p>
-                    <p>E-mail</p>
+                    <p>Name</p>
                     <p>phone number</p>
                 </div>
                 <div class="update_icon_container">
@@ -50,43 +49,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-<!-- 
-        <div class="log_in_information">
-
-            <div id="log_in_information_header">
-                <h3>Log in information</h3>
-            </div>
-            <div id="log_in_information_text">
-
-                <p>E-mail</p>
-                <p>Password</p>
-                <div id="update_icon_container">
-                    <a href="#"><i id="update_icon" class="fa-solid fa-pen fa-lg"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="address_information">
-            <div id="address_information_header">
-                <h3>Address details</h3>
-            </div>
-            <div id="address_information_text">
-                <p>Street , house number</p>
-                <p>Zip code</p>
-                <p>City</p>
-                <p>Country</p>
-            </div>
-            <div id="update_icon_container">
-                <a href="#"><i id="update_icon" class="fa-solid fa-pen fa-lg"></i></a>
-
-
-            </div>
-
-        </div> -->
 
     </div>
 @endsection
