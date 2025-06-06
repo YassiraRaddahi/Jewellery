@@ -54,8 +54,11 @@ Route::get('/users/accountpage', function () {
     return view('users.accountpage');
 })->middleware('auth')->name('users.accountpage');
 
+Route::get('/personaldata', function () {
+    return view('users.personal_data');
+})->name('personaldata');
+
 Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
 Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.name');
 Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
 Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
-
