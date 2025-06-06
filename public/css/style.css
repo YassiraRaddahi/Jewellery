@@ -776,6 +776,7 @@ footer span a:hover
     border-radius: 50px;
 } */
 
+
  .create_account_container
  {
     background-color: #fefcf3;
@@ -833,22 +834,23 @@ footer span a:hover
     align-items: center;
     padding: 20px;
     width: 80vw;
-}
+ }
 
  #contactus-text
-{
+ {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60%;
-}
+ }
 
  #contactus-text p
-{
+ {
     margin: 10px 0;
-}
+ }
 
  
+
  .homepage_banner {
     display: flex;
     justify-content: space-between;
@@ -908,104 +910,6 @@ footer span a:hover
     justify-content: space-evenly;
     width: 100%;
 }
-
-.personal_data
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.information_details{
-    background-color:#fefcf3;
-    border-radius: 20px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 30vw;
-    min-height: 56vh;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   
-}
-
-.information_header 
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-
-.update_icon{
-    cursor: pointer;
-    color:#000000;
-}
-
-.information_details a
-{
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-}
-
-.update_icon_container{
-    display: flex;
-    justify-content: center;
-   
-}
-.information_details p
-{
-   border:#000000 solid 3px;
-   border-radius: 20px;
-    padding: 10px;
-    min-width: 20vw;
-    display: flex;
-    justify-content: center;
-    background-color: #f9e9c7;
-
-}
-    
-@media screen and (max-width: 786px) 
-{
-   .information_details 
-    {
-        min-width: 70vw;
-        min-height: 30vh;
-    }
-
-    .personal_data 
-    {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .information_details p 
-    {
-        width: 100%;
-        text-align: center;
-        font-size: clamp(14px, 2vw, 18px);
-    }
-    .information_details div{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-.update_icon_container a{
-    display: flex;
-    justify-content: center;
-    
-}
-.information_header h2{
-    text-align: center;
-}
-    
 
 .icons-general-accountpage-container div
 {
@@ -1132,3 +1036,7 @@ footer span a:hover
 
    
 }
+
+
+
+
