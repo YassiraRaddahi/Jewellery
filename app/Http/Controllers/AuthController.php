@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use League\CommonMark\Reference\Reference;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -47,13 +49,56 @@ class AuthController extends Controller
 
     public function registerForm()
     {
+
+        if(Auth::check())
+        {
+            return redirect()->route('users.accountpage');
+        }
+
         return view('auth.register');
     }
 
   
-    public function register()
+    public function register(Request $request)
     {
-       
+        // Validates the registration form
+        $data = $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'infix' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],         
+        ]);
+
+        try{
+
+            // Creates a new user
+            $user = User::create([
+                'first_name' => $data['first_name'],
+                'infix' => $data['infix'] ?? null,
+                'last_name' => $data['last_name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+        } 
+        catch (\Exception $e) {
+
+            // Redirects back with an error message if user creation fails
+            return back()->withErrors([
+                'general' => 'An error occurred while creating your account. Please try again.',
+            ])->withInput();
+
+        }
+
+        // Logs in the user
+        Auth::login($user);
+
+        // Regenerates the session to prevent session fixation
+        $request->session()->regenerate();
+
+        // Redirects to the account page
+        return redirect()->route('users.accountpage');
     }
 
     public function logout(Request $request)

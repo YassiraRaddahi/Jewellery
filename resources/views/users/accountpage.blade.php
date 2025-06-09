@@ -5,7 +5,7 @@
 @section('content')
 <div class="general-accountpage-container">
     <div class="welcome-message-account-container">
-        <h1>Welcome {{$user->name}} to our team</h1>
+        <h1>Welcome {{$user->first_name}} to our team</h1>
         <h2>We appreciate you for choosing us!</h2>
     </div>
     <div class="icons-general-accountpage-container">
@@ -36,14 +36,6 @@
                 <p class="accountpage-navigation-p">Log Out</p>
             </button>
         </form>
-        {{-- <a href="{{ route('logout')}}">
-            <div>
-                <div id="logout-icon-container">
-                    <img id="logout-icon"src="{{ asset('images/icons/log-out.png') }}" alt="Logging Out Icon">
-                </div>
-                <p>Log Out</p>
-            </div>
-        </a> --}}
     </div>
 </div>
 @endsection
