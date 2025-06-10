@@ -59,3 +59,6 @@ Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.na
 Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
 Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
+Route::get('/orders/placed-message', function () {
+    return view('orders.order_placed_message');
+})->name('orders_placed_message');
