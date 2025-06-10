@@ -15,6 +15,7 @@ h1
 {
     font-family: 'italic';
     font-size: 2.5em;
+    text-align: center;
 }
 
 p
@@ -1041,7 +1042,6 @@ footer span a:hover
 {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
 }
 .information_details
@@ -1053,7 +1053,6 @@ footer span a:hover
     justify-content: space-between;
     align-items: center;
     min-width: 30vw;
-    min-height: 45vh;
     padding: 20px;
     margin: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1067,6 +1066,9 @@ footer span a:hover
     padding: 10px;
 }
 
+.update_icon_container{
+       margin-top: 15px;
+    }
 
 .update_icon{
     cursor: pointer;
@@ -1085,23 +1087,33 @@ footer span a:hover
     justify-content: center;
 
 }
+
+.information_details div
+{
+       
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .information_details p
 {
-   border:#000000 solid 3px;
-   border-radius: 20px;
+    border:#000000 solid 3px;
+    border-radius: 20px;
     padding: 10px;
     min-width: 20vw;
     display: flex;
     justify-content: center;
     background-color: #f9e9c7;
-
+    font-size: clamp(14px, 2vw, 18px);
+    margin: 5px 0;
+  
 }
 @media screen and (max-width: 823px)
 {
    .information_details 
     {
         min-width: 70vw;
-        min-height: 30vh;
     }
 
     .personal_data 
@@ -1114,22 +1126,22 @@ footer span a:hover
     {
         width: 100%;
         text-align: center;
-        font-size: clamp(14px, 2vw, 18px);
+        margin: 10px 0;
     }
     .information_details div{
         width: 100%;
+    }
+    .update_icon_container{
+       margin-top: 20px;
+    }
+    .update_icon_container a{
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        
     }
-.update_icon_container a{
-    display: flex;
-    justify-content: center;
-    
-}
-.information_header h2{
-    text-align: center;
-}
+    .information_header h2{
+        text-align: center;
+    }
     
 }
 
