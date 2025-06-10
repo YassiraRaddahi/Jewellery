@@ -14,7 +14,7 @@
             <p>Order History</p>
         </div>
         <div>
-            <a href="#"><img id="personal-data-icon" src="{{ asset('images/icons/personal_data.png') }}" alt="Personal Data Icon"></a>
+            <a href="{{route('users.personaldata')}}"><img id="personal-data-icon" src="{{ asset('images/icons/personal_data.png') }}" alt="Personal Data Icon"></a>
             <p>Personal Data</p>
         </div>
         <div>
