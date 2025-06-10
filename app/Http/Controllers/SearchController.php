@@ -17,7 +17,7 @@ class SearchController extends Controller
         // where id -> 5
         $products = Product::with('category')->orderBy('name', 'ASC');
        $searchProducts = [];
-       $searchFocus = true;
+       
 
        // dd($categories);
      if(!empty($request->search)) {
@@ -32,15 +32,14 @@ class SearchController extends Controller
 // dd($searchProducts);
        
 //auto focus on the search bar
-    $searchFocus = $request->has('search');
+    
     
         //}
         
-        return view('home', 'search',  compact('searchFocus'), [
-            'search' => $request->search,	
-            'searchResults' => $searchProducts,
-            'searchFocus' => $searchFocus,
-            'title' => 'Search Results'
+       return view('home', [
+        'search' => $request->search,
+        'searchResults' => $searchProducts,
+        'title' => 'Search Results'
         ]);
     
     }
@@ -62,7 +61,17 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //   window.searchFocus = @json($searchFocus ?? false);
+
+    //document.addEventListener('DOMContentLoaded', function () {
+      //  if (window.searchFocus) {
+        //    const input = document.getElementById('search-input');
+          //  if (input) {
+            //    input.focus();
+            //}
+       // }
+    //});
+
     } 
 
     /**

@@ -18,16 +18,6 @@
     </div>
 </div>
 
-    window.searchFocus = @json($searchFocus ?? false);
-
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.searchFocus) {
-            const input = document.getElementById('search-input');
-            if (input) {
-                input.focus();
-            }
-        }
-    });
 
 
 
