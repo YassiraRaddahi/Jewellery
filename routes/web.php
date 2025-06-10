@@ -54,6 +54,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Users
 Route::get('/users/accountpage', [UsersController::class, 'accountPage'])->middleware('auth')->name('users.accountpage');
+Route::get('/users/personaldata', function () {
+    return view('users.personal_data');
+})->middleware('auth')->name('users.personaldata');
 
 
 // Search
