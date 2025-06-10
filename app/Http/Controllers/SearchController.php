@@ -32,14 +32,11 @@ class SearchController extends Controller
 // dd($searchProducts);
        
 //auto focus on the search bar
-if ($request->search) {
-    $searchFocus = true;
-} else {
-    $searchFocus = false;
-}
+    $searchFocus = $request->has('search');
+    
         //}
         
-        return view('home', [
+        return view('home', 'search',  compact('searchFocus'), [
             'search' => $request->search,	
             'searchResults' => $searchProducts,
             'searchFocus' => $searchFocus,

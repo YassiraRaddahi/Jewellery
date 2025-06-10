@@ -7,13 +7,30 @@
 
 <div class="homepage_banner">
     <div id="zoekbalk">
-        <div class="zoekbalk-container">
-            <form action="{{ route('search') }}" method="GET" id="search-form" autocomplete="off">
-                <input name="search" id="search-input" placeholder="Search for a product..." >
-                <button type="submit">
-                    <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
+    <div class="zoekbalk-container">
+        <form action="{{ route('search') }}" method="GET" id="search-form" autocomplete="off">
+            <input 
+                type="text" name="search" id="search-input" placeholder="Search for a product..." value="{{ old('search', $search ?? '')}}">
+            <button type="submit">
+                <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+    window.searchFocus = @json($searchFocus ?? false);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.searchFocus) {
+            const input = document.getElementById('search-input');
+            if (input) {
+                input.focus();
+            }
+        }
+    });
+
+
+
             @if(isset($searchResults) && !empty($search))
             <div id="live-results">
                 @if($searchResults->isEmpty())
@@ -27,11 +44,11 @@
                             @if(!empty($products->image))
                             <img src="{{asset($products->image)}}"
                                 class="preview-icon">
-                            @endif 
+                            @endif
                             {{ $products->name }}
                         </a>
-                    </li> 
-                    @endforeach 
+                    </li>
+                    @endforeach
                 </ul>
                 @endif
             </div>
