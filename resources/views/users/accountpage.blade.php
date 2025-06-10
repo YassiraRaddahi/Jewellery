@@ -15,7 +15,7 @@
                 <p class="accountpage-navigation-p">Order History</p> 
             </div>
         </a>
-        <a href="#">
+        <a href="{{ route('users.personaldata') }}">
             <div class="accountpage-link-container">
                 <img id="personal-data-icon" src="{{ asset('images/icons/personal_data_2.0.png') }}" alt="Personal Data Icon">
                 <p class="accountpage-navigation-p">Personal Data</p>
