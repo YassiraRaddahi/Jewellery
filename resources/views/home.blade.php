@@ -8,11 +8,9 @@
 <div class="homepage_banner">
     <div id="zoekbalk">
     <div class="zoekbalk-container">
-       <form action="{{ route('search') }}" method="GET" id="search-form" class="Form" {!! Form::open(['route' => 'search', 'method' => 'GET']) !!}
-    {!! Form::text('query', null, ['autofocus' => 'autofocus', 'placeholder' => 'Search...']) !!}
-{!! Form::close() !!} > 
+       <form action="{{ route('search') }}" method="GET" id="search-form" > 
             <input 
-                type="text" name="search" id="search-input" placeholder="Search for a product..." value="{{ old('search', $search ?? '')}}">
+                type="text" name="search" id="search-input" placeholder="Search for a product..."  {{ isset($autofocus) && $autofocus ? 'autofocus' : '' }} >
             <button type="submit">
                 <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
             </button>

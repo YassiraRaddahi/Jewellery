@@ -18,8 +18,14 @@ class SearchController extends Controller
         $products = Product::with('category')->orderBy('name', 'ASC');
        $searchProducts = [];
        
-       //$searchFocus = autoFocus 
-
+       
+       // Check if the request has a search parameter
+       $autofocus = $request->get('from') === 'searchicon';
+      if ($autofocus) {
+            $autofocus = true;
+        } else {
+            $autofocus = false;
+        }
        // dd($categories);
      if(!empty($request->search)) {
         $searchProducts = $products
@@ -36,13 +42,13 @@ class SearchController extends Controller
     
     
         //}
-                return view('partials.search-results', compact('searchProducts'));
-
+              
 
        return view('home', [
         'search' => $request->search,
         'searchResults' => $searchProducts,
-        'title' => 'Search Results'
+        'title' => 'Search Results',
+        'autofocus' => $autofocus
         ]);
     
     }
