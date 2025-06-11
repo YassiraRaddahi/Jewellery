@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
+
+    public function orderPlacedMessage()
+    {
+        return view('orders.order_placed');
+    }
+
     /**
      * Display a listing of the resource.
      */
