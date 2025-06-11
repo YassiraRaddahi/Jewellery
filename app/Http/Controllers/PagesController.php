@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
-class UsersController extends Controller
+class PagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,27 +31,20 @@ class UsersController extends Controller
         //
     }
 
-    public function accountPage()
-    {
-
-        $user = Auth::user();
-
-        return view('users.accountpage', [
-            'user' => $user,
-        ]);
-    }
-
-    public function showPersonalData()
-    {
-        return view('users.personal_data');
-    }
-
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($page)
     {
-        //
+        // Check if the view exists for the given page
+        if(View::exists("pages.$page")) 
+        {
+            return view("pages.$page");
+        } 
+      
+        // If the view does not exist, abort with a 404 error
+        abort(404);
+        
     }
 
     /**
