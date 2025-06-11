@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UsersController;
@@ -52,3 +53,5 @@ Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.na
 Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
 Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
+// Orders
+Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->name('orders.orderPlacedMessage');
