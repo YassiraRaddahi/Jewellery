@@ -8,7 +8,7 @@
 <div class="homepage_banner">
     <div id="zoekbalk">
     <div class="zoekbalk-container">
-       <form action="{{ route('search') }}" method="GET" id="search-form" class="Form" autocomplete="on" {!! Form::open(['route' => 'search', 'method' => 'GET']) !!}
+       <form action="{{ route('search') }}" method="GET" id="search-form" class="Form" {!! Form::open(['route' => 'search', 'method' => 'GET']) !!}
     {!! Form::text('query', null, ['autofocus' => 'autofocus', 'placeholder' => 'Search...']) !!}
 {!! Form::close() !!} > 
             <input 
