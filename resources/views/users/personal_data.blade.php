@@ -1,7 +1,13 @@
 @extends('layout.master_layout')
 @section('title', 'Personal Data')
 @section('content')
-    <h1>Personal data & address details</h1>
+
+    <div class="personal-data-header">
+        <div class="go-back-link-container">
+            <a href="{{route('users.accountpage')}}" class="go-back-link"><i class="fa-solid fa-left-long"></i>Go Back</a>
+        </div>
+        <h1>Personal data & address details</h1>
+    </div>
 
     <div class="personal_data">
         <div class="information_container">
@@ -29,8 +35,8 @@
             </div>
             <div class="information_details">
                 <div>
-                <p>{{$user->email}}</p>
-                <p>{{str_repeat('●', 15)}} </p>
+                    <p>{{$user->email}}</p>
+                    <p>{{str_repeat('●', 15)}} </p>
                 </div>
                 <div class="update_icon_container">
                     <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
