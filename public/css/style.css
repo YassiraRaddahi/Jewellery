@@ -1180,13 +1180,22 @@ width: 30vw;
     border-radius: 20px;
     padding: 10px;
     min-width: 20vw;
+    max-width: 20vw;
     display: flex;
     justify-content: center;
     background-color: #f9e9c7;
     font-size: clamp(14px, 2vw, 18px);
     margin: 5px 0;
+    text-align: center;
   
 }
+
+.user-not-provided-data
+{
+    color: #858080;
+    font-style: italic;
+}
+
 @media screen and (max-width: 823px)
 {
    .information_details 
