@@ -43,7 +43,12 @@ class UsersController extends Controller
 
     public function showPersonalData()
     {
-        return view('users.personal_data');
+
+        $user = Auth::user();
+
+        return view('users.personal_data', [
+            'user' => $user,
+        ]);
     }
 
     /**

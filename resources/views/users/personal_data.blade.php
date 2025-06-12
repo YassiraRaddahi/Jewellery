@@ -10,8 +10,13 @@
             </div>
             <div class="information_details">
                 <div>
-                    <p>Name</p>
-                    <p>phone number</p>
+                    <p>{{$user->first_name . " " . ($user->infix ? $user->infix . " " : "") . $user->last_name}}</p>
+                    
+                    @if($user->phone)
+                        <p>{{$user->phone}}</p>
+                    @else
+                        <p class="user-not-provided-data">Phone number</p>
+                    @endif
                 </div>
                 <div class="update_icon_container">
                     <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
@@ -24,8 +29,8 @@
             </div>
             <div class="information_details">
                 <div>
-                <p>E-mail</p>
-                <p>Password</p>
+                <p>{{$user->email}}</p>
+                <p>{{str_repeat('●', 15)}} </p>
                 </div>
                 <div class="update_icon_container">
                     <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
@@ -38,10 +43,28 @@
             </div>
             <div class="information_details">
                 <div>
-                <p>Street , house number</p>
-                <p>Zip code</p>
-                <p>City</p>
-                <p>Country</p>
+                    @if($user->address)
+                        <p>{{$user->address}}</p>
+                    @else
+                        <p class="user-not-provided-data">Address</p>
+                    @endif
+
+                    @if($user->zipcode)
+                        <p>{{$user->zipcode}}</p>
+                    @else
+                        <p class="user-not-provided-data">ZIP code</p>
+                    @endif
+
+                    @if($user->city)
+                        <p>{{$user->city}}</p>
+                    @else
+                        <p class="user-not-provided-data">City</p>
+                    @endif
+                    @if($user->country)
+                        <p>{{$user->country}}</p>
+                    @else
+                        <p class="user-not-provided-data">Country</p>
+                    @endif
                 </div>
                 <div class="update_icon_container">
                     <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
