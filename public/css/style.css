@@ -868,10 +868,10 @@ object-fit: cover;
 }
 
 .homepage_banner {
-  display: flex;
-  justify-content: space-between;
-  
-  align-items: center;
+ display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
   padding: 20px;
   width: 65vw;
   margin: 10px auto;
@@ -1019,6 +1019,11 @@ object-fit: cover;
     color: #c39f86;
     margin-right: auto;
     cursor: pointer;
+}
+#zoekbalk form
+{
+    /* position: relative; */
+    
 }
 #slogan
 {
