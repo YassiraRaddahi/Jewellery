@@ -88,25 +88,7 @@ class SearchController extends Controller
      */
     public function show(string $name)
     {
-       // $products = Product::where('name', $name);
-         //           $categories = Product::where('name', 'categories', $name);
-        // Retrieve the product by name
-        // Check if the product exists
-      //  if (!$products) {
-       //     $categories = $categories->where('name', $name)
-         //       ->where('categories', 'like', "%{$name}%")
-           //     ->orWhere('name', 'like', "%{$name}%")
-             //   ->get();  
-         //   abort(404, 'Product not found');
-       // }
-        // Return the view with the product data
-
-     //   return view('products.show', [
-       //     'product' => $products,
-         //   'title' => $products->name,
-           // 'categories' => $categories->get(),
-            
-        //]);
+      /* */
     }
 
     /**
