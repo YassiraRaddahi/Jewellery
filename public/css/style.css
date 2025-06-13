@@ -870,7 +870,7 @@ footer span a:hover
  }
  #sierlijke_lifestyle {
     display: flex;
-    flex-direction: column;
+    column-gap: 20px;
     height: 40vh;
     width: 30vw;
  }
@@ -980,13 +980,9 @@ footer span a:hover
 }
 #slogan
 {
-    display: flex;
-    flex-direction: column;   
-    margin: 0 auto;
-    width: 80vw;
-    max-width: 800px;
-    padding: 10px;
-
+    margin-left:250px;
+    
+    
     text-align: block;
     font-family: 'italic';
 
