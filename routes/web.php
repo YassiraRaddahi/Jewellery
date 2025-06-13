@@ -47,6 +47,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/users/accountpage', [UsersController::class, 'accountPage'])->middleware('auth')->name('users.accountpage');
 Route::get('/users/personaldata', [UsersController::class, 'showPersonalData'])->middleware('auth')->name('users.personaldata');
 
+Route::get('/users/accountdelete', function () {
+    return view('users.account_delete');
+})->middleware('auth')->name('users.accountdelete');
+
 // Search
 Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
 Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.name');
@@ -55,3 +59,4 @@ Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name
 
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->name('orders.orderPlacedMessage');
+
