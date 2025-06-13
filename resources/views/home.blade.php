@@ -35,18 +35,19 @@
             @endif
         </div>
         @endif
-    </div>
 
-    <div id="slogan">
-        <h1>Make </h1>
-        <h1>Milestones</h1>
-        <h1>Memorable</h1>
+        <div id="slogan">
+            <h1>Make</h1>
+            <h1>Milestones</h1>
+            <h1>Memorable</h1>
+        </div>
     </div>
 
     <div id="sierlijke_lifestyle">
         <img src="{{asset('images/lifestyle_photos/sierlijke_oorbellen_met_sierlijke_bloemenketting.jpg')}}" alt="Homepage Banner">
     </div>
 </div>
+
 
 
 @include('layout.nav-products')
