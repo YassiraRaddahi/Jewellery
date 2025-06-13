@@ -59,3 +59,6 @@ Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.na
 Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
 Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
+Route::get('/users/accountdelete', function () {
+    return view('users.account_delete');
+})->middleware('auth')->name('users.accountdelete');
