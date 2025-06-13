@@ -1,3 +1,4 @@
+php 
 <?php
 
 namespace App\Http\Controllers;
@@ -16,24 +17,39 @@ class SearchController extends Controller
     {
         // where id -> 5
         $products = Product::with('category')->orderBy('name', 'ASC');
-       // $categories = $products->category;
-
+       $searchProducts = [];
+       
+       
+       // Check if the request has a search parameter
+       $autofocus = $request->get('from') === 'searchicon';
+      if ($autofocus) {
+            $autofocus = true;
+        } else {
+            $autofocus = false;
+        }
        // dd($categories);
-     if(request()->has('search')) {
+     if(!empty($request->search)) {
         $searchProducts = $products
         ->where('name', 'like', "%{$request->search}%")
-        // ->orWhere('categories', 'like', "%{$request->search}%")
-        ->orWhere('description', 'like', "%{$request->search}%");
+        ->orWhereHas('category', function ($query) use ($request) {
+            $query->where('name', 'like', "%{$request->search}%");
+        })
+        ->orWhere('description', 'like', "%{$request->search}%")->get();
            
      }
-        
-        return view('pages.home', [
-            'search' => $request->search,	
-            'searchResults' => $searchProducts->paginate(10),
-         //   'products' => $products->category,
-            'title' => 'Search Results'
-            
+// dd($searchProducts);
+       
+//auto focus on the search bar
+    
+    
+        //}
+              
 
+       return view('home', [
+        'search' => $request->search,
+        'searchResults' => $searchProducts,
+        'title' => 'Search Results',
+        'autofocus' => $autofocus
         ]);
     
     }
@@ -55,7 +71,17 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //   window.searchFocus = @json($searchFocus ?? false);
+
+    //document.addEventListener('DOMContentLoaded', function () {
+      //  if (window.searchFocus) {
+        //    const input = document.getElementById('search-input');
+          //  if (input) {
+            //    input.focus();
+            //}
+       // }
+    //});
+
     } 
 
     /**
@@ -63,25 +89,7 @@ class SearchController extends Controller
      */
     public function show(string $name)
     {
-       // $products = Product::where('name', $name);
-         //           $categories = Product::where('name', 'categories', $name);
-        // Retrieve the product by name
-        // Check if the product exists
-      //  if (!$products) {
-       //     $categories = $categories->where('name', $name)
-         //       ->where('categories', 'like', "%{$name}%")
-           //     ->orWhere('name', 'like', "%{$name}%")
-             //   ->get();  
-         //   abort(404, 'Product not found');
-       // }
-        // Return the view with the product data
-
-     //   return view('products.show', [
-       //     'product' => $products,
-         //   'title' => $products->name,
-           // 'categories' => $categories->get(),
-            
-        //]);
+      /* */
     }
 
     /**
