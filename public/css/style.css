@@ -870,6 +870,7 @@ footer span a:hover
  }
  #sierlijke_lifestyle {
     display: flex;
+    flex-direction: column;
     height: 40vh;
     width: 30vw;
  }
@@ -979,6 +980,14 @@ footer span a:hover
 }
 #slogan
 {
+    display: flex;
+    flex-direction: column;   
+    margin: 0 auto;
+    width: 80vw;
+    max-width: 800px;
+    padding: 10px;
+
+    text-align: block;
     font-family: 'italic';
 
 }
@@ -990,7 +999,7 @@ footer span a:hover
 }
 
 #live-results {
-    /* position: relative; */
+     position: relative; 
     /* top: 100%;
     left: 0; */
     margin-top: 5px;
@@ -1000,12 +1009,12 @@ footer span a:hover
     z-index: 50;
     min-width: 100%;
     color:#000000;
-    width: 40vw;
+    width: 30vw;
     max-width: 450px;
     max-height: 150px;
     overflow-y: auto;
     padding-bottom: 10px;
-    align-items: center;
+    
 
 }
 #live-results a {
