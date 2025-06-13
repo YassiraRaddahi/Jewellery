@@ -870,6 +870,7 @@ object-fit: cover;
 .homepage_banner {
   display: flex;
   justify-content: space-between;
+  
   align-items: center;
   padding: 20px;
   width: 65vw;
@@ -1001,7 +1002,7 @@ object-fit: cover;
     border-radius: 5px;
     background-color: #f2efe3;
     height: 5vh;
-    width: 18vw;
+    width: 29vw;
     border: #c39f86 solid 2px;
 }
 
