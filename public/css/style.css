@@ -1023,6 +1023,13 @@ object-fit: cover;
     border: #c39f86 solid 2px;
 }
 
+#zoekbalk-icon
+{
+    font-size: 15px;
+    color: #c39f86;
+    margin-right: auto;
+    cursor: pointer;
+}
 
 
 #slogan
