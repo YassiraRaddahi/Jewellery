@@ -19,7 +19,7 @@ h1
 
 p
 {
-    font-size: 1.2em;
+    font-size: clamp(16px, 1.8vw, 1.2em);
 }
 
 header 
@@ -137,7 +137,7 @@ nav ul li a
 
 main 
 {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .container
@@ -311,7 +311,7 @@ main
 
 .go-back-link:hover
 {
-    background-color: #babbb4;
+    background-color: #e8d9bb;
 }
 
 .go-back-link i
@@ -330,19 +330,9 @@ main
     width: 80vw;
 }
 
-.product-show-information
-{
-     
-}
-
 h2
 {
     font-size: clamp(18px, 1.8vw, 24px);
-}
-
-p
-{
-    font-size: clamp(16px, 1.8vw, 1.2em);
 }
 
 .product-show-description
@@ -573,8 +563,8 @@ footer
 footer p 
 {
     margin: 0;
+    font-size: clamp(14px, 1.5vw, 16px);
 }
-
 
 footer span a 
 {
@@ -582,6 +572,7 @@ footer span a
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    font-size: clamp(14px, 1.5vw, 16px);
 }
 
 footer span a:hover 
@@ -1037,76 +1028,94 @@ footer span a:hover
    
 }
 
-.account-deletion-container {
-    width: 90%;
+.deletion-title-container
+{
+    font-size: 24px;
+    background-color: #d9c8a4;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 700;
+}
+
+.deletion-instructions 
+{
+    font-size: clamp(14px, 1vw, 16px);
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.account-deletion-container 
+{
+    width: 90vw;
     max-width: 400px;
     background: linear-gradient(to right, #f5e8c4, #f1eee7);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-   }
-   .deletion-title-box {
-    font-size: 24px;
-    background-color: #d9c8a4;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: 700;
-   }
-   .deletion-instructions {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 20px;
-   text-align: center;
-   }
-   .account-deletion-form {
-    text-align: left;
-   }
-   label {
+}
+
+.account-deletion-form > label 
+{
     font-weight: bold;
+}
+
+.account-deletion-form label
+{
     display: block;
     margin: 10px 0 5px;
-   }
-   input[type="email"],
-   input[type="password"],
-   input.other-reason-input {
-    width: 100%;
+}
+
+.deletion-reason-label 
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.account-deletion-form input[type="email"],
+.account-deletion-form input[type="password"],
+#other-reason-textarea
+{
+    min-width: 100%;
+    max-width: 100%;
     padding: 8px;
+    min-height: 35px;
     border-radius: 10px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     box-sizing: border-box;
-   }
-   .deletion-reason-label {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-weight: bold;
-   }
-   .reason-options-box label {
-    font-weight: normal;
-   }
-   .reason-options-box .other-reason-input {
+}
+
+#other-reason-textarea
+{
+    display: none;
     margin-top: 8px;
     font-style: italic;
-   }
-   .deletion-button-group {
+}
+
+.deletion-button-group {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-   }
-   button {
+}
+
+.cancel-button, .confirm-deletion-button
+{
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
     font-weight: bold;
     cursor: pointer;
-   }
-   .cancel-button {
     background-color: #e0d6be;
-   }
-   .confirm-deletion-button {
-    background-color: #e0d6be;
-    color: black;
-   }
+    font-size: 14px;
+}
+
+.cancel-button
+{
+    text-decoration: none;
+    color: #000000;
+}

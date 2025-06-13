@@ -15,7 +15,7 @@
 
         <div>
             <label for="infix">Infix:</label>
-            <input type="text" id="infix" name="infix" required>
+            <input type="text" id="infix" name="infix">
         </div>
 
         <div>
