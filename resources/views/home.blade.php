@@ -7,7 +7,6 @@
 
 <div class="homepage_banner">
     <div id="zoekbalk">
-    <div class="zoekbalk-container">
        <form action="{{ route('search') }}" method="GET" id="search-form" > 
             <input 
                 type="text" name="search" id="search-input" placeholder="Search for a product..."  {{ isset($autofocus) && $autofocus ? 'autofocus' : '' }} >
