@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -50,6 +52,42 @@ class UsersController extends Controller
             'user' => $user,
         ]);
     }
+
+
+    public function deleteAccountForm()
+    {
+        return view('users.account_delete');
+    }
+
+     public function deleteAccount(Request $request)
+     {
+            // Validate the request
+            $credentials = $request->validate([
+                'email' => ['required', 'email', 'exists:users,email'],
+                'password' => ['required', 'string'],
+            ]);
+        
+            // Getting the authenticated user
+            $user = Auth::user();
+
+            // Check if the provided credentials match the authenticated user
+            if($user->email !== $credentials['email'] || !Hash::check($credentials['password'], $user->password)) {
+                return redirect()->back()->withErrors(['general' => 'The provided credentials do not match your account.'])->withInput();
+            }
+            // Delete the user account
+            $user = User::find($user->id);
+            $user->delete();
+            
+            Auth::logout();
+
+            session()->invalidate();
+
+            // Regenerate the CSRF token
+            session()->regenerateToken();
+
+            // Redirect to home with a success message
+            return redirect()->route('home')->with('success-account-deletion', 'Your account has been deleted successfully.');
+     }
 
     /**
      * Display the specified resource.

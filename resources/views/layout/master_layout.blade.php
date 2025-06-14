@@ -8,7 +8,17 @@
     <script src="https://kit.fontawesome.com/5c3b708ee0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    @if(session('success-account-creation'))
+        <div class="alert-success">
+            {{ session('success-account-creation') }}
+        </div>
+    @endif
+    @if(session('success-account-deletion'))
+        <div class="alert-success">
+            {{ session('success-account-deletion') }}
+        </div>
+    @endif
+
     <header>
        <div id="logo-container">
         <a href="{{route('home')}}">

@@ -10,6 +10,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UsersController;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -32,9 +33,9 @@ Route::get('/products/{id}', [ProductsController::class, 'show'])->name('product
 
 // Cart
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
-Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
-Route::put('/cart/update', [CartController::class, 'update'])->name('cart.update');
-Route::delete('/cart/delete-one', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
+Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
+Route::put('/cart', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
 
 // Authentication
 Route::get('/login', [AuthController::class, 'loginForm'])->name('loginForm');
@@ -46,10 +47,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Users
 Route::get('/users/accountpage', [UsersController::class, 'accountPage'])->middleware('auth')->name('users.accountpage');
 Route::get('/users/personaldata', [UsersController::class, 'showPersonalData'])->middleware('auth')->name('users.personaldata');
-
-Route::get('/users/accountdelete', function () {
-    return view('users.account_delete');
-})->middleware('auth')->name('users.accountdelete');
+Route::get('/users/delete-account', [UsersController::class, 'deleteAccountForm'])->middleware('auth')->name('users.deleteAccountForm');
+Route::delete('/users/delete-account', [UsersController::class, 'deleteAccount'])->middleware('auth')->name('users.deleteAccount');
 
 // Search
 Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');

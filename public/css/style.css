@@ -728,6 +728,7 @@ footer span a:hover
 {
     color: red;
     font-size: 14px;
+    margin: 0px;
 }
 
 .login_group input
@@ -1166,10 +1167,85 @@ width: 30vw;
     font-size: 14px;
 }
 
+.cancel-button:hover, .confirm-deletion-button:hover
+{
+    background-color: #d4c8a1;
+}
+
 .cancel-button
 {
     text-decoration: none;
     color: #000000;
+}
+
+.alert-success
+{
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    text-align: center;
+
+}
+
+#delete-account-dialog
+{
+    border-color: #7f5a42;
+    border-radius: 20px;
+    background-color: #fefcf3;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 90vw;
+    max-width: 500px;
+    height: 35vh;
+    min-height: 150px;
+    max-height: 250px;
+}
+
+.delete-account-dialog-content
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#delete-account-dialog-message-container
+{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#delete-account-dialog-message-container p
+{
+    margin: 0;
+}
+
+#cancel-deletion, #confirm-deletion
+{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #956d51;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#cancel-deletion:hover, #confirm-deletion:hover
+{
+    background-color: #7f5a42;
+}
+
+.delete-account-dialog-button-group
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .text-order-placed
