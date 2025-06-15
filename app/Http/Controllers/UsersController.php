@@ -53,10 +53,35 @@ class UsersController extends Controller
         ]);
     }
 
+    public function updateDataForm(string $sortData)
+    {
+
+        $validRouteParams = ['personal-information', 'login-information', 'address-details'];
+
+        // Validate the sortData parameter
+        if (!in_array($sortData, $validRouteParams, true)) {
+            abort(404);
+        }
+        
+        $sortDataToUpdate = ucwords(str_replace('-', ' ',$sortData));
+        $title = 'Update ' . $sortDataToUpdate;
+        $updateUserDataForm = 'users_components.update_' . str_replace('-', '_', $sortData) . '_form';
+
+
+        $user = Auth::user();
+
+        return view('users.update_data', [
+            'user' => $user,
+            'sortDataToUpdate' => $sortDataToUpdate,
+            'title' => $title,
+            'updateUserDataForm' => $updateUserDataForm,
+        ]);
+    }
+
 
     public function deleteAccountForm()
     {
-        return view('users.account_delete');
+        return view('users.delete_account');
     }
 
      public function deleteAccount(Request $request)

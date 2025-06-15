@@ -25,13 +25,13 @@
                     @endif
                 </div>
                 <div class="update_icon_container">
-                    <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
+                    <a href="{{route('users.updateDataForm', ['sortData' => 'personal-information'])}}"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
                 </div>
             </div>
         </div>
         <div class="information_container">
             <div class="information_header">
-                <h3>Log in information</h3>
+                <h3>Login information</h3>
             </div>
             <div class="information_details">
                 <div>
@@ -39,7 +39,7 @@
                     <p>{{str_repeat('●', 15)}} </p>
                 </div>
                 <div class="update_icon_container">
-                    <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
+                    <a href="{{route('users.updateDataForm', ['sortData' => 'login-information'])}}"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     @endif
                 </div>
                 <div class="update_icon_container">
-                    <a href="#"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
+                    <a href="{{route('users.updateDataForm', ['sortData' => 'address-details'])}}"><i class="update_icon fa-solid fa-pen fa-lg"></i></a>
                 </div>
             </div>
         </div>
