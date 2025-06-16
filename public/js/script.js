@@ -22,3 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
             input.focus();
         });
     });
+
+
+
+function disappearLiveResults() {
+    let liveResults = document.getElementById('live-results');
+    
+    liveResults.style.display = 'none';
+    
+}

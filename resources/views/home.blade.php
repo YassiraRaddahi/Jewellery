@@ -8,7 +8,7 @@
     <div id="zoekbalk">
         <form action="{{ route('search') }}" method="GET" id="search-form"> 
             <input 
-                type="text" name="search" id="search-input" placeholder="Search for a product..."  {{ isset($autofocus) && $autofocus ? 'autofocus' : '' }} >
+                type="text" name="search" id="search-input" placeholder="Search for a product..." onblur="disappearLiveResults()" {{ isset($autofocus) && $autofocus ? 'autofocus' : '' }} >
             <button type="submit">
                 <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
             </button>

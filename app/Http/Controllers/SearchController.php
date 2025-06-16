@@ -20,13 +20,16 @@ class SearchController extends Controller
        
        
        // Check if the request has a search parameter
-       $autofocus = $request->get('from') === 'searchicon';
-      if ($autofocus) {
-            $autofocus = true;
-        } else {
-            $autofocus = false;
-        }
+      //  $autofocus = $request->get('from') === 'searchicon';
+      // if ($autofocus) {
+      //       $autofocus = true;
+      //   } else {
+      //       $autofocus = false;
+      //   }
        // dd($categories);
+
+        $autofocus = true;
+
      if(!empty($request->search)) {
         $searchProducts = $products
         ->where('name', 'like', "%{$request->search}%")
