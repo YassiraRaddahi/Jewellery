@@ -332,11 +332,6 @@ main
     width: 80vw;
 }
 
-.product-show-information
-{
-     
-}
-
 h2
 {
     font-size: clamp(18px, 1.8vw, 24px);
@@ -1278,12 +1273,6 @@ object-fit: cover;
     .information_header h2{
         text-align: center;
     }
-    
-}
-
-#zoekbalk form
-{
-    /* position: relative; */
     
 }
 
