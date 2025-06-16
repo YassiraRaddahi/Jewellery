@@ -1458,3 +1458,18 @@ width: 30vw;
     /* min-height: 150px;
     max-height: 250px; */
 }
+
+.update-user-data-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.update-user-data-label-input-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
