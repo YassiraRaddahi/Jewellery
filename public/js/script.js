@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function () {
 let liveResults = document.getElementById('live-results');
 let searchArea = document.getElementById('zoekbalk');
 
-document.addEventListener('click', function(event) {
-    // Check if the clicked element is outside the live results container
-    if (!searchArea.contains(event.target)) {
+document.addEventListener('click', function(event) 
+{
+    // Checks if the user has clicked outside the search area
+    if (!searchArea.contains(event.target)) 
+    {
      // Hide live results
         liveResults.style.display = 'none';
     }
 });
-
-// Check if the click was outside the live results container
 
     
