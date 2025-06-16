@@ -11,32 +11,32 @@ function ProductAddedMessage(button)
     }, 1000);
 
 }
-// document.addEventListener('DOMContentLoaded', function () {
-//         const icon = document.getElementById('show-search');
-//         const container = document.getElementById('search-form-container');
-//         const input = document.getElementById('search-input');
+document.addEventListener('DOMContentLoaded', function () {
+        const icon = document.getElementById('show-search');
+        const container = document.getElementById('search-form-container');
+        const input = document.getElementById('search-input');
 
-//         icon.addEventListener('click', function (e) {
-//             e.preventDefault();
-//             container.style.display = 'block';
-//             input.focus();
-//         });
-//     });
+        icon.addEventListener('click', function (e) {
+            e.preventDefault();
+            container.style.display = 'block';
+            input.focus();
+        });
+    });
 
 
 
-function disappearLiveResults(event) 
-{
-    let liveResults = document.getElementById('live-results');
 
-    // Check if the click was outside the live results container
-    if (event.target.id === 'live-results') {
-        liveResults.style.display = 'block';
-    } 
-    else if (event.target.id === 'search-input') 
-    {
-         liveResults.style.display = 'none';
+let liveResults = document.getElementById('live-results');
+let searchArea = document.getElementById('zoekbalk');
+
+document.addEventListener('click', function(event) {
+    // Check if the clicked element is outside the live results container
+    if (!searchArea.contains(event.target)) {
+     // Hide live results
+        liveResults.style.display = 'none';
     }
+});
+
+// Check if the click was outside the live results container
 
     
-}
