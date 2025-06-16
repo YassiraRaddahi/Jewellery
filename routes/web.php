@@ -49,9 +49,6 @@ Route::get('/users/personaldata', [UsersController::class, 'showPersonalData'])-
 
 // Search
 Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
-Route::get('/search/{name}', [SearchController::class, 'show'])->name('search.name');
-Route::get('/search/products', [SearchController::class, 'show'])->name('search.name.products');
-Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->name('orders.orderPlacedMessage');

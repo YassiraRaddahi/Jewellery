@@ -14,46 +14,34 @@ class SearchController extends Controller
      */
     public function liveSearch(Request $request)
     {
-        // where id -> 5
         $products = Product::with('category')->orderBy('name', 'ASC');
-       $searchProducts = [];
-       
-       
-       // Check if the request has a search parameter
-      //  $autofocus = $request->get('from') === 'searchicon';
-      // if ($autofocus) {
-      //       $autofocus = true;
-      //   } else {
-      //       $autofocus = false;
-      //   }
-       // dd($categories);
+        $searchProducts = [];
+
+        // Check if the request has a search parameter
+        //  $autofocus = $request->get('from') === 'searchicon';
+        // if ($autofocus) {
+        //       $autofocus = true;
+        //   } else {
+        //       $autofocus = false;
+        //   }
+        // dd($categories);
 
         $autofocus = true;
 
-     if(!empty($request->search)) {
-        $searchProducts = $products
-        ->where('name', 'like', "%{$request->search}%")
-        ->orWhereHas('category', function ($query) use ($request) {
-            $query->where('name', 'like', "%{$request->search}%");
-        })
-        ->orWhere('description', 'like', "%{$request->search}%")->get();
-           
-     }
-// dd($searchProducts);
-       
-//auto focus on the search bar
-    
-    
-        //}
-              
-
-       return view('pages.home', [
-        'search' => $request->search,
-        'searchResults' => $searchProducts,
-        'title' => 'Search Results',
-        'autofocus' => $autofocus
+        if (!empty($request->search)) 
+        {
+            $searchProducts = $products
+                ->where('name', 'like', "%{$request->search}%")
+                ->orWhereHas('category', function ($query) use ($request) {
+                    $query->where('name', 'like', "%{$request->search}%");
+                })
+                ->orWhere('description', 'like', "%{$request->search}%")->get();
+        }
+        return view('pages.home', [
+            'search' => $request->search,
+            'searchResults' => $searchProducts,
+            'autofocus' => $autofocus
         ]);
-    
     }
     /**
      * Display a listing of the resource.
@@ -75,23 +63,23 @@ class SearchController extends Controller
     {
         //   window.searchFocus = @json($searchFocus ?? false);
 
-    //document.addEventListener('DOMContentLoaded', function () {
-      //  if (window.searchFocus) {
+        //document.addEventListener('DOMContentLoaded', function () {
+        //  if (window.searchFocus) {
         //    const input = document.getElementById('search-input');
-          //  if (input) {
-            //    input.focus();
-            //}
-       // }
-    //});
+        //  if (input) {
+        //    input.focus();
+        //}
+        // }
+        //});
 
-    } 
+    }
 
     /**
      * Display the specified resource.
      */
     public function show(string $name)
     {
-      /* */
+        /* */
     }
 
     /**
@@ -118,4 +106,3 @@ class SearchController extends Controller
         //
     }
 }
-?>
