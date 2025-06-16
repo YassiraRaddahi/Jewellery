@@ -47,7 +47,7 @@ class SearchController extends Controller
         //}
               
 
-       return view('home', [
+       return view('pages.home', [
         'search' => $request->search,
         'searchResults' => $searchProducts,
         'title' => 'Search Results',
