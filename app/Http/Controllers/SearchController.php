@@ -14,34 +14,28 @@ class SearchController extends Controller
      */
     public function liveSearch(Request $request)
     {
+        // where id -> 5
         $products = Product::with('category')->orderBy('name', 'ASC');
-        $searchProducts = [];
+       // $categories = $products->category;
 
-        // Check if the request has a search parameter
-        //  $autofocus = $request->get('from') === 'searchicon';
-        // if ($autofocus) {
-        //       $autofocus = true;
-        //   } else {
-        //       $autofocus = false;
-        //   }
-        // dd($categories);
-
-        $autofocus = true;
-
-        if (!empty($request->search)) 
-        {
-            $searchProducts = $products
-                ->where('name', 'like', "%{$request->search}%")
-                ->orWhereHas('category', function ($query) use ($request) {
-                    $query->where('name', 'like', "%{$request->search}%");
-                })
-                ->orWhere('description', 'like', "%{$request->search}%")->get();
-        }
+       // dd($categories);
+     if(request()->has('search')) {
+        $searchProducts = $products
+        ->where('name', 'like', "%{$request->search}%")
+        // ->orWhere('categories', 'like', "%{$request->search}%")
+        ->orWhere('description', 'like', "%{$request->search}%");
+           
+     }
+        
         return view('pages.home', [
-            'search' => $request->search,
-            'searchResults' => $searchProducts,
-            'autofocus' => $autofocus
+            'search' => $request->search,	
+            'searchResults' => $searchProducts->paginate(10),
+         //   'products' => $products->category,
+            'title' => 'Search Results'
+            
+
         ]);
+    
     }
     /**
      * Display a listing of the resource.
@@ -61,25 +55,33 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        //   window.searchFocus = @json($searchFocus ?? false);
-
-        //document.addEventListener('DOMContentLoaded', function () {
-        //  if (window.searchFocus) {
-        //    const input = document.getElementById('search-input');
-        //  if (input) {
-        //    input.focus();
-        //}
-        // }
-        //});
-
-    }
+        //
+    } 
 
     /**
      * Display the specified resource.
      */
     public function show(string $name)
     {
-        /* */
+       // $products = Product::where('name', $name);
+         //           $categories = Product::where('name', 'categories', $name);
+        // Retrieve the product by name
+        // Check if the product exists
+      //  if (!$products) {
+       //     $categories = $categories->where('name', $name)
+         //       ->where('categories', 'like', "%{$name}%")
+           //     ->orWhere('name', 'like', "%{$name}%")
+             //   ->get();  
+         //   abort(404, 'Product not found');
+       // }
+        // Return the view with the product data
+
+     //   return view('products.show', [
+       //     'product' => $products,
+         //   'title' => $products->name,
+           // 'categories' => $categories->get(),
+            
+        //]);
     }
 
     /**

@@ -4,52 +4,45 @@
 
 
 @section('content')
+
 <div class="homepage_banner">
-    <div>
-        <div id="zoekbalk">
-            <form action="{{ route('search') }}" method="GET" id="search-form"> 
-                <input 
-                    type="text" name="search" id="search-input" placeholder="Search for a product..." {{ isset($autofocus) && $autofocus ? 'autofocus' : '' }} >
-                <button type="submit">
-                    <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-            @if(isset($searchResults) && !empty($search))
+     <div id="zoekbalk">
+        <form action="{{ route('search') }}" method="GET" id="search-form" autocomplete="off">
+            <input name="search" id="search-input" placeholder="Search for a product...">
+            <button type="submit">
+                <i id="zoekbalk-icon" class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+   @if(isset($searchResults) && $search)
             <div id="live-results">
                 @if($searchResults->isEmpty())
-                <p>No results found for "{{ $search }}"</p>
+                    <p class="p-2">No results found for "{{ $search }}"</p>
                 @else
-                <ul>
-                    @foreach ($searchResults as $products)
-                    <li class="result-item">
-                        <a href="{{ route('products.show', ['id' => $products->id, 'previous_route' => '/' . request()->path()]) }}"
-                            class="flex items-center gap-2 hover:text-[#c39f86]">
-                            @if(!empty($products->image))
-                            <img src="{{asset($products->image)}}" class="preview-icon">
-                            @endif
-                            {{ $products->name }}
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
+                    <ul class="p-2">
+                        @foreach ($searchResults as $products)
+                            <li class="py-1 border-b">
+                                <a href="{{ route('products.show',['id' => $products->id, 'previous_route'=> '/' . request()->path()]) }}" class="block text-gray-800 hover:text-[#c39f86]">
+                                    {{ $product->name }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                    {{$searchResults->links()}}
                 @endif
             </div>
         @endif
-        </div>
         <div id="slogan">
-            <h1>Make</h1>
+            <h1>Make </h1>
             <h1>Milestones</h1>
             <h1>Memorable</h1>
         </div>
     </div>
 
+
     <div id="sierlijke_lifestyle">
         <img src="{{asset('images/lifestyle_photos/sierlijke_oorbellen_met_sierlijke_bloemenketting.jpg')}}" alt="Homepage Banner">
     </div>
 </div>
-
-
-
 @include('layout.nav-products')
 
 <div class="products-container">

@@ -27,31 +27,6 @@ function ProductAddedMessage(button)
 
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-        const icon = document.getElementById('show-search');
-        const container = document.getElementById('search-form-container');
-        const input = document.getElementById('search-input');
-
-        icon.addEventListener('click', function (e) {
-            e.preventDefault();
-            container.style.display = 'block';
-            input.focus();
-        });
-    });
-
-let liveResults = document.getElementById('live-results');
-let searchArea = document.getElementById('zoekbalk');
-
-document.addEventListener('click', function(event) 
-{
-    // Checks if the user has clicked outside the search area
-    if (!searchArea.contains(event.target)) 
-    {
-     // Hide live results
-        liveResults.style.display = 'none';
-    }
-});
-
 function showDeleteAccountDialogOrErrors() 
 {
 
@@ -86,3 +61,4 @@ function onEnterDeleteAccountForm(event)
         showDeleteAccountDialogOrErrors();
     }
 }
+
