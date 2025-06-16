@@ -19,7 +19,7 @@
             <input type="text" id="phone-number-update" name="phone-number-update" value="{{old('phone-number-update', $user->phone)}}">
         </div>
     </div>
-    <div>
-        <button>Save</button>
+    <div class="update-user-data-button-container">
+        <button type="submit" class="update-user-data-button" >Save</button>
     </div>
 </form>

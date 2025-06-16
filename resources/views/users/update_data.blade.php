@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-<div class="update-personal-data-header">
+<div class="update-user-data-header">
     <div class="go-back-link-container">
         <a href="{{route('users.personaldata')}}" class="go-back-link"><i class="fa-solid fa-left-long"></i>Go Back</a>
     </div>

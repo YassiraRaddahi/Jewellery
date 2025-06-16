@@ -48,6 +48,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/users/accountpage', [UsersController::class, 'accountPage'])->middleware('auth')->name('users.accountpage');
 Route::get('/users/personal-data', [UsersController::class, 'showPersonalData'])->middleware('auth')->name('users.personaldata');
 Route::get('/users/update/{sortData}', [UsersController::class, 'updateDataForm'])->middleware('auth')->name('users.updateDataForm');
+Route::patch('users/update/{sortData}', [UsersController::class, 'updateData'])->middleware('auth')->name('users.updateData');
 Route::get('/users/delete-account', [UsersController::class, 'deleteAccountForm'])->middleware('auth')->name('users.deleteAccountForm');
 Route::delete('/users/delete-account', [UsersController::class, 'deleteAccount'])->middleware('auth')->name('users.deleteAccount');
 

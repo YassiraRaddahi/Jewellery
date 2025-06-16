@@ -78,6 +78,10 @@ class UsersController extends Controller
         ]);
     }
 
+    public function updateData(Request $request)
+    {
+
+    }
 
     public function deleteAccountForm()
     {

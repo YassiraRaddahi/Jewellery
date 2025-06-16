@@ -1429,7 +1429,7 @@ width: 30vw;
 
 }
 
-.update-personal-data-header
+.update-user-data-header
 {
     position: relative;
     display: flex;
@@ -1438,7 +1438,7 @@ width: 30vw;
     padding: 27px 0px;
 }
 
-.update-personal-data-header h1
+.update-user-data-header h1
 {
     position: absolute;
     left: 50%;
@@ -1450,13 +1450,11 @@ width: 30vw;
     border: 3px solid #000000;
     border-radius: 20px;
     background-color: #fefcf3;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90vw;
+    min-width: 300px;
     max-width: 600px;
-    height: 35vh;
-    /* min-height: 150px;
-    max-height: 250px; */
 }
 
 .update-user-data-form
@@ -1466,6 +1464,23 @@ width: 30vw;
     gap: 30px;
 }
 
+.update-user-data-form label
+{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.update-user-data-form input
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    border: #000000 solid 2px;
+    width: 60%;
+    height: 40px;
+}
+
 .update-user-data-label-input-container
 {
     display: flex;
@@ -1473,3 +1488,64 @@ width: 30vw;
     gap: 15px;
 }
 
+.update-user-data-label-input-container div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.update-user-data-button-container
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.update-user-data-button
+{
+    background-color: #f9e9c7;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-align: center;
+    min-width: 125px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.update-user-data-button:hover
+{
+    background-color: #e8d9bb;
+}
+
+@media screen and (max-width: 600px)
+{
+    .update-user-data-label-input-container div
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .update-user-data-form input
+    {
+        width: 100%;
+    }
+
+
+    .update-user-data-header
+    {
+        position: unset;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .update-user-data-header h1
+    {
+        position: unset;
+        left: unset;
+        transform: unset;
+    }
+}
