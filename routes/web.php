@@ -54,4 +54,5 @@ Route::get('/search/products', [SearchController::class, 'show'])->name('search.
 Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name('search.name.categories.name');
 
 // Orders
-Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->name('orders.orderPlacedMessage');
+Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->middleware('auth')->name('orders.orderPlacedMessage');
+Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->middleware('auth')->name('orders.order_details');
