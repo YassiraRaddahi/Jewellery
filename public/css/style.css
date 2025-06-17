@@ -1285,7 +1285,6 @@ width: 30vw;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    gap: 20px;
 }
 
 .order-details-user-info-divs-container
@@ -1327,17 +1326,6 @@ width: 30vw;
     width: 100%;
 }
 
-#order-details-update-button
-{
-    background-color: #f2efe3;
-    border-radius: 20px;
-    width: 150px;
-    padding: 10px;
-    border: #c39f86 solid 2px;
-    cursor: pointer;
-    font-size: clamp(14px, 3vw, 18px);
-}
-
 .order-details-pay
 {
     display: flex;
@@ -1369,7 +1357,7 @@ width: 30vw;
 }
 
 
-#order-details-order-button
+#order-details-update-button, #order-details-order-button
 {
     margin: 20px;
     background-color: #f2efe3;
@@ -1385,6 +1373,13 @@ width: 30vw;
 {
     background-color: #c39f86;
     color: #FFFFFF;
+}
+
+#order-details-update-button
+{
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
 }
 
 .order-details-pay-message-container

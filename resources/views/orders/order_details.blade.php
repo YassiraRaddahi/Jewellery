@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="order-details-user-info-button-container">
-                <button id="order-details-update-button">Update</button>
+                <a href="#" id="order-details-update-button">Update</a>
             </div>
         </div>
 
