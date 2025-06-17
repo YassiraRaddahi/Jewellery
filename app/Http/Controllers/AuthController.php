@@ -41,7 +41,7 @@ class AuthController extends Controller
 
         // Redirects back with an error message and repopulates the email input
         return back()->withErrors([
-            'general' => 'The email address or password does not match our records',
+            'general' => 'The email address or password does not match our records.',
         ])->onlyInput('email');
 
     }
@@ -98,7 +98,7 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         // Redirects to the account page
-        return redirect()->route('users.accountpage');
+        return redirect()->route('users.accountpage')->with('success-account-creation', 'Your account has been created successfully!');
     }
 
     public function logout(Request $request)

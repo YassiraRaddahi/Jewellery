@@ -8,7 +8,17 @@
     <script src="https://kit.fontawesome.com/5c3b708ee0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    @if(session('success-account-creation'))
+        <div class="alert-success">
+            {{ session('success-account-creation') }}
+        </div>
+    @endif
+    @if(session('success-account-deletion'))
+        <div class="alert-success">
+            {{ session('success-account-deletion') }}
+        </div>
+    @endif
+
     <header>
        <div id="logo-container">
         <a href="{{route('home')}}">
@@ -25,7 +35,7 @@
     
         <div class="icon-buttons">
             <ul>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a></li>
+                  <li><a href="{{route('search', ['from' => 'searchicon']) }}"><i class="fa-solid fa-magnifying-glass fa-lg" ></i></a></li>
                 <li>
                     <a class="cart-link" href="{{ route('cart.show')}}">
                         <i class="fa-solid fa-cart-shopping fa-lg"></i>
