@@ -18,11 +18,6 @@ h1
     text-align: center;
 }
 
-p
-{
-    font-size: 1.2em;
-}
-
 header 
 {
     background-color:#f2efe3; 
@@ -1269,148 +1264,190 @@ width: 30vw;
     
 }
 
-
-
 .order-details-container
 {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 65vw;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
 }
-.order-details-user-info-container{
+
+.order-details-user-info-container
+{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 90vw;
-    max-width: 500px;
-    background-color:#eee3cb ;
+    width: 53%;
+    min-width: 500px;
+    background-color:#eee3cb;
     border: #fefcf3 solid 2px;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   
+    gap: 20px;
 }
-.order-details-pay{
+
+.order-details-user-info-divs-container
+{
     display: flex;
     flex-direction: column;
-    align-items: center;
-   width: 20vw;
-    height:30vh;
-    background-color: #eee3cb;
-    border: #fefcf3 solid 2px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    
-    
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.order-details-user-info-container p, label{
-    font-size: clamp(14px, 2vw, 18px);
-    margin: 5px 0;
 
+.order-formulier
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.order-details-user-info-container p{
+
+.order-formulier p, .order-formulier span
+{
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 0 0 10px 0;
+}
+
+.order-formulier p
+{
     word-break: break-word;
     text-align: center;
     background-color: #f9e9c7;
-    border: #000000 solid 1px;
-    border-radius: 10px;
+    border: #000000 solid 2px;
+    border-radius: 20px;
     padding: 10px;
-    min-width: 20vw;
-    min-height: 5vh;
+    width: 65%;
+    min-width: 260px;
+    min-height: 45px;
 }
-.order-details-total{
+
+.order-details-user-info-button-container
+{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#order-details-update-button
+{
+    background-color: #f2efe3;
+    border-radius: 20px;
+    width: 150px;
+    padding: 10px;
+    border: #c39f86 solid 2px;
+    cursor: pointer;
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+.order-details-pay
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee3cb;
+    border: #fefcf3 solid 2px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-pay p
+{
+    margin: 10px;
+}
+
+.order-details-overview-container
+{
+    width: 35%;
+    min-width: 350px;
+}
+
+.order-details-total
+{
     background-color: #c39f86;
     width: 100%;
-text-align: center;
+    text-align: center;
+    margin-top: 20px;
 }
-#order-details-pay-button{
-    margin: 10px;
-    background-color: #f2efe3;
-    border-radius: 20px;
-    width: 100px;
-    height: 50px;   
-    border: #c39f86 solid 2px;
-    cursor: pointer;
-    
-    font-size: clamp(14px, 2vw, 18px);
-    
-}
-#order-details-update-button{
-    margin: 10px;
-    background-color: #f2efe3;
-    border-radius: 20px;
-    width: 50%;
-    height: 40px;
-    border: #c39f86 solid 2px;
-    cursor: pointer;
-    font-size: clamp(14px, 2vw, 18px);
-}
-.order-formulier{
-    /* max-height: 30vh;
-    overflow-y: auto;
-    max-width: 60vw; */
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
 
+
+#order-details-order-button
+{
+    margin: 20px;
+    background-color: #f2efe3;
+    border-radius: 20px;
+    width: 150px;
+    padding: 10px;  
+    border: #c39f86 solid 2px;
+    cursor: pointer;
+    font-size: clamp(14px, 3vw, 18px);
 }
-@media screen and (max-width: 768px)
+
+#order-details-update-button:hover, #order-details-order-button:hover
+{
+    background-color: #c39f86;
+    color: #FFFFFF;
+}
+
+.order-details-pay-message-container
+{
+    text-align: center;
+}
+
+.discount
+{
+    color: red;
+}
+
+@media screen and (max-width: 1360px)
 {
     .order-details-container
     {
         flex-direction: column;
-        flex-wrap: wrap;
         align-items: center;
-    }
-    
-    .order-details-user-info-container
-    {
-        width: 100%;
-    
-    }
-    .order-details-pay
-    {
-        width: 100%;
-        
-    }
-    .order-details-user-info-container p, label
-    {
-        font-size: clamp(12px, 2vw, 16px);
+        gap: 50px;
+        width: unset;
     }
 
-    
-    .title_order_details
+    .order-details-user-info-container
     {
-        width: 200px;
-        height:60px;
-        display: flex;
+        width: unset;
+    }
+ 
+    .order-details-overview-container
+    {
+        min-width: 300px;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 625px)
+{
+    .order-details-container
+    {
+        width: 90vw;
+    }
+
+     .order-details-user-info-container
+    {
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .order-formulier
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-formulier p
+    {
+        min-width: 100%;
+    }
+
+    .order-details-user-info-button-container
+    {
         justify-content: center;
-        padding-left: 10px;
     }
-    .order-formulier{
-    max-height: 30vh;
-    overflow-y: auto;
-    width: 50vw;
     
-    }
-}
-.title_order_details{
-    font-size: clamp(22px, 4vw, 2.5em);
-    font-family: 'italic';
-    margin-left: 20px;
-    padding: 0px;
-    margin: 0px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    width: 20vw;
-    height:60px;
-    padding: 7px;
-    background-color: #d9c8a4;
-}
-.order-details-pay p{
-    margin: 3px;
 }
 
