@@ -1439,7 +1439,190 @@ object-fit: cover;
     
 }
 
-#live-results {
+.order-details-container
+{
+    display: flex;
+    flex-direction: row;
+    width: 65vw;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.order-details-user-info-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    min-width: 500px;
+    background-color:#eee3cb;
+    border: #fefcf3 solid 2px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-user-info-divs-container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-formulier
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-formulier p, .order-formulier span
+{
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 0 0 10px 0;
+}
+
+.order-formulier p
+{
+    word-break: break-word;
+    text-align: center;
+    background-color: #f9e9c7;
+    border: #000000 solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 65%;
+    min-width: 260px;
+    min-height: 45px;
+}
+
+.order-details-user-info-button-container
+{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.order-details-pay
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee3cb;
+    border: #fefcf3 solid 2px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-pay p
+{
+    margin: 10px;
+}
+
+.order-details-overview-container
+{
+    width: 35%;
+    min-width: 350px;
+}
+
+.order-details-total
+{
+    background-color: #c39f86;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#order-details-update-button, #order-details-order-button
+{
+    margin: 20px;
+    background-color: #f2efe3;
+    border-radius: 20px;
+    width: 150px;
+    padding: 10px;  
+    border: #c39f86 solid 2px;
+    cursor: pointer;
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+#order-details-update-button:hover, #order-details-order-button:hover
+{
+    background-color: #c39f86;
+    color: #FFFFFF;
+}
+
+#order-details-update-button
+{
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.order-details-pay-message-container
+{
+    text-align: center;
+}
+
+.discount
+{
+    color: red;
+}
+
+@media screen and (max-width: 1360px)
+{
+    .order-details-container
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        width: unset;
+    }
+
+    .order-details-user-info-container
+    {
+        width: unset;
+    }
+ 
+    .order-details-overview-container
+    {
+        min-width: 300px;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 625px)
+{
+    .order-details-container
+    {
+        width: 90vw;
+    }
+
+     .order-details-user-info-container
+    {
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .order-formulier
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-formulier p
+    {
+        min-width: 100%;
+    }
+
+    .order-details-user-info-button-container
+    {
+        justify-content: center;
+    }
+    
+}
+
+#live-results 
+{
      position: absolute; 
     top: 40px;
     left: 0;
@@ -1455,10 +1638,10 @@ object-fit: cover;
     max-height: 150px;
     overflow-y: auto;
     padding-bottom: 10px;
-    
-
 }
-#live-results a {
+
+#live-results a 
+{
     display: flex;
     color: #000000;
     align-items: center;
@@ -1466,34 +1649,41 @@ object-fit: cover;
     padding: 0;
     margin: 0;
     text-decoration: none;
-    
 }
-#live-results ul {
+
+#live-results ul 
+{
     list-style: none;
     padding-left: 0%;
     margin: 0;
 }
-#live-results li {
+
+#live-results li 
+{
     color: #000000;
     background: none;
-     border-bottom: 1px solid #c39f86; 
+    border-bottom: 1px solid #c39f86; 
     padding: 10px 0;
 }
-#live-results li:last-child {
+
+#live-results li:last-child 
+{
     border-bottom: none; 
 }
-#live-results li::before {
+
+#live-results li::before 
+{
     content: none;
     display: none;
 }
-#live-results a:hover {
-    
-    color: #93745e;
 
+#live-results a:hover 
+{
+    color: #93745e;
 }
 
-
-#live-results .preview-icon {
+#live-results .preview-icon 
+{
     position: relative;
     display: flex;
     align-items: center;
@@ -1508,10 +1698,10 @@ object-fit: cover;
     transition-property: opacity, transform;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateY(-15px); 
-    
 } 
 
-#live-results li:hover .preview-icon {
+#live-results li:hover .preview-icon 
+{
     opacity: 1;
     transform: translateY(0);
 }
