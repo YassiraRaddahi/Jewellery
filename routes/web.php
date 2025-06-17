@@ -55,4 +55,4 @@ Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
 
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->middleware('auth')->name('orders.orderPlacedMessage');
-Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->middleware('auth')->name('orders.order_details');
+Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->middleware('auth')->name('orders.orderdetails');
