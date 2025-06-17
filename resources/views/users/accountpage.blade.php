@@ -21,7 +21,7 @@
                 <p class="accountpage-navigation-p">Personal Data</p>
             </div>
         </a>
-        <a href="#">
+        <a href="{{route('users.deleteAccountForm')}}">
             <div class="accountpage-link-container">
                 <img id="delete-account-icon"src="{{ asset('images/icons/delete-account.png') }}" alt="Delete Account Icon">
                 <p class="accountpage-navigation-p">Delete Account</p>
