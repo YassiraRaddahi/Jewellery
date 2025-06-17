@@ -80,7 +80,12 @@ class UsersController extends Controller
 
     public function updateData(Request $request)
     {
-
+        $credentials = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,' . Auth::id()],
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+            // Add other fields as necessary
+        ]);
     }
 
     public function deleteAccountForm()
