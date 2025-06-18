@@ -75,7 +75,7 @@ class AuthController extends Controller
             // Creates a new user
             $user = User::create([
                 'first_name' => $data['first_name'],
-                'infix' => $data['infix'] ?? null,
+                'infix' => $data['infix'],
                 'last_name' => $data['last_name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
@@ -98,7 +98,7 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         // Redirects to the account page
-        return redirect()->route('users.accountpage')->with('success-account-creation', 'Your account has been created successfully!');
+        return redirect()->route('users.accountpage')->with('success', 'Your account has been created successfully!');
     }
 
     public function logout(Request $request)

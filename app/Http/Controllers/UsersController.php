@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 use App\Models\User;
+
 
 class UsersController extends Controller
 {
@@ -80,12 +82,59 @@ class UsersController extends Controller
 
     public function updateData(Request $request)
     {
-        $credentials = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users,email,' . Auth::id()],
-            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
-            // Add other fields as necessary
+        $dataToUpdate = $request->validate([
+            'first-name-update' => ['required', 'string', 'max:255'],
+            'infix-update' => ['nullable', 'string', 'max:255'],
+            'last-name-update' => ['required', 'string', 'max:255'],
+            'phone-number-update' => ['nullable', 'string', 'regex:/^\+?[1-9][0-9]{6,14}$/' ],
+        ],
+[
+            'phone-number-update.regex' => 'Please enter a valid phone number of 7 to 15 digits with no spaces or special characters. It may start with "+" followed by a digit other than 0.' 
         ]);
+
+        try
+        {
+
+            $user = Auth::user();
+            $user->fill([
+                'first_name' => $dataToUpdate['first-name-update'],
+                'infix' => $dataToUpdate['infix-update'] ?? null,
+                'last_name' => $dataToUpdate['last-name-update'],
+                'phone' => $dataToUpdate['phone-number-update'] ?? null
+            ]);
+
+            // Checks if any data has changed
+            if($user->isDirty())
+            {
+                $user->save();
+                return redirect()->route('users.personaldata')->with('success', 'Your personal information has been updated successfully.');
+            }
+        } 
+        catch (\Exception $e) {
+
+            // Redirects back with an error message if user creation fails
+            return back()->withErrors([
+                'general' => 'An error occurred while updating your personal information. Please try again.',
+            ])->withInput();
+
+        }
+
+        return redirect()->route('users.personaldata');
+
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'email', 'max:255', 'unique:users,email,' . Auth::id()],
+        //     'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+        //     // Add other fields as necessary
+        // ]); 
+    
+        // $data = $request->validate([
+        //         'first_name' => ['required', 'string', 'max:255'],
+        //         'infix' => ['nullable', 'string', 'max:255'],
+        //         'last_name' => ['required', 'string', 'max:255'],
+        //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+        //         'password' => ['required', 'string', 'min:8', 'confirmed'],         
+        //     ]);
+
     }
 
     public function deleteAccountForm()
@@ -93,35 +142,35 @@ class UsersController extends Controller
         return view('users.delete_account');
     }
 
-     public function deleteAccount(Request $request)
-     {
-            // Validate the request
-            $credentials = $request->validate([
-                'email' => ['required', 'email', 'exists:users,email'],
-                'password' => ['required', 'string'],
-            ]);
+    public function deleteAccount(Request $request)
+    {
+        // Validate the request
+        $credentials = $request->validate([
+            'email' => ['required', 'email', 'exists:users,email'],
+            'password' => ['required', 'string'],
+        ]);
+
+        // Getting the authenticated user
+        $user = Auth::user();
+
+        // Check if the provided credentials match the authenticated user
+        if($user->email !== $credentials['email'] || !Hash::check($credentials['password'], $user->password)) {
+            return redirect()->back()->withErrors(['general' => 'The provided credentials do not match your account.'])->withInput();
+        }
+        // Delete the user account
+        $user = User::find($user->id);
+        $user->delete();
         
-            // Getting the authenticated user
-            $user = Auth::user();
+        Auth::logout();
 
-            // Check if the provided credentials match the authenticated user
-            if($user->email !== $credentials['email'] || !Hash::check($credentials['password'], $user->password)) {
-                return redirect()->back()->withErrors(['general' => 'The provided credentials do not match your account.'])->withInput();
-            }
-            // Delete the user account
-            $user = User::find($user->id);
-            $user->delete();
-            
-            Auth::logout();
+        session()->invalidate();
 
-            session()->invalidate();
+        // Regenerate the CSRF token
+        session()->regenerateToken();
 
-            // Regenerate the CSRF token
-            session()->regenerateToken();
-
-            // Redirect to home with a success message
-            return redirect()->route('home')->with('success-account-deletion', 'Your account has been deleted successfully.');
-     }
+        // Redirect to home with a success message
+        return redirect()->route('home')->with('success', 'Your account has been deleted successfully.');
+    }
 
     /**
      * Display the specified resource.

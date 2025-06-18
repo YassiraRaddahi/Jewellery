@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'phone' => fake()->optional()->phoneNumber(),
+            'phone' => fake()->optional()->regexify('\+?[1-9]{1}[0-9]{6,14}'),
             'address' => fake()->optional()->streetAddress(),
             'zipcode' => fake()->optional()->postcode(),
             'city' => fake()->optional()->city(),
