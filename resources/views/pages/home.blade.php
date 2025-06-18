@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="homepage_banner">
-    <div>
+    <div id="zoekbalk-slogan">
         <div id="zoekbalk">
             <form action="{{ route('search') }}" method="GET" id="search-form"> 
                 <input 

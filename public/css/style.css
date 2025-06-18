@@ -868,6 +868,8 @@ object-fit: cover;
   
 }
 
+
+
 #zoekbalk {
   display: flex;
   position: relative;
@@ -877,18 +879,16 @@ object-fit: cover;
 
 
 
-
-
-
 #sierlijke_lifestyle {
   height: 40vh;
-  width: 30vw;
+  width: 50vh;
 }
 
 #sierlijke_lifestyle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
 
 .general-accountpage-container
@@ -1003,7 +1003,7 @@ object-fit: cover;
     border-radius: 5px;
     background-color: #f2efe3;
     height: 5vh;
-    width: 29vw;
+    width: 30vw;
     border: #c39f86 solid 2px;
 }
 
@@ -1035,6 +1035,38 @@ object-fit: cover;
     left: 15%;
     z-index: 2; */
 
+}
+@media (max-width: 968px) {
+  .homepage_banner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+    #sierlijke_lifestyle {
+        width: 100%;
+        height: 40vh;
+        max-width: 500px;
+    }
+    #sierlijke_lifestyle img {
+        
+        object-fit: cover;
+        
+    }
+    #zoekbalk-slogan  {
+        width: 100%;
+    } 
+
+    #search-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    #search-form [name="search"] {
+        width: 80%;
+        
+    }
 }
 
 
