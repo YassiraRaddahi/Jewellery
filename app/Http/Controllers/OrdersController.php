@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -10,6 +11,13 @@ class OrdersController extends Controller
     public function orderPlacedMessage()
     {
         return view('orders.order_placed');
+    }
+
+    public function OrderDetailsUpdate()
+    {
+        $user = Auth::user();
+
+        return view('orders.order_details_update', compact('user'));
     }
 
     /**
