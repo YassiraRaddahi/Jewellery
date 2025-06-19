@@ -68,7 +68,7 @@ class AuthController extends Controller
             'infix' => ['nullable', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],         
+            'password' => ['required', 'string', 'min:8', 'confirmed']         
         ]);
 
         try{
@@ -79,7 +79,7 @@ class AuthController extends Controller
                 'infix' => $data['infix'] !== null ? strtolower($data['infix']) : null,
                 'last_name' => ucwords($data['last_name']),
                 'email' => strtolower($data['email']),
-                'password' => Hash::make($data['password']),
+                'password' => Hash::make($data['password'])
             ]);
 
         } 
