@@ -1496,6 +1496,11 @@ width: 30vw;
     align-items: center;
 }
 
+.update-user-data-label-input-container p
+{
+    text-align: right;
+}
+
 .update-user-data-button-container
 {
     display: flex;
@@ -1529,6 +1534,11 @@ width: 30vw;
         align-items: flex-start;
     }
 
+    .update-user-data-label-input-container p
+    {
+        text-align: left;
+    }
+
     .update-user-data-form input
     {
         width: 100%;
@@ -1548,4 +1558,5 @@ width: 30vw;
         left: unset;
         transform: unset;
     }
+
 }

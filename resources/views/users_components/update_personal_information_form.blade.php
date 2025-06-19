@@ -1,34 +1,34 @@
-<form class="update-user-data-form" action="{{route('users.updateData', ['sortData' => 'personal-information'])}}" method="POST">
+<form class="update-user-data-form" action="{{route('users.updatePersonalInformation')}}" method="POST">
     @csrf
     @method('Patch')
     <div class="update-user-data-label-input-container">
         <div>
-            <label for="first-name-update">First Name</label>
-            <input type="text" id="first-name-update" name="first-name-update" value="{{old('first-name-update', $user->first_name)}}" required>
-            @if($errors->has('first-name-update'))
-                <p class="error-message">{{ $errors->first('first-name-update') }}</p>
-            @endif
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" value="{{old('first-name', $user->first_name)}}" required>
         </div>
-        <div>
-            <label for="infix-update">Infix</label>
-            <input type="text" id="infix-update" name="infix-update" value="{{old('infix-update', $user->infix)}}">
-            @if($errors->has('infix-update'))
-                <p class="error-message">{{ $errors->first('infix-update') }}</p>
-            @endif
-        </div>
-        <div>
-            <label for="last-name-update">Last Name</label>
-            <input type="text" id="last-name-update" name="last-name-update" value="{{old('last-name-update', $user->last_name)}}" required>
-        </div>
-            @if($errors->has('last-name-update'))
-                <p class="error-message">{{ $errors->first('last-name-update') }}</p>
+        @if($errors->has('first-name'))
+                <p class="error-message">{{ $errors->first('first-name') }}</p>
             @endif
         <div>
-            <label for="phone-number-update">Phone Number</label>
-            <input type="tel" id="phone-number-update" name="phone-number-update" placeholder="e.g. +31623456789" value="{{old('phone-number-update', $user->phone)}}">
+            <label for="infix">Infix</label>
+            <input type="text" id="infix" name="infix" value="{{old('infix', $user->infix)}}">
         </div>
-            @if($errors->has('phone-number-update'))
-                <p class="error-message">{{ $errors->first('phone-number-update') }}</p>
+        @if($errors->has('infix'))
+                <p class="error-message">{{ $errors->first('infix') }}</p>
+            @endif
+        <div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" value="{{old('last-name', $user->last_name)}}" required>
+        </div>
+            @if($errors->has('last-name'))
+                <p class="error-message">{{ $errors->first('last-name') }}</p>
+            @endif
+        <div>
+            <label for="phone-number">Phone Number</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="e.g. +31623456789" value="{{old('phone-number', $user->phone)}}">
+        </div>
+            @if($errors->has('phone-number'))
+                <p class="error-message">{{ $errors->first('phone-number') }}</p>
             @endif
 
             @if($errors->has('general'))

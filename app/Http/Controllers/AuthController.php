@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use League\CommonMark\Reference\Reference;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -28,6 +27,8 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
+
+        $credentials['email'] = strtolower($credentials['email']);
 
         // Tries to log in the user
         if(Auth::attempt($credentials)) {
@@ -74,10 +75,10 @@ class AuthController extends Controller
 
             // Creates a new user
             $user = User::create([
-                'first_name' => $data['first_name'],
-                'infix' => $data['infix'],
-                'last_name' => $data['last_name'],
-                'email' => $data['email'],
+                'first_name' => ucwords($data['first_name']),
+                'infix' => $data['infix'] !== null ? strtolower($data['infix']) : null,
+                'last_name' => ucwords($data['last_name']),
+                'email' => strtolower($data['email']),
                 'password' => Hash::make($data['password']),
             ]);
 

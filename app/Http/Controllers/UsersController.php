@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -80,16 +79,16 @@ class UsersController extends Controller
         ]);
     }
 
-    public function updateData(Request $request)
+    public function updatePersonalInformation(Request $request)
     {
         $dataToUpdate = $request->validate([
-            'first-name-update' => ['required', 'string', 'max:255'],
-            'infix-update' => ['nullable', 'string', 'max:255'],
-            'last-name-update' => ['required', 'string', 'max:255'],
-            'phone-number-update' => ['nullable', 'string', 'regex:/^\+?[1-9][0-9]{6,14}$/' ],
+            'first-name' => ['required', 'string', 'max:255'],
+            'infix' => ['nullable', 'string', 'max:255'],
+            'last-name' => ['required', 'string', 'max:255'],
+            'phone-number' => ['nullable', 'string', 'regex:/^\+?[1-9][0-9]{6,14}$/' ],
         ],
 [
-            'phone-number-update.regex' => 'Please enter a valid phone number of 7 to 15 digits with no spaces or special characters. It may start with "+" followed by a digit other than 0.' 
+            'phone-number.regex' => 'Please enter a valid phone number of 7 to 15 digits with no spaces or special characters. It may start with "+" followed by a digit other than 0.' 
         ]);
 
         try
@@ -97,22 +96,23 @@ class UsersController extends Controller
 
             $user = Auth::user();
             $user->fill([
-                'first_name' => $dataToUpdate['first-name-update'],
-                'infix' => $dataToUpdate['infix-update'] ?? null,
-                'last_name' => $dataToUpdate['last-name-update'],
-                'phone' => $dataToUpdate['phone-number-update'] ?? null
+                'first_name' => ucwords($dataToUpdate['first-name']),
+                'infix' => $dataToUpdate['infix'] !== null ? strtolower($dataToUpdate['infix']) : null,
+                'last_name' => ucwords($dataToUpdate['last-name']),
+                'phone' => $dataToUpdate['phone-number'] ?? null,
             ]);
 
-            // Checks if any data has changed
+            // Checks whether any data has changed
             if($user->isDirty())
             {
                 $user->save();
                 return redirect()->route('users.personaldata')->with('success', 'Your personal information has been updated successfully.');
             }
         } 
-        catch (\Exception $e) {
+        catch (\Exception $e) 
+        {
 
-            // Redirects back with an error message if user creation fails
+            // Redirects back with an error message if update fails
             return back()->withErrors([
                 'general' => 'An error occurred while updating your personal information. Please try again.',
             ])->withInput();
@@ -121,20 +121,41 @@ class UsersController extends Controller
 
         return redirect()->route('users.personaldata');
 
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'email', 'max:255', 'unique:users,email,' . Auth::id()],
-        //     'password' => ['nullable', 'string', 'min:8', 'confirmed'],
-        //     // Add other fields as necessary
-        // ]); 
-    
-        // $data = $request->validate([
-        //         'first_name' => ['required', 'string', 'max:255'],
-        //         'infix' => ['nullable', 'string', 'max:255'],
-        //         'last_name' => ['required', 'string', 'max:255'],
-        //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-        //         'password' => ['required', 'string', 'min:8', 'confirmed'],         
-        //     ]);
+    }
 
+    public function updateLoginInformation(Request $request)
+    {
+        $dataToUpdate = $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . Auth::id()],
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+        ]); 
+
+        try
+        {
+            $user = Auth::user();
+            $user->email = strtolower($dataToUpdate['email']);
+
+            if(!empty($dataToUpdate['password']))
+            {
+                 $user->password = Hash::make($dataToUpdate['password']);
+            }
+
+            // Checks whether any data has changed
+            if($user->isDirty())
+            {
+                $user->save();
+                return redirect()->route('users.personaldata')->with('success', 'Your login information has been updated successfully.');
+            }
+        }
+        catch(\Exception $e)
+        {
+            return back()->withErrors([
+                'general' => 'An error occurred while updating your personal information. Please try again.'
+                ])->withInput();
+        }
+
+        return redirect()->route('users.personaldata');
+    
     }
 
     public function deleteAccountForm()
@@ -154,7 +175,7 @@ class UsersController extends Controller
         $user = Auth::user();
 
         // Check if the provided credentials match the authenticated user
-        if($user->email !== $credentials['email'] || !Hash::check($credentials['password'], $user->password)) {
+        if($user->email !== strtolower($credentials['email']) || !Hash::check($credentials['password'], $user->password)) {
             return redirect()->back()->withErrors(['general' => 'The provided credentials do not match your account.'])->withInput();
         }
         // Delete the user account
