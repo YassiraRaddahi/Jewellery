@@ -46,7 +46,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Users
 Route::get('/users/accountpage', [UsersController::class, 'accountPage'])->middleware('auth')->name('users.accountpage');
-Route::get('/users/personaldata', [UsersController::class, 'showPersonalData'])->middleware('auth')->name('users.personaldata');
+Route::get('/users/personal-data', [UsersController::class, 'showPersonalData'])->middleware('auth')->name('users.personaldata');
+Route::get('/users/update/{sortData}', [UsersController::class, 'updateDataForm'])->middleware('auth')->name('users.updateDataForm');
+Route::patch('users/update/personal-information', [UsersController::class, 'updatePersonalInformation'])->middleware('auth')->name('users.updatePersonalInformation');
+Route::patch('users/update/login-information', [UsersController::class, 'updateLoginInformation'])->middleware('auth')->name('users.updateLoginInformation');
+Route::patch('users/update/address-details', [UsersController::class, 'updateAddressDetails'])->middleware('auth')->name('users.updateAddressDetails');
 Route::get('/users/delete-account', [UsersController::class, 'deleteAccountForm'])->middleware('auth')->name('users.deleteAccountForm');
 Route::delete('/users/delete-account', [UsersController::class, 'deleteAccount'])->middleware('auth')->name('users.deleteAccount');
 

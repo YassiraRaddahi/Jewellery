@@ -1,6 +1,6 @@
 @extends('layout.master_layout')
 
-@section('title', 'accountpage')
+@section('title', 'Accountpage')
 
 @section('content')
 <div class="general-accountpage-container">
