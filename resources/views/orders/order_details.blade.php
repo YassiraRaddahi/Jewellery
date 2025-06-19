@@ -14,11 +14,11 @@
                         {{ $user->first_name . " " . ($user->infix ? $order->user->infix . " " : "") . $user->last_name }}</p>
                 </div>
                 <div class="order-formulier">
-                    <span>Email:</span>
+                    <span>Email Address:</span>
                     <p id="order-details-email">{{ $user->email }}</p>
                 </div>
                 <div class="order-formulier">
-                    <span>Phone number:</span>
+                    <span>Phone Number:</span>
                     <p id="order-details-phone">{{ $user->phone }}</p>
                 </div>
                 <div class="order-formulier">
@@ -57,7 +57,7 @@
 
             <div class="order-details-pay-message-container">
                 <p class="error-message">Fill in all details  to  continue ordering.<br>
-                    Click on update to add details.</p>
+                    Phone number is not required.</p>
             </div>
         </div>
     

@@ -24,6 +24,13 @@ class OrdersController extends Controller
         return view('orders.order_details', [
         'user' => $user]);
     }
+    
+     public function OrderDetailsUpdate()
+    {
+        $user = Auth::user();
+
+        return view('orders.order_details_update', compact('user'));
+    }
 
     /**
      * Display a listing of the resource.
