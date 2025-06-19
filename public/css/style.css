@@ -1546,3 +1546,11 @@ object-fit: cover;
     opacity: 1;
     transform: translateY(0);
 }
+@media header and (max-width: 768px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;  
+        width: 100%;
+      }
+}
