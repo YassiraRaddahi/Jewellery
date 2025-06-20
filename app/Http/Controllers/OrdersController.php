@@ -25,11 +25,16 @@ class OrdersController extends Controller
         'user' => $user]);
     }
     
-     public function OrderDetailsUpdate()
+    public function orderDetailsUpdateForm()
     {
         $user = Auth::user();
 
         return view('orders.order_details_update', compact('user'));
+    }
+
+    public function orderDetailsUpdate(Request $request)
+    {
+        return redirect()->route('orders.orderdetails');
     }
 
     /**

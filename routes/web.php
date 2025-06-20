@@ -60,4 +60,5 @@ Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->middleware('auth')->name('orders.orderPlacedMessage');
 Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->middleware('auth')->name('orders.orderdetails');
-Route::get(  '/orders/order-details-update', [OrdersController::class, 'OrderDetailsUpdate'])->name('orders.orderDetailsUpdate');
+Route::get(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdateForm'])->name('orders.orderDetailsUpdateForm');
+Route::patch(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdate'])->name('orders.orderDetailsUpdate');

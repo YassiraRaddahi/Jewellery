@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="order-details-user-info-button-container">
-                <a href="#" id="order-details-update-button">Update</a>
+                <a href="{{route('orders.orderDetailsUpdateForm')}}" id="order-details-update-button">Update</a>
             </div>
         </div>
 
@@ -56,7 +56,8 @@
             </div>
 
             <div class="order-details-pay-message-container">
-                <p class="error-message">Fill in all details  to  continue ordering.<br>
+                <p class="error-message">
+                    Please fill in all details to continue ordering.<br>
                     Phone number is not required.</p>
             </div>
         </div>

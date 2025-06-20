@@ -6,7 +6,7 @@
     <h1 class="title">Order Details Update</h1>
 
     <div class="order-details-update-container">
-        <form id="order-details-update-form" action="#" method="POST">
+        <form id="order-details-update-form" action="{{route('orders.orderDetailsUpdate')}}" method="POST">
             @csrf
             @method('PATCH')
 
