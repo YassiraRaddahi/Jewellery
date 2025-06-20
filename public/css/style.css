@@ -1463,22 +1463,21 @@ footer span a:hover {
         border-bottom: none;
     }
   .products-container {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0;
+    display: grid;
+    flex-direction: row;
+    
 
     
+    
   }
+  
   #product-home {
-        width: 100%;
+    width: 100%;
     max-width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
   }
    #product-home img  {
-   width: 100%;
-    height: auto;
-    display: block;
+    display: grid;
    }
 }
