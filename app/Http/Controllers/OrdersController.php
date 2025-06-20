@@ -15,9 +15,9 @@ class OrdersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function  orderHistory()
     {
-        //
+        return view('orders.order_history');
     }
 
     /**

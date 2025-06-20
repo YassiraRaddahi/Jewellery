@@ -55,3 +55,4 @@ Route::get('/search/categories/{name}', [SearchController::class, 'show'])->name
 
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->name('orders.orderPlacedMessage');
+Route::get('/orders/history', [OrdersController::class, 'orderHistory'])->name('orders.order_history');
