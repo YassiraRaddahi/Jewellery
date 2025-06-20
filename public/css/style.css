@@ -1457,7 +1457,7 @@ object-fit: cover;
     width: 53%;
     min-width: 500px;
     background-color:#eee3cb;
-    border: #fefcf3 solid 2px;
+    border: 2px solid white;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1487,7 +1487,7 @@ object-fit: cover;
     word-break: break-word;
     text-align: center;
     background-color: #f9e9c7;
-    border: #000000 solid 2px;
+    border: 2px solid black;
     border-radius: 20px;
     padding: 10px;
     width: 65%;
@@ -1508,7 +1508,7 @@ object-fit: cover;
     flex-direction: column;
     align-items: center;
     background-color: #eee3cb;
-    border: #fefcf3 solid 2px;
+    border: 2px solid white;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -1535,7 +1535,6 @@ object-fit: cover;
 
 #order-details-update-button, #order-details-order-button
 {
-    margin: 20px;
     background-color: #f2efe3;
     border-radius: 20px;
     width: 150px;
@@ -1543,6 +1542,11 @@ object-fit: cover;
     border: #c39f86 solid 2px;
     cursor: pointer;
     font-size: clamp(14px, 3vw, 18px);
+}
+
+#order-details-order-button
+{
+     margin: 20px 0 20px 0;
 }
 
 #order-details-update-button:hover, #order-details-order-button:hover
@@ -1556,6 +1560,7 @@ object-fit: cover;
     color: #000000;
     text-decoration: none;
     text-align: center;
+    margin-top: 20px;
 }
 
 .order-details-pay-message-container
@@ -1759,6 +1764,7 @@ object-fit: cover;
     border: #000000 solid 2px;
     width: 60%;
     height: 40px;
+    font-size: 1em;
 }
 
 .update-user-data-label-input-container
@@ -1839,4 +1845,67 @@ object-fit: cover;
         transform: unset;
     }
 
+}
+
+/* Liza */
+
+.order-details-update-container
+{
+    width: 60vw;
+    padding: 20px;
+    background-color: #eee3cb;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    margin-top: 40px;
+}
+
+#order-details-update-form input
+{
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 45px;
+    padding: 10px;
+    font-size: 1em;
+    width: 65%;
+}
+
+.order-details-update-label-input-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#order-details-update-form label,
+#order-details-update-form input
+{
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 0 0 10px 0;
+}
+
+.order-details-update-formulier-footer
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 914px) 
+{
+
+    .order-details-update-container
+    {
+        width: 70vw;
+        min-width: 300px;   
+    }
+
+    .order-details-update-label-input-div
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #order-details-update-form input
+    {
+        width:100%;
+    }
 }
