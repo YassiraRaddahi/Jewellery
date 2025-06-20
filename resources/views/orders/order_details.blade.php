@@ -58,9 +58,9 @@
             <div class="order-details-pay-message-container">
                 <p class="error-message">
                     Please fill in all details to continue ordering.<br>
-                    Phone number is not required.</p>
+                    Phone number is not required.
+                </p>
             </div>
         </div>
-    
     </div>
 @endsection
