@@ -9,9 +9,9 @@
 </head>
 <body>
     @if(session('success'))
-        <div class="alert-success">
-            {{ session('success') }}
-        </div>
+            <div id="alert-success">
+                {{ session('success') }}
+            </div>
     @endif
     <header>
        <div id="logo-container">
