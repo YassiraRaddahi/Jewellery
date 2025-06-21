@@ -1,4 +1,5 @@
-<nav id="products-nav">
+<div id="products-nav-container">
+    <nav id="products-nav">
         <ul>
             <li><a href="{{route('products.sale')}}">Sale</a></li>
             <li><a href="{{route('categories.show', 'rings')}}">Rings</a></li>
@@ -7,4 +8,5 @@
             <li><a href="{{route('categories.show', 'earrings')}}">Earrings</a></li>
             <li><a href="{{route('products.index')}}">Show all</a></li>
         </ul>
-</nav>
+    </nav>
+</div>

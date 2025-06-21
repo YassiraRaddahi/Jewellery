@@ -98,8 +98,13 @@ nav ul li a {
     color: #000000;
 }
 
+#products-nav-container
+{
+    min-width: 100%;
+    padding: 20px;
+}
+
 #products-nav {
-    min-width: 70vw;
     background-color: #c39f86;
     padding: 10px 20px;
     border-radius: 10px;
@@ -860,7 +865,6 @@ footer span a:hover {
     justify-content: stretch;
     padding: 20px;
     flex-wrap: wrap;
-    border: 1px solid black;
     gap: 2%;
 }
 
@@ -869,7 +873,6 @@ footer span a:hover {
     display: grid;
     width: 49%;
     min-height: 100%;
-    border: 1px solid red;
 }
 
 
@@ -885,7 +888,6 @@ footer span a:hover {
 #sierlijke_lifestyle {
     width: 49%;
     aspect-ratio: 3/2;
-    border: 1px solid orange;
 }
 
 #sierlijke_lifestyle img {
