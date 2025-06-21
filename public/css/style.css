@@ -159,7 +159,7 @@ main
     grid-template-columns: repeat(4, 1fr);
 }
 
-@media screen and (max-width: 1076px) {
+@media screen and (max-width: 1102px) {
     .products-container {
         grid-template-columns: repeat(3, 1fr);
 
@@ -218,16 +218,18 @@ main
     margin: 0 20px;
     color:#858080;
 }
-
+ 
 .product-category
 {
-    height: 40vh;
+    width: 20vw;
+    min-width: 250px;
     aspect-ratio: 1/1;
 }
 
 .product-category-container
 {
-    width: 40vh;
+    width: 20vw;
+    min-width: 250px;
 }
 
 .product-category img
