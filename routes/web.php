@@ -60,5 +60,6 @@ Route::get('/search', [SearchController::class, 'liveSearch'])->name('search');
 // Orders
 Route::get('/orders/order-placed', [OrdersController::class, 'orderPlacedMessage'])->middleware('auth')->name('orders.orderPlacedMessage');
 Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->middleware('auth')->name('orders.orderdetails');
-Route::get(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdateForm'])->name('orders.orderDetailsUpdateForm');
-Route::patch(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdate'])->name('orders.orderDetailsUpdate');
+Route::post('/orders/order-details', [OrdersController::class, 'placeOrder'])->middleware('auth')->name('orders.placeOrder');
+Route::get(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdateForm'])->middleware('auth')->name('orders.orderDetailsUpdateForm');
+Route::patch(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdate'])->middleware('auth')->name('orders.orderDetailsUpdate');

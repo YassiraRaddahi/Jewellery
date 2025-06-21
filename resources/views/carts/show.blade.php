@@ -61,7 +61,7 @@
                     <p>Total: €{{ number_format($cart_total_normal_price, 2) }}</p>
                 @endif
 
-                <a href="{{route('orders.orderdetails')}}" id="order-button">Order</a>
+                <a href="{{route(name: 'orders.orderdetails')}}" id="order-button">Order</a>
             </div>
         </div>
     @endif

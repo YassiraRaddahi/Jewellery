@@ -527,11 +527,12 @@ h2
 #order-button:hover
 {
     background-color: #c39f86;
+    color: #FFFFFF;
 }  
 
 .bottom-cart-container
 {
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     justify-content: flex-end;
 }
@@ -1222,13 +1223,24 @@ object-fit: cover;
     color: #000000;
 }
 
-.alert-success
+#alert-success
 {
     background-color: #d4edda;
     color: #155724;
     padding: 10px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: opacity 1s ease;
+    opacity: 1;
+    z-index: 1;
 
+}
+
+.alert-success-faded
+{
+    opacity: 0 !important;
 }
 
 #delete-account-dialog
@@ -1580,7 +1592,7 @@ object-fit: cover;
      margin: 20px 0 20px 0;
 }
 
-#order-details-update-button:hover, #order-details-order-button:hover
+#order-details-update-button:hover
 {
     background-color: #c39f86;
     color: #FFFFFF;

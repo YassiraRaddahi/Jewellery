@@ -46,20 +46,33 @@
         <div class="order-details-overview-container">
             <div class="order-details-pay">
                 <h2>Overview</h2>
-                <p>Product: 4x</p>
-                <p>Subtotal: €85</p>
-                <p>Discount:<span class="discount"> -€3</span></p>
+                <p>Products: {{$total_products_in_cart}}x</p>
+                 @if($cart_has_sale_products)
+                <p>Subtotal: €{{number_format($cart_total_normal_price, 2)}} </p>
+                    <p>Discount:<span class="discount"> -{{number_format($cart_total_normal_price - $cart_total_sale_price, 2)}}</span></p>
+                    
                 <div class="order-details-total">
-                    <p>Total: €82</p>
+                    <p>Total: {{number_format($cart_total_sale_price, 2)}}</p>
                 </div>
-                <button type="submit" id="order-details-order-button">Order</button>
+                @else
+                    <div class="order-details-total">
+                    <p>Total: {{number_format($cart_total_normal_price, 2)}}</p>
+                </div>
+                @endif
+                <form action="{{route('orders.placeOrder')}}" method="POST">
+                    @csrf
+                    <button onmouseenter="onHoverOrderButton()" onmouseleave="onHoverLeaveOrderButton()" type="submit" id="order-details-order-button" {{$requiredDataIsMissing ? 'disabled' : ''}}>Order</button>
+                    <input type="hidden" name="hasOrdered" value="true">
+                </form>
             </div>
 
             <div class="order-details-pay-message-container">
-                <p class="error-message">
-                    Please fill in all details to continue ordering.<br>
-                    Phone number is not required.
-                </p>
+                @if($requiredDataIsMissing)
+                    <p class="error-message">
+                        Please fill in all details to continue ordering.<br>
+                        Phone number is not required.
+                    </p>
+                @endif
             </div>
         </div>
     </div>

@@ -66,7 +66,7 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
 
-       return to_route('products.show',['id' => $productId, 'previous_route' => $previous_route]);
+       return to_route('products.show',['id' => $productId, 'previous_route' => $previous_route])->with('success', 'Product added to cart successfully.');
         
     }
 
@@ -166,7 +166,7 @@ class CartController extends Controller
         }
 
 
-        return back();
+        return back()->with('success', 'Product updated in cart successfully.');
     }
 
     /**
