@@ -1,6 +1,6 @@
 @extends('layout.master_layout')
 
-@section('title', 'account delete')
+@section('title', 'Delete Account')
 
 @section('content')
     

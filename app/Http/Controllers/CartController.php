@@ -66,7 +66,7 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
 
-       return to_route('products.show',['id' => $productId, 'previous_route' => $previous_route]);
+       return to_route('products.show',['id' => $productId, 'previous_route' => $previous_route])->with('success', 'Product added to cart successfully.');
         
     }
 
@@ -115,17 +115,13 @@ class CartController extends Controller
                     if($product->on_sale)
                     {
                         $cart_total_sale_price += $product->price * (1 - $product->discount_factor) * $quantity;
+                        $cart_has_sale_products = true;
                     }
                     else
                     {
                         $cart_total_sale_price += $product->price * $quantity;
                     }
                     
-                }
-
-                if($cart_total_normal_price != $cart_total_sale_price)
-                {
-                    $cart_has_sale_products = true;
                 }
         }
 
@@ -170,7 +166,7 @@ class CartController extends Controller
         }
 
 
-        return back();
+        return back()->with('success', 'Product updated in cart successfully.');
     }
 
     /**

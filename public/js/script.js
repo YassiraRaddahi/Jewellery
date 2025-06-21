@@ -86,3 +86,42 @@ function onEnterDeleteAccountForm(event)
         showDeleteAccountDialogOrErrors();
     }
 }
+
+function onHoverOrderButton()
+{
+    let orderButton = document.getElementById('order-details-order-button');
+    if(orderButton.disabled)
+    {
+        orderButton.style.cursor = 'initial';
+    }
+    else
+    {
+        orderButton.style.backgroundColor = '#c39f86';
+        orderButton.style.color = '#FFFFFF';
+    }
+}
+
+function onHoverLeaveOrderButton()
+{
+    let orderButton = document.getElementById('order-details-order-button');
+
+    if(!orderButton.disabled)
+    {
+        orderButton.style.backgroundColor = '#f2efe3';
+        orderButton.style.color = '#000000';
+    }
+    
+}
+
+document.addEventListener('DOMContentLoaded', function()
+{
+    let succesMessageDiv = document.getElementById('alert-success');
+
+    if(succesMessageDiv)
+    {
+
+        console.log("success message");
+
+        setTimeout(() => {succesMessageDiv.classList.add('alert-success-faded')}, 3000);
+    }
+});

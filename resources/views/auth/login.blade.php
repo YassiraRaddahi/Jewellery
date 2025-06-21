@@ -4,10 +4,10 @@
 
 @section('content')
 
-<div class="login_group">
+<div class="login-group">
 
     <h1>Log in</h1>
-    <form action="{{ route('login') }}" method="POST">
+    <form class="login-form" action="{{ route('login') }}" method="POST">
         @csrf
         <div>
             <label for="email">Email Address:</label><hr>
@@ -31,11 +31,11 @@
                 </p>
                 @endif
         </div>
-        <div id="log-in-button">
+        <div id="log-in-button-container">
             <button type="submit">Log in</button>
         </div>
     </form>
 
-    <p>Don't have an account? <a href="{{ route('registerForm') }}">Register here</a></p>
+    <p class="register-link" >Don't have an account? <a href="{{ route('registerForm') }}">Register here</a></p>
 </div>
 @endsection

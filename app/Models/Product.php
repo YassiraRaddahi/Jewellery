@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function orderline()
+    {
+        return $this->hasMany(OrderLine::class);
+    }
 }

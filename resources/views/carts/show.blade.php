@@ -61,9 +61,7 @@
                     <p>Total: €{{ number_format($cart_total_normal_price, 2) }}</p>
                 @endif
 
-                <form action="#" method="GET">
-                    <button type="submit" name="submitButton" class="order-button">Order</button>
-                </form>
+                <a href="{{route(name: 'orders.orderdetails')}}" id="order-button">Order</a>
             </div>
         </div>
     @endif
