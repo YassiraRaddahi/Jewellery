@@ -52,7 +52,7 @@
 
 @include('layout.nav-products')
 
-<div class="products-container">
+<div class="products-container-home">
     <div class="product-home">
         <a href="{{route('categories.show', 'rings')}}"><img src="{{asset('images/rings/enkel_twisted_met_dubbel_twisted_ring.jpg')}}" alt="Rings"></a>
     </div>
