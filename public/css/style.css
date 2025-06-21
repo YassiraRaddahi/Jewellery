@@ -780,15 +780,26 @@ footer span a:hover
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+ }
+.create_account_container p
+ {
+    text-align: center;
+    
+ }
+ @media (max-width: 1035px) 
+ {
+    .create_account_container
+    {
+        width: 90vw;
+    }
  }
 
 .create-account-form-group
 {
     margin-bottom: 10px;
-    max-width: 300px; 
+    
 }
 
 .create_account_container [type="text"],
