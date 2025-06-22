@@ -191,17 +191,6 @@ class OrdersController extends Controller
 
         return redirect()->route('orders.orderdetails');
     }
-public function orderHistoryShow(){
-    $user = Auth::user();
-    return view('orders.order_history_show');
-}
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
     public function  orderHistoryIndex()
     {
@@ -214,6 +203,24 @@ public function orderHistoryShow(){
         
         return view('orders.order_history_index', 
         compact('orders'));
+    }
+
+    public function orderHistoryShow($orderNumber)
+    {
+        $user = Auth::user();
+
+        $order = Order::with('orderlines')->findorfail($orderNumber);
+
+        return view('orders.order_history_show', 
+        compact('user', 'order'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
     }
 
     /**

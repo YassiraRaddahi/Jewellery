@@ -215,7 +215,7 @@ class UsersController extends Controller
             return redirect()->back()->withErrors(['general' => 'The provided credentials do not match your account.'])->withInput();
         }
         // Delete the user account
-        $user = User::find($user->id);
+        $user = User::findOrFail($user->id);
         $user->delete();
         
         Auth::logout();
