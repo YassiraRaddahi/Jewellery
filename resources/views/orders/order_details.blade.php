@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="order-details-user-info-button-container">
-                <a href="{{route('orders.orderDetailsUpdateForm')}}" id="order-details-update-button">Update</a>
+                <a href="{{route('orders.orderDetailsUpdateForm')}}" id="order-details-edit-button">Edit</a>
             </div>
         </div>
 
@@ -49,14 +49,14 @@
                 <p>Products: {{$total_products_in_cart}}x</p>
                  @if($cart_has_sale_products)
                 <p>Subtotal: €{{number_format($cart_total_normal_price, 2)}} </p>
-                    <p>Discount:<span class="discount"> -{{number_format($cart_total_normal_price - $cart_total_sale_price, 2)}}</span></p>
+                    <p>Discount:<span class="discount"> -€{{number_format($cart_total_normal_price - $cart_total_sale_price, 2)}}</span></p>
                     
                 <div class="order-details-total">
-                    <p>Total: {{number_format($cart_total_sale_price, 2)}}</p>
+                    <p>Total: €{{number_format($cart_total_sale_price, 2)}}</p>
                 </div>
                 @else
                     <div class="order-details-total">
-                    <p>Total: {{number_format($cart_total_normal_price, 2)}}</p>
+                    <p>Total: €{{number_format($cart_total_normal_price, 2)}}</p>
                 </div>
                 @endif
                 <form action="{{route('orders.placeOrder')}}" method="POST">

@@ -9,7 +9,7 @@
         <h2>We appreciate you for choosing us!</h2>
     </div>
     <div class="icons-general-accountpage-container">
-        <a href="#">
+        <a href="{{ route('orders.orderHistoryIndex') }}">
             <div class="accountpage-link-container">
                 <img id="order-history-icon" src="{{ asset('images/icons/Cart_Order_History_2.0.png') }}" alt="Order History Icon">
                 <p class="accountpage-navigation-p">Order History</p> 
