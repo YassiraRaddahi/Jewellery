@@ -2001,3 +2001,91 @@ footer span a:hover {
         text-align: left;
     }
 }
+.order-history-show-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width:80%;
+    height: 100%;
+
+
+}
+
+
+.order-history-show-products-all-info,
+.order-history-show-details-all-info {
+    background-color:#d9c8a4;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 45%;
+    width: 30vw;
+    height: 30vw;
+    text-align: center;
+    overflow-y: scroll;
+    
+    
+}
+
+/* Продукти */
+.order-history-show-products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-history-show-product-1,
+.order-history-show-product-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.order-history-show-product-1 img,
+.order-history-show-product-2 img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Деталі замовлення */
+.order-history-show-details p {
+    margin: 8px 0;
+}
+
+
+/* Адаптивність */
+@media screen and (max-width: 905px) {
+    .order-history-show-container {
+        flex-direction: column;
+    }
+}
+@media  screen and (max-width: 753px) {
+    .order-history-show-products-all-info,
+    .order-history-show-details-all-info {
+        width: 90vw;
+        
+    }
+
+    .order-history-show-container {
+        width: 100%;
+        align-items: center;
+    }
+
+    .order-history-show-products-all-info,
+    .order-history-show-details-all-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+}

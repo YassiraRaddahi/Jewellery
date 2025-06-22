@@ -63,3 +63,4 @@ Route::get('/orders/order-details', [OrdersController::class, 'orderDetails'])->
 Route::post('/orders/order-details', [OrdersController::class, 'placeOrder'])->middleware('auth')->name('orders.placeOrder');
 Route::get(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdateForm'])->middleware('auth')->name('orders.orderDetailsUpdateForm');
 Route::patch(  '/orders/order-details-update', [OrdersController::class, 'orderDetailsUpdate'])->middleware('auth')->name('orders.orderDetailsUpdate');
+Route::get('/orders/order-history/show', [OrdersController::class, 'orderHistoryShow'])->middleware('auth')->name('orders.order_history_show');

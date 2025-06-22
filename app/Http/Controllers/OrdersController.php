@@ -191,7 +191,10 @@ class OrdersController extends Controller
 
         return redirect()->route('orders.orderdetails');
     }
-
+public function orderHistoryShow(){
+    $user = Auth::user();
+    return view('orders.order_history_show');
+}
     /**
      * Display a listing of the resource.
      */
