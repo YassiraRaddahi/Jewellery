@@ -9,6 +9,23 @@ body {
     color: #000000;
 }
 
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
 h1 {
     font-family: 'italic';
     font-size: 2.5em;
@@ -1623,7 +1640,7 @@ footer span a:hover {
     color: #000000;
     width: 30vw;
     max-width: 450px;
-    max-height: 150px;
+    max-height: 300px;
     overflow-y: auto;
     padding-bottom: 10px;
 }
@@ -2112,25 +2129,32 @@ footer span a:hover {
     gap:40px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
     width:80%;
-    height: 100%;
+}
+
+.sub-title-order-history-show
+{
+    text-align: center;
 }
 
 .order-history-show-products-all-info,
 .order-history-show-details-all-info 
 {
     background-color:#d9c8a4;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex: 1 1 45%;
-    width: 30vw;
-    height: 30vw;
+    width: 35vw;
+    height: 50vh;
+    min-height: 226px;
+    min-width: 400px;
     text-align: center;
-    overflow-y: scroll;
+    
 }
 
 /* Продукти */
@@ -2138,11 +2162,10 @@ footer span a:hover {
 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    overflow-y: auto;
 }
 
-.order-history-show-product-1,
-.order-history-show-product-2 
+.order-history-show-product
 {
     display: flex;
     flex-direction: row;
@@ -2152,13 +2175,22 @@ footer span a:hover {
     padding-bottom: 10px;
 }
 
-.order-history-show-product-1 img,
-.order-history-show-product-2 img 
+.order-history-show-product-information
+{
+    text-align: left;
+    font-size: clamp(10px, 0.8vw, 1.2em);
+}
+
+.order-history-show-product img
 {
     width: 80px;
     height: 80px;
-    object-fit: cover;
     border-radius: 5px;
+}
+
+.order-history-show-details
+{
+    text-align: left;
 }
 
 /* Деталі замовлення */
@@ -2169,34 +2201,39 @@ footer span a:hover {
 
 
 /* Адаптивність */
-@media screen and (max-width: 905px) 
+@media screen and (max-width: 1095px) 
 {
+
     .order-history-show-container 
     {
         flex-direction: column;
+        width: 80%;
+        align-items: stretch;
     }
-}
 
-@media  screen and (max-width: 753px) 
-{
+
     .order-history-show-products-all-info,
     .order-history-show-details-all-info 
     {
-        width: 90vw;
+        min-width: 100%;
     }
 
+    .order-history-show-products
+    {
+        width: 100%;
+    }
+
+    .order-history-show-product
+    {
+        min-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1095px) 
+{
     .order-history-show-container 
     {
         width: 100%;
-        align-items: center;
     }
-
-    .order-history-show-products-all-info,
-    .order-history-show-details-all-info 
-    {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
 }
