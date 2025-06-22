@@ -112,6 +112,10 @@ class OrdersController extends Controller
             'quantity' => $quantity,
             'price_at_order_time' => $product->price
             ]);
+
+            $product->stock -= $quantity;
+            $product->save();
+
         }
 
 
