@@ -2081,7 +2081,6 @@ footer span a:hover {
         flex-direction: column;
         gap: 30px;
     }
-    
 
     .order-history-header h1 
     {
@@ -2105,7 +2104,9 @@ footer span a:hover {
         width: 100%;
     }
 }
-.order-history-show-container {
+
+.order-history-show-container 
+{
     display: flex;
     flex-wrap: wrap;
     gap:40px;
@@ -2114,13 +2115,11 @@ footer span a:hover {
     margin-top: 20px;
     width:80%;
     height: 100%;
-
-
 }
 
-
 .order-history-show-products-all-info,
-.order-history-show-details-all-info {
+.order-history-show-details-all-info 
+{
     background-color:#d9c8a4;
     flex-direction: row;
     align-items: center;
@@ -2132,19 +2131,19 @@ footer span a:hover {
     height: 30vw;
     text-align: center;
     overflow-y: scroll;
-    
-    
 }
 
 /* Продукти */
-.order-history-show-products {
+.order-history-show-products 
+{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .order-history-show-product-1,
-.order-history-show-product-2 {
+.order-history-show-product-2 
+{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2154,7 +2153,8 @@ footer span a:hover {
 }
 
 .order-history-show-product-1 img,
-.order-history-show-product-2 img {
+.order-history-show-product-2 img 
+{
     width: 80px;
     height: 80px;
     object-fit: cover;
@@ -2162,35 +2162,41 @@ footer span a:hover {
 }
 
 /* Деталі замовлення */
-.order-history-show-details p {
+.order-history-show-details p 
+{
     margin: 8px 0;
 }
 
 
 /* Адаптивність */
-@media screen and (max-width: 905px) {
-    .order-history-show-container {
+@media screen and (max-width: 905px) 
+{
+    .order-history-show-container 
+    {
         flex-direction: column;
     }
 }
-@media  screen and (max-width: 753px) {
+
+@media  screen and (max-width: 753px) 
+{
     .order-history-show-products-all-info,
-    .order-history-show-details-all-info {
+    .order-history-show-details-all-info 
+    {
         width: 90vw;
-        
     }
 
-    .order-history-show-container {
+    .order-history-show-container 
+    {
         width: 100%;
         align-items: center;
     }
 
     .order-history-show-products-all-info,
-    .order-history-show-details-all-info {
+    .order-history-show-details-all-info 
+    {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
     
-
 }

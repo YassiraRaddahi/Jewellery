@@ -25,7 +25,7 @@
                                             <a href="{{ route('products.show', ['id' => $products->id, 'previous_route' => '/' . request()->path()]) }}"
                                                 class="flex items-center gap-2 hover:text-[#c39f86]">
                                                 @if(!empty($products->image))
-                                                    <img src="{{asset($products->image)}}" class="preview-icon">
+                                                    <img src="{{asset($products->image)}}" class="preview-icon" alt="preview-icon">
                                                 @endif
                                                 {{ $products->name }}
                                             </a>

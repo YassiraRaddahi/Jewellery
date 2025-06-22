@@ -17,7 +17,7 @@
         @else
             @foreach($orders as $order)
                 <div class="one-order-history-container">
-                    <a class="link-to-order-box" href="#">
+                    <a class="link-to-order-box" href="{{route('orders.order_history_show', ['ordernumber' => $order->id])}}">
                         <div class="order-box">
                             <h3>Order Number: {{$order->id}} </h3>
                         </div>
