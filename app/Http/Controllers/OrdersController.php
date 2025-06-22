@@ -200,6 +200,19 @@ class OrdersController extends Controller
         //
     }
 
+    public function  orderHistoryIndex()
+    {
+        $userId = Auth::id();
+
+        $orders = Order::with('orderlines')
+        ->where('user_id', $userId)
+        ->latest()
+        ->get();
+        
+        return view('orders.order_history_index', 
+        compact('orders'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

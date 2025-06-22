@@ -2001,3 +2001,24 @@ footer span a:hover {
         text-align: left;
     }
 }
+
+#order-history-container 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: 20vh;
+}
+
+#order-box 
+{
+    text-align: center;
+    width: 40vw;
+    height:  20vh;
+    max-width: 500px;
+    border: 3px solid #d9c8a4;
+    text-align: center;
+}
