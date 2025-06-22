@@ -6,18 +6,25 @@
     <div class="order-history">
         <h1 class="title">Order History
     </div>
+    <div class="order-history-container">
 
-    @foreach($orders as $order)
-        <div id="order-history-container">
-            <div id="order-box">
-                <h3>Order Number: {{$order->id}} </h3>
-            </div>
-            <div id="order-information">
-                <p>Date: {{$order->order_date}}</p>
-                <p>Product: {{$order->total_products_order}}x</p>
-                <p>Total: €{{number_format($order->total_order_price, 2)}}</p>
-            </div>
-
-        </div>
-    @endforeach
+        @if($orders->isEmpty())
+            <p class="no-orders-message">You have nothing ordered yet</p>
+        @else
+            @foreach($orders as $order)
+                <div class="one-order-history-container">
+                    <a class="link-to-order-box" href="#">
+                        <div class="order-box">
+                            <h3>Order Number: {{$order->id}} </h3>
+                        </div>
+                    </a>
+                    <div class="order-information">
+                        <p>Date: {{$order->order_date}}</p>
+                        <p>Product: {{$order->total_products_order}}x</p>
+                        <p>Total: €{{number_format($order->total_order_price, 2)}}</p>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+    </div>
 @endsection

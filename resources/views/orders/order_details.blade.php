@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="order-details-user-info-button-container">
-                <a href="{{route('orders.orderDetailsUpdateForm')}}" id="order-details-update-button">Update</a>
+                <a href="{{route('orders.orderDetailsUpdateForm')}}" id="order-details-edit-button">Edit</a>
             </div>
         </div>
 
