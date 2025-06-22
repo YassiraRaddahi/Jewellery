@@ -62,7 +62,6 @@
                 <form action="{{route('orders.placeOrder')}}" method="POST">
                     @csrf
                     <button onmouseenter="onHoverOrderButton()" onmouseleave="onHoverLeaveOrderButton()" type="submit" id="order-details-order-button" {{$requiredDataIsMissing ? 'disabled' : ''}}>Order</button>
-                    <input type="hidden" name="hasOrdered" value="true">
                 </form>
             </div>
 

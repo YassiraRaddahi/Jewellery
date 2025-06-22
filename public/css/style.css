@@ -1952,6 +1952,11 @@ footer span a:hover {
     width: 65%;
 }
 
+#order-details-update-form p
+{
+    text-align: right;
+}
+
 .order-details-update-label-input-div{
     display: flex;
     justify-content: space-between;
@@ -1962,7 +1967,7 @@ footer span a:hover {
 #order-details-update-form input
 {
     font-size: clamp(14px, 3vw, 16px);
-    margin: 0 0 10px 0;
+    margin: 5px 0 5px 0;
 }
 
 .order-details-update-formulier-footer
@@ -1989,5 +1994,10 @@ footer span a:hover {
     #order-details-update-form input
     {
         width:100%;
+    }
+
+    #order-details-update-form p
+    {
+        text-align: left;
     }
 }
