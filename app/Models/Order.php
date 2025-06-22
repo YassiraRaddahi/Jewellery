@@ -11,9 +11,27 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function orderline()
+    public function orderlines()
     {
         return $this->hasMany(OrderLine::class);
+    }
+
+    public function getTotalOrderPriceAttribute()
+    {
+        return $this->getRelationValue('orderlines')->sum(function ($orderline)
+        {
+           return $orderline->quantity * $orderline->price_at_order_time;
+        });
+    }
+
+    public function getTotalProductsOrderAttribute()
+    {
+        return $this->getRelationValue('orderlines')->sum('quantity');
+    }
+
+    public function getOrderDateAttribute()
+    {
+        return $this->created_at->format('d-m-Y');
     }
 
     /**

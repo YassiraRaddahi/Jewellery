@@ -95,7 +95,7 @@
             </p>
             @endif
             <div class="order-details-update-formulier-footer">
-                <button type="submit" id="order-details-update-button">Update</button>
+                <button type="submit" id="order-details-edit-button">Update</button>
             </div>
         </form>
     </div>

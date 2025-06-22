@@ -1514,7 +1514,7 @@ footer span a:hover {
 }
 
 
-#order-details-update-button, #order-details-order-button
+#order-details-edit-button, #order-details-order-button
 {
     background-color: #f2efe3;
     border-radius: 20px;
@@ -1530,13 +1530,13 @@ footer span a:hover {
      margin: 20px 0 20px 0;
 }
 
-#order-details-update-button:hover
+#order-details-edit-button:hover
 {
     background-color: #c39f86;
     color: #FFFFFF;
 }
 
-#order-details-update-button
+#order-details-edit-button
 {
     color: #000000;
     text-decoration: none;
@@ -1999,5 +1999,108 @@ footer span a:hover {
     #order-details-update-form p
     {
         text-align: left;
+    }
+}
+
+.order-history-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 27px 0px;
+}
+
+.order-history-header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.order-history-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    min-height: 60vh; 
+}
+
+.no-orders-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #858080;
+}
+
+.one-order-history-container 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 80%;
+}
+
+.link-to-order-box
+{
+    color: #000000;
+    text-decoration: none;
+    min-width: 64%;
+    min-height: 100%;
+}
+
+.order-box 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #d9c8a4;
+    height: 100%;
+    width: 100%;
+}
+
+.order-box h3
+{
+    font-size: clamp(10px, 1.8vw, 1.2em);
+}
+
+.order-information p
+{
+    font-size: clamp(12px, 2vw, 1.3em);
+}
+
+@media screen and (max-width: 768px)
+{
+
+    .order-history-header 
+    {
+        position: unset;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+
+    .order-history-header h1 
+    {
+        position: unset;
+        left: unset;
+        transform: unset;
+    }
+    
+    .one-order-history-container 
+    {
+        justify-content: space-evenly;
+    }
+
+    .link-to-order-box
+    {
+        min-width: 45%;
+    }
+
+    .one-order-history-container
+    {
+        width: 100%;
     }
 }
