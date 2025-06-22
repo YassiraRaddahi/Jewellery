@@ -1890,7 +1890,6 @@ object-fit: cover;
 
 }
 
-/* Liza */
 
 .order-details-update-container
 {
@@ -1913,6 +1912,11 @@ object-fit: cover;
     width: 65%;
 }
 
+#order-details-update-form p
+{
+    text-align: right;
+}
+
 .order-details-update-label-input-div{
     display: flex;
     justify-content: space-between;
@@ -1923,7 +1927,7 @@ object-fit: cover;
 #order-details-update-form input
 {
     font-size: clamp(14px, 3vw, 16px);
-    margin: 0 0 10px 0;
+    margin: 5px 0 5px 0;
 }
 
 .order-details-update-formulier-footer
@@ -1950,5 +1954,10 @@ object-fit: cover;
     #order-details-update-form input
     {
         width:100%;
+    }
+
+    #order-details-update-form p
+    {
+        text-align: left;
     }
 }
