@@ -2002,6 +2002,20 @@ footer span a:hover {
     }
 }
 
+.order-history-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 27px 0px;
+}
+
+.order-history-header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .order-history-container
 {
     display: flex;
@@ -2059,6 +2073,22 @@ footer span a:hover {
 
 @media screen and (max-width: 768px)
 {
+
+    .order-history-header 
+    {
+        position: unset;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+
+    .order-history-header h1 
+    {
+        position: unset;
+        left: unset;
+        transform: unset;
+    }
+    
     .one-order-history-container 
     {
         justify-content: space-evenly;

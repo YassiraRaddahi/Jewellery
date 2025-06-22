@@ -3,9 +3,13 @@
 @section('title', 'Order History')
 
 @section('content')
-    <div class="order-history">
+    <div class="order-history-header">
+        <div class="go-back-link-container">
+            <a href="{{route('users.accountpage')}}" class="go-back-link"><i class="fa-solid fa-left-long"></i>Go Back</a>
+        </div>
         <h1 class="title">Order History
     </div>
+
     <div class="order-history-container">
 
         @if($orders->isEmpty())
