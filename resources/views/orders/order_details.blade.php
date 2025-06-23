@@ -11,7 +11,7 @@
                 <div class="order-formulier">
                     <span>Name:</span>
                     <p id="order-details-name">
-                        {{ $user->first_name . " " . ($user->infix ? $order->user->infix . " " : "") . $user->last_name }}</p>
+                        {{ $user->first_name . " " . ($user->infix ? $user->infix . " " : "") . $user->last_name }}</p>
                 </div>
                 <div class="order-formulier">
                     <span>Email Address:</span>
